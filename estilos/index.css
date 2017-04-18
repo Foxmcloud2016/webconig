@@ -1,0 +1,96 @@
+header {
+
+	width: 860px;
+
+	height: 160px;
+
+	background-color: white;
+
+	-webkit-border-radius: 20px;
+
+	-moz-border-radius: 20px;
+
+	border-radius: 20px;
+
+}
+
+
+header #titulo {
+
+	width: 460px;/*860*/
+
+	position: relative;
+
+	top: 10px;
+
+	left: 10px;
+
+	/*top: -150px;
+
+	left: 10px;*/
+
+}
+
+
+
+
+
+header #titulo a h1 {
+
+	/*margin:auto auto;*/
+
+
+
+	font-size: 26px;
+
+	text-shadow: -2px 1px #556E6C;
+
+	color: #E6D023;
+
+
+
+}
+
+
+
+header #titulo a {
+
+	text-decoration: none;
+
+
+
+}
+
+
+#cuerpo form {
+	padding-left: 30px;
+	line-height: 40px;
+	font-weight: 600;
+	font-style: italic;
+}
+
+#nombre {
+	width: 300px;
+}
+
+input[type=text] {
+	background-color: #FEFDF9;
+	border-radius: 10px;
+}
+
+input[type=password] {
+	background-color: #FEFDF9;
+	border-radius: 10px;
+}
+
+select {
+	background-color: #FEFDF9;
+	border-radius: 10px;
+}
+
+input[type=submit] {
+	background-color: #E2CC23;
+	border-radius: 8px;
+	font-weight: 600;
+	padding: 5px 8px;
+}

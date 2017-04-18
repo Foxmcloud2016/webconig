@@ -1,0 +1,115 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+
+header {
+    width: 860px;
+    height: 160px;
+    background-color: white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+header #head {
+    width: 860px;
+    height: 160px;
+    /*background-image: url("../img/igualdad2.jpg");
+    background-repeat: no-repeat;
+    background-position: 95% 90%;*/
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+header #titulo {
+    width: 460px;/*860*/
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+header #titulo a h1 {
+    /*margin:auto auto;*/
+    font-size: 26px;
+    text-shadow: -2px 1px #556E6C;
+    color: #E6D023;
+}
+header #titulo a {
+    text-decoration: none;
+}
+
+header #head .info-login {
+    padding-top: 20px;
+}
+
+#nav {
+    height: 50px;/**/
+    /*padding-top: 58px;*/
+    margin-top: 79px;/**/
+    padding-left: 20px;
+    width: 100%;
+}
+
+/**/
+ul, ol {
+                list-style:none;
+            }
+            
+            .nav {
+                width:500px; /*Le establecemos un ancho*/
+               /* margin:0 auto; /*Centramos automaticamente*/
+            }
+ 
+            .nav > li {
+                float:left;
+            }
+            
+            .nav li a {
+                background-color:#000;
+                color:#fff;
+                text-decoration:none;
+                padding:10px 12px;
+                display:block;
+            }
+            
+            /*desplegables*/
+            .nav ul li a {
+                background-color:#000;
+                color:#fff;
+                text-decoration:none;
+                padding:10px 12px;
+                display:block;
+                background-color: #4CAF50;
+            }
+
+            ul.nav ul li a ul li a{
+                display:block;
+            }
+            
+            .nav li a:hover {
+                background-color:#434343;
+            }
+            
+            .nav li ul {
+                display:none;
+                position:absolute;
+                min-width:255px;/*140*/
+            }
+            
+            .nav li:hover > ul {
+                display:block;
+            }
+            
+            .nav li ul li {
+                position:relative;
+            }
+            
+            .nav li ul li ul {
+                right:-255px;/*-140*/
+                top:0px;
+            }
+
+/**/
+.info-login {
+    float: left;
+    padding: 0 2em;
+}

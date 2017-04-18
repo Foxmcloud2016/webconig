@@ -1,0 +1,40 @@
+<?php
+
+	#En este php se encarga de cambiar los estados de las migraaciones vigentes en el system
+
+	include('includes/inicio_sesion.php');
+	include('mysql/conectar.php');
+	$id_usuario = $_SESSION['id']['ID_USUARIO'];
+
+	# Id Migracion
+	$q = intval($_GET['q']);
+
+	$query = "SELECT * FROM migraciones where ID_MIGRACION = '".$q."'";
+	$resultado = $conexion->query($query);
+	$row = $resultado->fetch_assoc();
+	$id_ca = $row['ID_COMODATARIO_FK'];
+	# Estado
+	$e = intval($_GET['e']);
+
+	if ($e == 1) {
+		$query="UPDATE `migraciones` SET `ESTADO`= 2 WHERE ID_MIGRACION = '".$q."'";
+		$motivo = 'Migracion = Retirado';
+	} else if ($e == 2){
+		$query="UPDATE `migraciones` SET `ESTADO`= 3 WHERE ID_MIGRACION = '".$q."'";
+		$motivo = 'Migracion = Recibida';
+	}
+
+	if ($conexion->query($query) === TRUE) {
+	    echo "Cambio Satisfactorio";
+	    include('movimientos.php');
+
+	    cargarMov($id_usuario, $motivo,$id_ca);
+	} else {
+		echo "$query";
+	    echo "Error Cambiando: " . $conexion->error;
+	}
+
+	$conexion->close();
+
+
+?>
