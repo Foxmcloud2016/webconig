@@ -25,61 +25,42 @@
 	$datos=$conexion->query($consulta);
 	$num_rows = mysqli_num_rows($datos);
 
-
-
-
-
-
-
-
 	//ACA SE DECIDE CUANTOS RESULTADOS MOSTRAR POR PÁGINA , EN EL EJEMPLO PONGO 15
-$rows_per_page= 15;
-  
-//CALCULO LA ULTIMA PÁGINA
-$lastpage= ceil($num_rows / $rows_per_page);
-  
-//COMPRUEBO QUE EL VALOR DE LA PÁGINA SEA CORRECTO Y SI ES LA ULTIMA PÁGINA
-$page=(int)$page;
- 
-if($page > $lastpage)
-{
-    $page= $lastpage;
-}
- 
-if($page < 1)
-{
-    $page=1;
-}
- 
-//CREO LA SENTENCIA LIMIT PARA AÑADIR A LA CONSULTA QUE DEFINITIVA
-$limit= 'LIMIT '. ($page -1) * $rows_per_page . ',' .$rows_per_page;
+		$rows_per_page= 15;
+		  
+		//CALCULO LA ULTIMA PÁGINA
+		$lastpage= ceil($num_rows / $rows_per_page);
+		  
+		//COMPRUEBO QUE EL VALOR DE LA PÁGINA SEA CORRECTO Y SI ES LA ULTIMA PÁGINA
+		$page=(int)$page;
+		 
+		if($page > $lastpage)
+		{
+		    $page= $lastpage;
+		}
+		 
+		if($page < 1)
+		{
+		    $page=1;
+		}
+		 
+		//CREO LA SENTENCIA LIMIT PARA AÑADIR A LA CONSULTA QUE DEFINITIVA
+		$limit= 'LIMIT '. ($page -1) * $rows_per_page . ',' .$rows_per_page;
 
-//REALIZO LA CONSULTA QUE VA A MOSTRAR LOS DATOS (ES LA ANTERIO + EL $limit)
-$consulta .=" $limit";
-$consulta_limit=mysqli_query($conexion,$consulta);
-  
-if(!$consulta_limit)
-{
-        //SI FALLA LA CONSULTA MUESTRO ERROR
-        die('Invalid query: ' . mysqli_error());
-}
-else
-{}
-     
-	/*
-
-	SELECT PRESTAMOS.DNI, PRESTAMOS.APEYNOM, PRESTAMOS.ID_MAQUINA_FK, PRESTAMOS.VIGENTE, PRESTAMOS.TIPO_COM_PRE, PRESTAMOS.ADEUDA_BATERIA, PRESTAMOS.ADEUDA_CARGADOR, PRESTAMOS.ADEUDA_ANTENA, PRESTAMOS.MOTIVO_PRESTAMO, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO FROM parque_escolar AS PARQUE JOIN PRESTAMOS ON PARQUE.ID_MAQUINA = PRESTAMOS.ID_MAQUINA_FK WHERE PARQUE.ID_COLEGIO_FK=5 GROUP BY PARQUE.SERIE
-
-
-
-	//ordena por nombre de marca, modelo y serie
-	SELECT PRESTAMOS.DNI, PRESTAMOS.APEYNOM, PRESTAMOS.ID_MAQUINA_FK, PRESTAMOS.VIGENTE, PRESTAMOS.TIPO_COM_PRE, PRESTAMOS.ADEUDA_BATERIA, PRESTAMOS.ADEUDA_CARGADOR, PRESTAMOS.ADEUDA_ANTENA, PRESTAMOS.MOTIVO_PRESTAMO, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO FROM parque_escolar AS PARQUE JOIN PRESTAMOS ON PARQUE.ID_MAQUINA = PRESTAMOS.ID_MAQUINA_FK WHERE PARQUE.ID_COLEGIO_FK=5 ORDER BY PARQUE.MARCA, PARQUE.MODELO, PARQUE.SERIE
-
-
-
-
-
-	*/
+		//REALIZO LA CONSULTA QUE VA A MOSTRAR LOS DATOS (ES LA ANTERIO + EL $limit)
+		$consulta .=" $limit";
+		$consulta_limit=mysqli_query($conexion,$consulta);
+		  
+		if(!$consulta_limit)
+		{
+		        //SI FALLA LA CONSULTA MUESTRO ERROR
+		        die('Invalid query: ' . mysqli_error());
+		}
+		else
+		{
+			//Si no hay consulta con limit no hace nada
+		}
+		     
 ?>
 <!DOCTYPE html>
 <html>
@@ -144,13 +125,14 @@ else
 
 			              				<!--   Fin de bucle while  !-->
 								</table>
-								<?php
-									include('paginacion_historial_prestamos.php');
-								?>
+								
 							</div>
 					<?php }else{
 								//No hay nets prestadas, entonces no muestra nada
 						} ?>
+						<?php
+									include('paginacion_historial_prestamos.php');
+								?>
 			</div>
 			<?php
 				include('../includes/footer.php');
