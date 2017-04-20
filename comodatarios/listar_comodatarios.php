@@ -16,24 +16,37 @@ include('../mysql/conectar.php');
 		<?php include('../includes/header.php'); ?>
 		<div id="cuerpo">
 			<h2>Buscar Comodatario</h2>
+
 			<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+				<p>Busca un comodatario por DNI o por sus Nombres o Apellidos.</p>
 				<span>DNI:</span>
 				<!--	En el siguiente input, el atributo onkeypress sólo permite ingresar números, ya que es un campo para DNI´s	-->
-				<input class="en_linea" type="text" name="dni" id='dni' required onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>
+				<input class="en_linea" type="text" name="dni" id='dni' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>
+				<br>
+				<span>Apellidos o Nombres:</span>
+				<!--	En el siguiente input, el atributo onkeypress sólo permite ingresar números, ya que es un campo para DNI´s	-->
+				<input class="en_linea" type="text" name="apeynom" id='apeynom'></input>
+				<br>
 				<input type="submit" name="submit" value="Buscar comodatario"></input>
 				<br/>
 			</form>
 			<?php
 			if(isset($_POST['submit'])){
 				$dni = $_POST['dni'];
-				$result = mysqli_query($conexion, "SELECT * FROM COMODATARIOS WHERE DNI_COM=$dni") or die("Error " .mysqli_error($conexion));
+				$apeynom = $_POST['apeynom'];
+				if ($dni === '') {
+					$result = mysqli_query($conexion, "SELECT * FROM comodatarios where APEYNOM LIKE '%$apeynom%'") or die("Error " .mysqli_error($conexion));	
+				} elseif ($apeynom === '') {
+					$result = mysqli_query($conexion, "SELECT * FROM COMODATARIOS WHERE DNI_COM=$dni") or die("Error " .mysqli_error($conexion));
+				}
+				
 						//Var_dump($row);
 				$contador = mysqli_num_rows($result);
 						//echo $contador;
 				?>
 				<?php
 				if ($contador == 0) {
-					echo "<span>El DNI ingresado no se encuentra cargado en la base de datos aún, haga click <a href=".'alta_alumno.php'.">aquí</a> para cargar un alumno o <a href=".'alta_docente.php'.">aquí</a> para un docente.</span>";
+					echo "<span>El DNI o Apellido o Nombre ingresado no se encuentra cargado en la base de datos aún, haga click <a href=".'alta_alumno.php'.">aquí</a> para cargar un alumno o <a href=".'alta_docente.php'.">aquí</a> para un docente.</span>";
 				}else if ($contador >= 1) {?>
 				<div>
 					<table>
