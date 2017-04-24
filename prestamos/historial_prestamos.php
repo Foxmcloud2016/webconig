@@ -14,6 +14,18 @@
 	    $page=1;
 	}
 
+	//Consulta a la BBDD de todas las nets del parque escolar
+	//$parque_escolar="SELECT ID_MAQUINA, SERIE, MARCA, MODELO, ESTADO,ESTADO_EQUIPO FROM PARQUE_ESCOLAR WHERE ID_COLEGIO_FK='$id_colegio'";
+	//$resultado=$conexion->query($parque_escolar);
+
+	//Consulta a la BBDD de todas las nets del parque escolar filtradas por marca
+	$marca="SELECT MARCA FROM PARQUE_ESCOLAR WHERE ID_COLEGIO_FK='$id_colegio'";
+	$resultado_marca=$conexion->query($marca);
+
+	//Consulta a la BBDD de todas las nets del parque escolar filtradas por modelo
+	$modelo="SELECT MODELO FROM PARQUE_ESCOLAR WHERE ID_COLEGIO_FK='$id_colegio'";
+	$resultado_modelo=$conexion->query($modelo);
+
 	//Consulta a BD de nets que alguna vez se prestaron y ya fueron devueltas (historial de prestamos)
 	$consulta = "SELECT PRESTAMOS.DNI, PRESTAMOS.APEYNOM, PRESTAMOS.ID_MAQUINA_FK, PRESTAMOS.VIGENTE, PRESTAMOS.TIPO_COM_PRE, PRESTAMOS.ADEUDA_BATERIA, PRESTAMOS.ADEUDA_CARGADOR, PRESTAMOS.ADEUDA_ANTENA, PRESTAMOS.MOTIVO_PRESTAMO, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO
 						FROM parque_escolar AS PARQUE
@@ -82,6 +94,24 @@
 						if ($num_rows >= 1) { ?>
 							<div>
 								<h2>Historial de prestamos:</h2>
+								<select name="marca" id="marca">
+										<?php 
+											echo "<option id='sin_marca'>Ninguno</option>";
+										 	while($row = mysqli_fetch_assoc($resultado_marca)){  
+												echo "<option id="."'".$row['MARCA']."'".">".$row['MARCA']."</option>";
+										}
+										?>
+
+								</select>
+								<select name="modelo" id="modelo">
+									<?php 
+										echo "<option id='sin_modelo'>Ninguno</option>";
+										while($row = mysqli_fetch_assoc($resultado_modelo)){  
+											echo "<option id="."'".$row['MODELO']."'".">".$row['MODELO']."</option>";
+										}
+										?>
+
+								</select>
 								<?php echo "Cantidad de registros: "; echo($num_rows);?>
 								<table>
 									<!--   Header de tablas con nombres de columnas  !-->
