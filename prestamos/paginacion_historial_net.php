@@ -19,13 +19,13 @@
 								<?php
 								for($i= $page+1; $i<= $lastpage ; $i++)
 									{?>
-								<li><a href="historial_prestamos.php?page=<?php echo $i;?>"><?php echo $i;?></a></li>
+								<li><a href="historial_net.php?page=<?php echo $i;?>"><?php echo $i;?></a></li>
 								<?php }
 
            //Y SI LA ULTIMA PÁGINA ES MAYOR QUE LA ACTUAL MUESTRO EL BOTON NEXT O LO DESHABILITO
 								if($lastpage >$page )
 									{?>      
-								<li class="next"><a href="historial_prestamos.php?page=<?php echo $nextpage;?>" >Próxima &raquo;</a></li><?php
+								<li class="next"><a href="historial_net.php?page=<?php echo $nextpage;?>" >Próxima &raquo;</a></li><?php
 							}
 							else
 								{?>
@@ -38,7 +38,7 @@
 
             //EN CAMBIO SI NO ESTAMOS EN LA PÁGINA UNO HABILITO EL BOTON DE PREVIUS Y MUESTRO LAS DEMÁS
 						?>
-						<li class="previous"><a href="historial_prestamos.php?page=<?php echo $prevpage;?>">&laquo; Anterior</a></li><?php
+						<li class="previous"><a href="historial_net.php?page=<?php echo $prevpage;?>">&laquo; Anterior</a></li><?php
 						for($i= 1; $i<= $lastpage ; $i++)
 						{
                            //COMPRUEBO SI ES LA PÁGINA ACTIVA O NO
@@ -48,13 +48,13 @@
 							}
 							else
 							{
-								?>       <li><a href="historial_prestamos.php?page=<?php echo $i;?>" ><?php echo $i;?></a></li><?php
+								?>       <li><a href="historial_net.php?page=<?php echo $i;?>" ><?php echo $i;?></a></li><?php
 							}
 						}
              //Y SI NO ES LA ÚLTIMA PÁGINA ACTIVO EL BOTON NEXT     
 						if($lastpage >$page )
 							{   ?>   
-						<li class="next"><a href="historial_prestamos.php?page=<?php echo $nextpage;?>">Próxima &raquo;</a></li><?php
+						<li class="next"><a href="historial_net.php?page=<?php echo $nextpage;?>">Próxima &raquo;</a></li><?php
 					}
 					else
 					{

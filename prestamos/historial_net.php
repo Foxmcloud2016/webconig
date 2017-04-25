@@ -147,7 +147,7 @@
 								echo "<button class='button button2' onclick='window.close();'>Cerrar pestaña</button>";
 						} ?>
 						<?php
-									include('paginacion_historial_prestamos.php');
+									include('paginacion_historial_net.php');
 								?>
 			</div>
 			<?php

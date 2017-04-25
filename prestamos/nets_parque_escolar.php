@@ -117,7 +117,7 @@
 								//No hay nets prestadas, entonces no muestra nada
 						} ?>
 						<?php
-									include('paginacion_historial_prestamos.php');
+									include('paginacion_nets_parque_escolar.php');
 								?>
 			</div>
 			<?php
