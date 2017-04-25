@@ -112,6 +112,14 @@ form textarea {
 	padding: 5px;
 }
 
+#cuerpo div h4{
+	padding-left: 5px;
+}
+
+#cuerpo div p{
+	padding-left: 5px;
+}
+
 #cuerpo div .col1 {
 	flex-basis: 60%;
 	margin-left: 5%;

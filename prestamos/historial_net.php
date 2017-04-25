@@ -14,31 +14,25 @@
 	    $page=1;
 	}
 
-	//Consulta a la BBDD de todas las nets del parque escolar
-	//$parque_escolar="SELECT ID_MAQUINA, SERIE, MARCA, MODELO, ESTADO,ESTADO_EQUIPO FROM PARQUE_ESCOLAR WHERE ID_COLEGIO_FK='$id_colegio'";
-	//$resultado=$conexion->query($parque_escolar);
-
-	//Consulta a la BBDD de todas las nets del parque escolar filtradas por marca
-	$marca="SELECT MARCA FROM PARQUE_ESCOLAR WHERE ID_COLEGIO_FK='$id_colegio'";
-	$resultado_marca=$conexion->query($marca);
-
-	//Consulta a la BBDD de todas las nets del parque escolar filtradas por modelo
-	$modelo="SELECT MODELO FROM PARQUE_ESCOLAR WHERE ID_COLEGIO_FK='$id_colegio'";
-	$resultado_modelo=$conexion->query($modelo);
+	$marca = $_GET['marca'];
+	$modelo = $_GET['modelo'];
+	$serie = $_GET['serie'];
 
 	//Consulta a BD de nets que alguna vez se prestaron y ya fueron devueltas (historial de prestamos)
-	$consulta = "SELECT PRESTAMOS.DNI, PRESTAMOS.APEYNOM, PRESTAMOS.ID_MAQUINA_FK, PRESTAMOS.VIGENTE, PRESTAMOS.TIPO_COM_PRE, PRESTAMOS.ADEUDA_BATERIA, PRESTAMOS.ADEUDA_CARGADOR, PRESTAMOS.ADEUDA_ANTENA, PRESTAMOS.MOTIVO_PRESTAMO, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO
+	$consulta = "SELECT PRESTAMOS.ID_PRESTAMO, PRESTAMOS.DNI, PRESTAMOS.APEYNOM, PRESTAMOS.ID_MAQUINA_FK, PRESTAMOS.VIGENTE, PRESTAMOS.TIPO_COM_PRE, PRESTAMOS.ADEUDA_BATERIA, PRESTAMOS.ADEUDA_CARGADOR, PRESTAMOS.ADEUDA_ANTENA, PRESTAMOS.MOTIVO_PRESTAMO, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO, PARQUE.ESTADO_EQUIPO, PARQUE.ESTADO
 						FROM parque_escolar AS PARQUE
 						JOIN PRESTAMOS 
 						ON PARQUE.ID_MAQUINA = PRESTAMOS.ID_MAQUINA_FK
 						WHERE PARQUE.ID_COLEGIO_FK='$id_colegio'
-						AND PRESTAMOS.VIGENTE=0 
-						ORDER BY PARQUE.MARCA, PARQUE.MODELO, PARQUE.SERIE";
+						/*AND PRESTAMOS.VIGENTE=0*/
+						AND PARQUE.SERIE='$serie'
+						/*ORDER BY PARQUE.MARCA, PARQUE.MODELO, PARQUE.SERIE*/
+						ORDER BY PRESTAMOS.ID_PRESTAMO";
 	$datos=$conexion->query($consulta);
 	$num_rows = mysqli_num_rows($datos);
 
 	//ACA SE DECIDE CUANTOS RESULTADOS MOSTRAR POR PÁGINA , EN EL EJEMPLO PONGO 15
-		$rows_per_page= 15;
+		$rows_per_page= 10;
 		  
 		//CALCULO LA ULTIMA PÁGINA
 		$lastpage= ceil($num_rows / $rows_per_page);
@@ -93,48 +87,32 @@
 					<?php
 						if ($num_rows >= 1) { ?>
 							<div>
-								<h2>Historial de prestamos:</h2>
-								<select name="marca" id="marca">
-										<?php 
-											echo "<option id='sin_marca'>Ninguno</option>";
-										 	while($row = mysqli_fetch_assoc($resultado_marca)){  
-												echo "<option id="."'".$row['MARCA']."'".">".$row['MARCA']."</option>";
-										}
-										?>
-
-								</select>
-								<select name="modelo" id="modelo">
-									<?php 
-										echo "<option id='sin_modelo'>Ninguno</option>";
-										while($row = mysqli_fetch_assoc($resultado_modelo)){  
-											echo "<option id="."'".$row['MODELO']."'".">".$row['MODELO']."</option>";
-										}
-										?>
-
-								</select>
-								<?php echo "Cantidad de registros: "; echo($num_rows);?>
+								<h2>Historial de prestamo de:</h2>
+								<h4><?php echo "$marca $modelo $serie"; ?></h4>
+								<?php echo "<p>Cantidad de registros: ".($num_rows)."</p>";?>
 								<table>
 									<!--   Header de tablas con nombres de columnas  !-->
 										<tr>
 											<th>DNI</th>
-											<th>APEYNOM</th>
-											<th>Marca</th>
-											<th>Modelo</th>
-											<th>Serie</th>
+											<th>Apellido y nombre</th>
+											<th>Tipo Comodatario</th>
 											<th>Adeuda cargador</th>
 											<th>Adeuda bateria</th>
 											<th>Adeuda antena</th>
+											<th>Estado del equipo</th>
+											<th>Prestada?</th>
 										</tr>
-										<!--   Bucle while para completar tabla con todos los registros de colegios   !-->
-										<!--?php while($row=$resultado->fetch_assoc()){?-->
+
 										 <?php while($row = mysqli_fetch_assoc($consulta_limit))
           {  ?>
 			              					<tr>
 			              						<td><?php echo $row['DNI'];?> </td>	
 												<td><?php echo $row['APEYNOM'];?> </td>
-												<td><?php echo $row['MARCA'];?> </td>
-			              						<td><?php echo $row['MODELO'];?> </td>
-			              						<td><?php echo $row['SERIE'];?> </td>
+												<td><?php if ($row['TIPO_COM_PRE']==1) {
+			              							echo 'Docente';
+			              						}else{
+			              							echo 'Alumno/a';
+			              						}?></td>
 			              						<td><?php if ($row['ADEUDA_CARGADOR']==1) {
 			              							echo 'Si';
 			              						}else{
@@ -150,6 +128,12 @@
 			              						}else{
 			              							echo 'No';
 			              						}?></td>
+			              						<td><?php echo $row['ESTADO_EQUIPO'];?> </td>
+			              						<td><?php if ($row['VIGENTE']=='1') {
+			              							echo 'Si';
+			              						}else{
+			              							echo 'No';
+			              						}?></td>
 			     							<tr> 
 			              				<?php } ?>
 
@@ -158,7 +142,9 @@
 								
 							</div>
 					<?php }else{
-								//No hay nets prestadas, entonces no muestra nada
+								//No hay nets prestadas
+								echo "<p>La netbook <b>$marca $modelo $serie</b> no ha sido prestada en ninguna oportunidad.</p>";
+								echo "<button class='button button2' onclick='window.close();'>Cerrar pestaña</button>";
 						} ?>
 						<?php
 									include('paginacion_historial_prestamos.php');

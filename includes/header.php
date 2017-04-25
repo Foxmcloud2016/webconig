@@ -61,7 +61,7 @@
 							<div class="dropdown-content-sub-prestamos">
 								<a class="dropdown-content-superior" href="/proyecto/prestamos/parque_escolar.php">Cargar Net al parque escolar</a>
 								<a class="dropdown-content-inferior" href="/proyecto/prestamos/admin_prestamo.php">Administrar prestamos</a>
-								<a class="dropdown-content-inferior" href="/proyecto/prestamos/historial_prestamos.php">Historial de Préstamos</a>
+								<a class="dropdown-content-inferior" href="/proyecto/prestamos/nets_parque_escolar.php">Nets del Parque Escolar</a>
 							</div>
 						</div>
 					</div>
