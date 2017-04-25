@@ -26,9 +26,20 @@ $csv_file = fopen('output.csv', "r");
 
 
     if ($count >= 1) {/*para que empiece a importar datos desde la segunda linea, ya que la primera es el titulo de cada columna*/
+    /*
         $sql = "INSERT INTO COMODATARIOS (DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$id_colegio')";
-    mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
+  		mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
+	*/
+  		$verifico_duplicado = "SELECT DNI_COM FROM `comodatarios` WHERE DNI_COM= '$data[0]'";
+  		$resultado = mysqli_query($conexion, $verifico_duplicado) or die('Error: '.mysqli_error($conexion));
+  		$row=mysqli_fetch_array($resultado,MYSQLI_NUM);
 
+  			if ($row[0] == $data[0]) {
+  				echo "El DNI "."$data[0]"." ya se encuentra cargado en la base de datos.</br>"; 
+  			}else{
+  				$sql = "INSERT INTO COMODATARIOS (DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$id_colegio')";
+  				mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
+  			}
     }
    //Insertamos los datos con los valores...
     $count++;
