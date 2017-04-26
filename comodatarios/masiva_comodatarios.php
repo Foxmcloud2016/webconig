@@ -1,5 +1,5 @@
 <?php
-			include('../includes/inicio_sesion.php');
+	include('../includes/inicio_sesion.php');
 ?>
 
 <!DOCTYPE html>
