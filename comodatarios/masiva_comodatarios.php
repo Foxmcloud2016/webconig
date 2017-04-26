@@ -36,16 +36,17 @@
 
 			//Abro el archivo CSV creado y lo guardo en una variable
 			$csv_file = fopen('output.csv', "r");
-
 			$count = 0;
+
 			echo "<div class='flex'>";
+			
+			echo "<h2>Detalle de carga de datos a la base de datos:</h2>";
+				
+			
 			while (($data = fgetcsv($csv_file, 1000, ",","\"")) !== FALSE){
 
 				if ($count >= 1) {/*para que empiece a importar datos desde la segunda linea, ya que la primera es el titulo de cada columna*/
-				    /*
-				        $sql = "INSERT INTO COMODATARIOS (DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$id_colegio')";
-				  		mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
-					*/
+
 				  		$verifico_duplicado = "SELECT DNI_COM FROM `comodatarios` WHERE DNI_COM= '$data[0]'";
 				  		$resultado = mysqli_query($conexion, $verifico_duplicado) or die('Error: '.mysqli_error($conexion));
 				  		$row=mysqli_fetch_array($resultado,MYSQLI_NUM);
@@ -65,11 +66,12 @@
    			//Insertamos los datos con los valores...
 				  	$count++;
 				  }
- //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
+ 				//cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
 				  fclose($csv_file);
-				  echo "<div class='insert_ok'>"."Los comodatarios se cargaron correctamente en la BBDD"."</div>";
+				  //echo "<div class='insert_ok'>"."Los comodatarios se cargaron correctamente en la BBDD"."</div>";
 				  echo "</div>";
-				  ?> 
+				  ?>
+				  <a class="button button2" href="alta_masiva.php">Volver</a>
 		</div>
 		<?php
 			include('../includes/footer.php');
