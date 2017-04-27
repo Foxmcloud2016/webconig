@@ -13,6 +13,7 @@
 	<script type="text/javascript" src='../js/myscripts.js'></script>
 	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+	<?php ##En esta parte serializo los datos que recibo del formulario. ?>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#mySubmit").click(function() {

@@ -32,7 +32,7 @@
 //Analiza si user o pass son NULL
 	if (is_null($_SESSION['usuario']['USUARIO']) or is_null($_SESSION['contrasenia']['PASS'])) {
 		//si al menos uno de ellos es NULL, redirecciona al INDEX
-		header('Location: index.php');
+		header('Location: ../index.php');
 		//Si ninguno es nulo (y por ende coinciden con los de la DDBB), redirecciona a home.
 	}elseif (!is_null($_SESSION['usuario']['USUARIO']) and !is_null($_SESSION['contrasenia']['PASS'])) {
 		 	#$query_user = "SELECT USUARIO FROM USUARIOS WHERE USUARIO = '".$user."'";
