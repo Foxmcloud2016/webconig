@@ -41,32 +41,53 @@
 			echo "<div class='flex'>";
 			
 			echo "<h2>Detalle de carga de datos a la base de datos:</h2>";
-				
+
+			$null="SELECT DNI_COM FROM `comodatarios` WHERE MARCA IS NULL OR MODELO IS NULL OR SERIE IS NULL";
+				  		//$verifico_duplicado = "SELECT DNI_COM FROM `comodatarios` WHERE DNI_COM= '$data[0]'";
+	  		$resultado = mysqli_query($conexion, $null) or die('Error: '.mysqli_error($conexion));
+	  		
+	  		if (isset($resultado)) {
+	  			while ($fila=mysqli_fetch_object($resultado)) {
+	  			$dni[]= $fila->DNI_COM; 
+	  		}
+	  		}
+
+	  		
+	  		if (isset($dni)) {
+	  			$dni_sin_net = count($dni);
+	  		}
+	  		
 			
+			
+			//echo var_dump($row);
+			echo "<br>";
+			//echo $dni[0];
+			echo "<br>";
+			//echo $dni[1];
+			echo "<br>";
+			//echo $dni_sin_net;
 			while (($data = fgetcsv($csv_file, 1000, ",","\"")) !== FALSE){
 
 				if ($count >= 1) {/*para que empiece a importar datos desde la segunda linea, ya que la primera es el titulo de cada columna*/
+						
 
-						$no_null="SELECT DNI_COM FROM `comodatarios` WHERE MARCA IS NOT NULL OR MODELO IS NOT NULL OR SERIE IS NOT NULL";
-				  		//$verifico_duplicado = "SELECT DNI_COM FROM `comodatarios` WHERE DNI_COM= '$data[0]'";
-				  		$resultado = mysqli_query($conexion, $no_null) or die('Error: '.mysqli_error($conexion));
-				  		$row=mysqli_fetch_array($resultado,MYSQLI_NUM);
-
-				  		if ($row[0] == $data[0]) {
-
-				  			echo "<div class='insert_wrong'>El comodatario con DNI: "."$data[0]"." ya tiene asignada una netbook en la base de datos. Por lo que no fue reemplazado dicho dato.</div></br>";
-
-				  		}else{
-
-				  			$sql = "UPDATE COMODATARIOS SET MARCA='$data[1]', MODELO='$data[2]', SERIE='$data[3]' WHERE DNI_COM='$data[0]'";
+						if (isset($dni)) {
+							if (in_array($data[0], $dni)) {
+							$sql = "UPDATE COMODATARIOS SET MARCA='$data[1]', MODELO='$data[2]', SERIE='$data[3]' WHERE DNI_COM='$data[0]'";
                 			mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
 
-				  			echo "<div class='insert_ok'>El comodatario con DNI: "."$data[0]"." fue cargado en la base de datos.</div></br>";
-				  		}
+				  			echo "<div class='insert_ok'>Al comodatario con DNI: ".$data[0]." se le asignó correctamente la netbook ".$data[1].", ".$data[2]." y número de serie ".$data[3].".</div></br>";
+						}else{
+							echo "<div class='insert_wrong'>El comodatario con DNI: ".$data[0]." no se encuentra cargado en la base de datos o ya tiene asignada una netbook en la misma.</div></br>";
+							}
+						}
 				  	}
    			//Insertamos los datos con los valores...
 				  	$count++;
 				  }
+				  if (!isset($dni)) {
+				  		echo "<div class='insert_wrong'>Todos los comodatarios cargados en la base de datos ya tienen una netbook asignada.</div>";
+				  	}
  				//cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
 				  fclose($csv_file);
 				  //echo "<div class='insert_ok'>"."Los comodatarios se cargaron correctamente en la BBDD"."</div>";
