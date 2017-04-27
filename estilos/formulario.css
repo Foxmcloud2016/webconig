@@ -221,3 +221,32 @@ div.paginacion {
 	justify-content: center;
 	padding: 10px 0px 10px 0px;
 }
+
+/*////////// MENSAJES DE INSERTS EN LA BBDD EN ALTA MASIVA\\\\\\\\\\\\*/
+
+div.insert_ok {
+	margin-top: 5px;	
+	padding: 5px;
+	width: 80%;
+	background: #7EEDB0;
+	border: solid #39C839 0.5px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+div.insert_wrong {
+	margin-top: 5px;
+	padding: 5px;
+	width: 80%;	
+	background: #EC98A0;
+	border: solid #EB4545 0.5px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+div.flex {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
