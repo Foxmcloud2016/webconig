@@ -142,7 +142,7 @@ header #head .info-login {
 .dropdown-content-sub-egresados {
     display: none;
     position: absolute;
-    top: 150px;
+    top: 100px;
     left: 160px;
     background-color: #f9f9f9;
     min-width: 160px;

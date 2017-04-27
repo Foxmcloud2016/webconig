@@ -47,7 +47,15 @@
 							<a class="dropdown-content-inferior" href="/proyecto/comodatos/comodato_docente.php">Docentes</a>
 						</div>
 					</div>
-					<a class="dropdown_subcontent" href="/proyecto/cesion/cesion.php">Egresados</a>
+					<!--a class="dropdown_subcontent" href="/proyecto/cesion/cesion.php">Egresados</a-->
+						<div class="dropdown_subcontent">
+							<button class="subdropbtn">Egresados</button>
+							<div class="dropdown-content-sub-egresados">
+								<a class="dropdown-content-superior" href="/proyecto/cesion/lista_egresados.php">Listado de Egresados</a>
+								<a class="dropdown-content-superior" href="/proyecto/cesion/cesion.php">Cargar un egresado</a>
+								<a class="dropdown-content-inferior" href="/proyecto/cesion/cesion_masiva.php">Alta Masiva de Egresados</a>
+							</div>
+						</div>
 					<a class="dropdown-content-inferior" href="/proyecto/devolucion/devolucion.php">Devolución de comodato</a>
 				</div>
 			</div>
