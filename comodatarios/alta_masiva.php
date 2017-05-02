@@ -27,7 +27,7 @@ include('../includes/inicio_sesion.php');
 			 		 	 			 </form>
 			 	</div>
 			 	<div class="col2">
-			 		<p>Descargue <a href="masiva_comodatarios.xls">aquí</a> el archivo excel para completar los datos necesarios para el alta masiva de .</p>
+			 		<p>Descargue <a href="masiva_comodatarios.xls">aquí</a> el archivo excel para completar los datos necesarios para el alta masiva de comodatarios.</p>
 			 	</div>
 			 </div>
  			 <div class="nets">
