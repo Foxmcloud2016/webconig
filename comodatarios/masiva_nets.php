@@ -38,9 +38,11 @@
 			$csv_file = fopen('output.csv', "r");
 			$count = 0;
 
+			echo "<h2>Detalle de carga de datos a la base de datos:</h2>";
 			echo "<div class='flex'>";
 			
-			echo "<h2>Detalle de carga de datos a la base de datos:</h2>";
+			$no_cargados = 0; //sirve para contar la cantidad de filas del excel NO cargados en la BBDD
+			$cargados = 0; //sirve para contar la cantidad de filas del excel cargados en la BBDD
 
 			$null="SELECT DNI_COM FROM `comodatarios` WHERE MARCA IS NULL OR MODELO IS NULL OR SERIE IS NULL";
 				  		//$verifico_duplicado = "SELECT DNI_COM FROM `comodatarios` WHERE DNI_COM= '$data[0]'";
@@ -60,11 +62,11 @@
 			
 			
 			//echo var_dump($row);
-			echo "<br>";
-			//echo $dni[0];
-			echo "<br>";
-			//echo $dni[1];
-			echo "<br>";
+			// echo "<br>";
+			// //echo $dni[0];
+			// echo "<br>";
+			// //echo $dni[1];
+			// echo "<br>";
 			//echo $dni_sin_net;
 			while (($data = fgetcsv($csv_file, 1000, ",","\"")) !== FALSE){
 
@@ -76,9 +78,11 @@
 							$sql = "UPDATE COMODATARIOS SET MARCA='$data[1]', MODELO='$data[2]', SERIE='$data[3]' WHERE DNI_COM='$data[0]'";
                 			mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
 
-				  			echo "<div class='insert_ok'>Al comodatario con DNI: ".$data[0]." se le asignó correctamente la netbook ".$data[1].", ".$data[2]." y número de serie ".$data[3].".</div></br>";
+				  			$cargados++;
 						}else{
-							echo "<div class='insert_wrong'>El comodatario con DNI: ".$data[0]." no se encuentra cargado en la base de datos o ya tiene asignada una netbook en la misma.</div></br>";
+							echo "<div class='insert_wrong'>El comodatario con DNI: ".$data[0]." no se encuentra cargado en la base de datos o ya tiene asignada una netbook en la misma.</div>";
+
+							$no_cargados++;
 							}
 						}
 				  	}
@@ -87,11 +91,28 @@
 				  }
 				  if (!isset($dni)) {
 				  		echo "<div class='insert_wrong'>Todos los comodatarios cargados en la base de datos ya tienen una netbook asignada.</div>";
+				  	}else{
+				  		echo "</div>";
+				  		echo "<h2>Resumen:</h2>";
+				  		echo "<div class='flex'>";
+				  		echo "<div class='insert_ok'>Se asignó netbook a ".$cargados." comodatarios.</div>";
+						echo "<div class='insert_wrong'>Hay ".$no_cargados." comodatarios que ya tienen netbook asignada o no estan cargados en la base de datos.</div>";
 				  	}
  				//cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
 				  fclose($csv_file);
 				  //echo "<div class='insert_ok'>"."Los comodatarios se cargaron correctamente en la BBDD"."</div>";
 				  echo "</div>";
+
+				  $cant_registros_excel = $count - 1; //Indica la cantidad de filas que tiene el excel importado
+					/*
+						echo "<h2>Resumen:</h2>";
+
+						echo "<div class='flex'>";
+						echo "<p>El archivo de excel importado tenia ".$cant_registros_excel." comodatarios cargados. A continuacion se detallan la cantidad cargada en la base de datos.</p>";
+						echo "<div class='insert_wrong'>Hay ".$no_cargados." comodatarios que no se cargaron en la BBDD.</div>";
+						echo "<div class='insert_ok'>Se cargaron ".$cargados." comodatarios en la BBDD.</div>";
+						echo "</div>";
+					*/
 				  ?>
 				  <a class="button button2" href="alta_masiva.php">Volver</a>
 		</div>
