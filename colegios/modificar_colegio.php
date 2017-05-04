@@ -17,6 +17,7 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="../estilos/general.css">
 	<link rel="stylesheet" type="text/css" href="../estilos/header.css">
+	<link rel="stylesheet" type="text/css" href="../estilos/formulario.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
