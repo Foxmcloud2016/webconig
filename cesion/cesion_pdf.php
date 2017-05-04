@@ -16,6 +16,11 @@ $titulo = iconv('UTF-8', 'windows-1252', $titulo);/*Esta función cambia la codi
 $contenido = iconv('UTF-8', 'windows-1252', $contenido);
 $firma1 = iconv('UTF-8', 'windows-1252', $firma1);
 $firma2 = iconv('UTF-8', 'windows-1252', $firma2);
+if (isset($motivo))  {
+	$motivo = iconv('UTF-8', 'windows-1252', $motivo);		
+}
+
+
 require('../fpdf/fpdf.php');
 $pdf = new FPDF('P','mm','Legal');
 $pdf->AddPage();
@@ -33,7 +38,12 @@ $pdf->SetX(20);//posiciono firma1
 $pdf->Write(0,$firma1);
 $pdf->SetX(148);//posiciono firma2
 $pdf->Write(0,$firma2);
-
+if (isset($motivo)) {
+	$pdf->Ln(7);
+	$pdf->SetFont('Arial','',6);
+	$pdf->SetX(20);
+	$pdf->MultiCell(0,5,$motivo,0,'J',false);
+}
 //Repite 2da vez
 $pdf->Ln(30);
 $pdf->SetFont('Arial','B',11);
@@ -50,6 +60,14 @@ $pdf->SetX(20);//posiciono firma1
 $pdf->Write(0,$firma1);
 $pdf->SetX(148);//posiciono firma2
 $pdf->Write(0,$firma2);
+
+if (isset($motivo)) {
+	$pdf->Ln(7);
+	$pdf->SetFont('Arial','',6);
+	$pdf->SetX(20);
+	$pdf->MultiCell(0,5,$motivo,0,'J',false);
+}
+
 
 if ($mayor=='si') {
 	$pdf->SetTitle("Contrato de Cesión - $responsable", true);

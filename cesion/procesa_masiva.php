@@ -102,7 +102,6 @@ include('../includes/inicio_sesion.php');
 			}else{
 				echo "<div class='insert_ok'>Se cargaron ".$cargados." egresados en la BBDD.</div>";
 			}
-			
 			echo "</div>";
 			
  //echo "Importación exitosa!";

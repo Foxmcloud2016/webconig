@@ -24,7 +24,9 @@
 				<br/>
 				<form action='modifica_estado.php' method ="POST">
 					<p>Por favor seleccione el estado</p>
+
 					<input type="hidden" name="id_egresado" value="<?php echo $id_egresado ?>">
+					<label for="estado">Estado</label>
 					<select name="estado">
 						<option value="1">Pendiente</option>
 						<option value="2">Pendiente de Retiro</option>
@@ -37,6 +39,9 @@
 					</form>
 			</div>
 		</div>
+		<script type="text/javascript">
+			
+		</script>
 		<?php
 				include('../includes/footer.php');
 			?>

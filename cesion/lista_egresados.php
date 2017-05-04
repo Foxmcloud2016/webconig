@@ -20,7 +20,13 @@
 		<?php include('../includes/header.php'); ?>
 		<div id="cuerpo">
 			<h2>Listado de Egresados</h2>
-
+			<?php if ($resultado_egresados->num_rows == 0): ?>
+				<div class='flex'>
+					<div class='insert_wrong'>
+					<p>Todavia no existen egresados en la BBDD</p>
+					</div>
+				</div>
+			<?php else: ?>
 			<div>
 				<table>
 					<!--   Header de tablas con nombres de columnas  !-->
@@ -53,13 +59,16 @@
           						
           						<td>
           							<a class="button button2" href="modificar_estado.php?id=<?php echo $row['ID_EGRESADO'] ;?>" >Modificar Estado</a>
-          							<a class="button button2" href='cesion_.php?id=<?php echo $row['ID_EGRESADO'] ;?>'  >Generar Contrato de Cesión</a>
+          							<a class="button button2" href="modificar_egresado.php?id=<?php echo $row['ID_EGRESADO'] ;?>" >Modificar Egresado</a>
+          							<a class="button" style='padding:0.25em' href='cesion_.php?id=<?php echo $row['ID_EGRESADO'] ;?>'  >Generar Contrato de Cesión</a>
+          							<a class="button button3" href="baja_egresado.php?id_e=<?php echo $row['ID_EGRESADO'] ;?>" >Baja Egresado</a>
           						</td>
  							<tr> 
           				<?php } ?>
           				<!--   Fin de bucle   !-->
 				</table>
 			</div>
+			<?php endif ?>
 		</div>
 			<?php include('../includes/footer.php'); ?>
 		</section>

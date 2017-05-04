@@ -36,7 +36,7 @@
 	$anio = strftime("%Y");
 	$adulto = $datos->APEYNOM_A;
 	$dni_adulto = $datos->DNI_ADULTO;
-	include('mes.php');
+	include('../includes/mes.php');
 	#include('escuela_origen.php');
 
 
@@ -47,7 +47,7 @@
 	if (empty($depto)) {
 		$depto = '-----';
 	}
-
+	
 	if ($mayor=='si') {
 		$responsable = $alumno;
 		$dni_responsable = $dni_alumno;
@@ -56,12 +56,22 @@
 		$curso_mayor = '-----';
 		$division_mayor = '-----';
 	}elseif ($mayor=='no') {
-		$responsable = $adulto;
-		$dni_responsable = $dni_adulto;
-		$curso_mayor = $curso;
-		$division_mayor = $division;
+		$mismo = $_POST['mismo'];
+		if ($mismo=='si') {
+			$responsable = $adulto;
+			$dni_responsable = $dni_adulto;
+			$curso_mayor = $curso;
+			$division_mayor = $division;
+		} else {
+			$responsable = $_POST['apeynom_adulto'];
+			$dni_responsable = $_POST['dni_adulto'];
+			$motivo = $_POST['motivo'];
+			$curso_mayor = $curso;
+			$division_mayor = $division;
+		}
+		
 	}
-
+	
 	include('cesion_pdf.php');
 
 	?>
