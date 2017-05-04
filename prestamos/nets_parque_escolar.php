@@ -3,8 +3,8 @@
 	include('../mysql/conectar.php');
 	$id_colegio = $_SESSION['colegio'];
 
-	//AL PRINCIPIO COMPRUEBO SI HICIERON CLICK EN ALGUNA PÁGINA 
-	if(isset($_GET['page']))
+//AL PRINCIPIO COMPRUEBO SI HICIERON CLICK EN ALGUNA PÁGINA 
+		if(isset($_GET['page']))
 	{
 	    $page= $_GET['page'];
 	}
@@ -18,19 +18,8 @@
 	$consulta = "SELECT ID_MAQUINA, (SELECT DISTINCT SERIE) as SERIE, MARCA, MODELO, ESTADO, ESTADO_EQUIPO FROM PARQUE_ESCOLAR WHERE ID_COLEGIO_FK='$id_colegio'";
 	$datos=$conexion->query($consulta);
 	$num_rows = mysqli_num_rows($datos);
-	//Consulta a BD de nets que alguna vez se prestaron y ya fueron devueltas (historial de prestamos)
-	/*
-	$consulta = "SELECT PRESTAMOS.DNI, PRESTAMOS.APEYNOM, PRESTAMOS.ID_MAQUINA_FK, PRESTAMOS.VIGENTE, PRESTAMOS.TIPO_COM_PRE, PRESTAMOS.ADEUDA_BATERIA, PRESTAMOS.ADEUDA_CARGADOR, PRESTAMOS.ADEUDA_ANTENA, PRESTAMOS.MOTIVO_PRESTAMO, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO
-						FROM parque_escolar AS PARQUE
-						JOIN PRESTAMOS 
-						ON PARQUE.ID_MAQUINA = PRESTAMOS.ID_MAQUINA_FK
-						WHERE PARQUE.ID_COLEGIO_FK='$id_colegio'
-						AND PRESTAMOS.VIGENTE=0 
-						ORDER BY PARQUE.MARCA, PARQUE.MODELO, PARQUE.SERIE";
-	$datos=$conexion->query($consulta);
-	$num_rows = mysqli_num_rows($datos);
-*/
-	//ACA SE DECIDE CUANTOS RESULTADOS MOSTRAR POR PÁGINA , EN EL EJEMPLO PONGO 15
+
+	//ACA SE DECIDE CUANTOS RESULTADOS MOSTRAR POR PÁGINA
 		$rows_per_page= 10;
 		  
 		//CALCULO LA ULTIMA PÁGINA
@@ -117,7 +106,7 @@
 								//No hay nets prestadas, entonces no muestra nada
 						} ?>
 						<?php
-									include('paginacion_nets_parque_escolar.php');
+									include('paginacion.php');
 								?>
 			</div>
 			<?php

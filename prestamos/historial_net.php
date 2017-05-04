@@ -18,6 +18,8 @@
 	$modelo = $_GET['modelo'];
 	$serie = $_GET['serie'];
 
+
+
 	//Consulta a BD de nets que alguna vez se prestaron y ya fueron devueltas (historial de prestamos)
 	$consulta = "SELECT PRESTAMOS.ID_PRESTAMO, PRESTAMOS.DNI, PRESTAMOS.APEYNOM, PRESTAMOS.ID_MAQUINA_FK, PRESTAMOS.VIGENTE, PRESTAMOS.TIPO_COM_PRE, PRESTAMOS.ADEUDA_BATERIA, PRESTAMOS.ADEUDA_CARGADOR, PRESTAMOS.ADEUDA_ANTENA, PRESTAMOS.MOTIVO_PRESTAMO, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO, PARQUE.ESTADO_EQUIPO, PARQUE.ESTADO
 						FROM parque_escolar AS PARQUE
@@ -89,7 +91,7 @@
 							<div>
 								<h2>Historial de prestamo de:</h2>
 								<h4><?php echo "$marca $modelo $serie"; ?></h4>
-								<?php echo "<p>Cantidad de registros: ".($num_rows)."</p>";?>
+								<?php echo "<p>Cantidad de veces prestada: ".($num_rows)."</p>";?>
 								<table>
 									<!--   Header de tablas con nombres de columnas  !-->
 										<tr>
@@ -142,12 +144,15 @@
 								
 							</div>
 					<?php }else{
+						 echo $num_rows; 
 								//No hay nets prestadas
 								echo "<p>La netbook <b>$marca $modelo $serie</b> no ha sido prestada en ninguna oportunidad.</p>";
 								echo "<button class='button button2' onclick='window.close();'>Cerrar pestaña</button>";
 						} ?>
 						<?php
-									include('paginacion_historial_net.php');
+
+						include('paginacion.php');
+
 								?>
 			</div>
 			<?php
