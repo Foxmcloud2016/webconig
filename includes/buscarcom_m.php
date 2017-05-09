@@ -4,7 +4,7 @@
 
 	$q = intval($_GET['q']);
 
-	$query="SELECT * FROM COMODATARIOS INNER JOIN COLEGIOS WHERE DNI_COM= '".$q."'";
+	$query="SELECT * FROM COMODATARIOS INNER JOIN COLEGIOS WHERE DNI_COM= '".$q."' ";
 	$resultado= $conexion->query($query);
 
 	$rowcount = mysqli_num_rows($resultado);

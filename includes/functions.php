@@ -3,10 +3,11 @@
 
 
 	function buscar_comodatario($q){
-
 	include('../mysql/conectar.php');
 
-	$query="SELECT * FROM COMODATARIOS INNER JOIN COLEGIOS WHERE DNI_COM= '".$q."'";
+	$colegio = $_SESSION['colegio'];
+
+	$query="SELECT * FROM COMODATARIOS INNER JOIN COLEGIOS WHERE DNI_COM = $q AND ID_COLEGIO_FK = $colegio";
 
 	$resultado= $conexion->query($query);
 
