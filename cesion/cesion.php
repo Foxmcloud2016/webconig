@@ -19,30 +19,16 @@ include('../includes/inicio_sesion.php');
 		<?php include('../includes/header.php') ?>
 		<div id="cuerpo">
 			<h2>Alta de Egresado</h2>
-			<form action="acta_cesion.php" method="POST" target="_blank">
+			<form action="confirmar_cesion.php" method="POST">
 				<label>DNI del comodatario:</label>
 				<input class="en_linea" type="text" id='dni' name="dni_com"></input>
 				<input class='button button2' id='btnbuscarcom' type='button' onclick='buscarcom()' value="Buscar comodatario"></input>
-				<div id='respuestatxt'>
-				</div>
+				<div id='respuestatxt'></div>
 				<div id='oculto' >
-					<label>¿El alumno/a es mayor de edad?:</label>
-					<input type="radio" name="mayor" value="si" />Si <br />
-					<input type="radio" name="mayor" value="no" />No <br />
-					<label>Domicilio:</label>
-					<input type="text" name="calle" id="domicilio"></input>
-					<label>Número:</label>
-					<input type="text" name="numero"></input>
-					<label>Piso:</label>
-					<input type="text" name="piso"></input>
-					<label>Departamento:</label>
-					<input type="text" name="depto"></input>
+					<label>Año de Egreso:</label>
+					<input type="text" name="anio_egreso"></input>
 					<label>Curso:</label>
-					<select name="curso">
-						<option value="3°">3°</option>
-						<option value="4°">4°</option>
-						<option value="6°">6°</option>
-						<option value="7°">7°</option>
+					<input type="text" name="curso"></input>
 					</select>
 					<label>División:</label>
 					<input type="text" name="division"></input>
@@ -53,7 +39,7 @@ include('../includes/inicio_sesion.php');
 						<option value="vespertino">Vespertino</option>
 					</select>
 				</div>
-				<input class="button button2" id="mySubmit" type="submit" value="Generar Contrato"></input>
+				<input class="button button2" id="mySubmit" type="submit" value="Marcar como Egresado"></input>
 			</form>
 			<script>document.getElementById("mySubmit").disabled = true;</script>	
 		</div>

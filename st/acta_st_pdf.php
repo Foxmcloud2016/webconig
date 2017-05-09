@@ -1,10 +1,10 @@
 	<?php
 	$titulo = 'ACTA DE SERVICIO TÉCNICO';
-	$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $adulto D.N.I. Nº $dni_adulto, en su carácter de $pmt del alumno $alumno, D.N.I. N° $dni_alumno de $curso $division, turno $turno del Establecimiento Educativo: $escuela_nombre_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por problemas con:";
+	$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $adulto D.N.I. Nº $dni_adulto, en su carácter de $retira del alumno $alumno, D.N.I. N° $dni_alumno de $curso $division, turno $turno del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por problemas con:";
 
 	$hoja2 = "Se solicita cuidado y responsabilidad en el uso de la misma.";
-	$mayus_pmt = strtoupper($pmt);
-	$firma1 = "FIRMA $mayus_pmt";
+	$mayus_retira = strtoupper($retira);
+	$firma1 = "FIRMA $mayus_retira";
 	$firma2 = 'FIRMA DE AUTORIDAD ESCOLAR';
 
 
@@ -14,7 +14,9 @@ ob_start();
 $titulo = iconv('UTF-8', 'windows-1252', $titulo);/*Esta función cambia la codificación de caracteres para que no salgan signo raros*/
 $hoja1 = iconv('UTF-8', 'windows-1252', $hoja1);
 $hoja2 = iconv('UTF-8', 'windows-1252', $hoja2);
-$disco = iconv('UTF-8', 'windows-1252', $disco);
+if (isset($disco)) {
+	$disco = iconv('UTF-8', 'windows-1252', $disco);
+}
 $firma1 = iconv('UTF-8', 'windows-1252', $firma1);
 $firma2 = iconv('UTF-8', 'windows-1252', $firma2);
 require('fpdf/fpdf.php');
