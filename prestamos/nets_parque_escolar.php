@@ -95,7 +95,7 @@
 												<td><?php echo $row['MODELO'];?> </td>
 												<td><?php echo $row['SERIE'];?> </td>
 			              						<td><?php echo $row['ESTADO_EQUIPO'];?> </td>
-			              						<td><?php echo "<a class='button button2' href="."historial_net.php?marca=".$row['MARCA']."&modelo=".$row['MODELO']."&serie=".$row['SERIE']." target='_blank'>Ver historial</a>";?></td>
+			              						<td><?php echo "<a class='button button2' href="."historial_net.php?marca=".$row['MARCA']."&modelo=".$row['MODELO']."&serie=".$row['SERIE'].">Ver historial</a>";?></td>
 			              				<?php } ?>
 
 			              				<!--   Fin de bucle while  !-->
