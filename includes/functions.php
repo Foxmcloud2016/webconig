@@ -1,11 +1,11 @@
-<?php 
+<?php
 
-	
-	
+
+
 	function buscar_comodatario($q){
 
 	include('../mysql/conectar.php');
-	
+
 	$query="SELECT * FROM COMODATARIOS INNER JOIN COLEGIOS WHERE DNI_COM= '".$q."'";
 
 	$resultado= $conexion->query($query);
@@ -35,8 +35,7 @@
 		echo "No existe un comodatario con ese DNI";
 	}
 
-	
-	}
-	
- ?>
 
+	}
+
+ ?>

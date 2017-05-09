@@ -14,7 +14,7 @@ var str = document.getElementById("dni").value;
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       $("respuestatxt").hide();
-      if (this.responseText != 'No existe'){
+      if (this.responseText != 'No existe un comodatario con ese DNI'){
             document.getElementById("respuestatxt").innerHTML = this.responseText;
             document.getElementById("mySubmit").disabled = false;
             document.getElementById('oculto').style.display = 'block';/*muestra el msj oculto en la devolcuion de comodato*/
@@ -26,6 +26,8 @@ var str = document.getElementById("dni").value;
             }
             $("#respuestatxt").slideDown("slow");
       } else {
+          document.getElementById("respuestatxt").innerHTML = this.responseText;
+          $("#respuestatxt").slideDown("slow");
           document.getElementById("mySubmit").disabled = true;
       }
 

@@ -16,6 +16,7 @@ include('../includes/inicio_sesion.php');
 		<?php
 		include('../includes/header.php');
 		?>
+		
 		<div id="cuerpo">
 			<h2>Alta de Alumno:</h2>
 			<form action="procesa_alta_comodatario.php" method="POST">

@@ -92,7 +92,7 @@ footer {
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
-	
+
 }
 
 footer #pie #logout {
@@ -176,6 +176,12 @@ footer #pie{
 }
 }
 
+/*Boton Buscar Egresado Formulario Listado Egresados*/
+
+#btnfiltrar{
+	margin-top: 10px;
+}
+
 /* Clases Botones */
 .button {
     background-color: #4CAF50; /* Green */
@@ -191,8 +197,8 @@ footer #pie{
 }
 
 .button2 {background-color: #008CBA;} /* Blue */
-.button3 {background-color: #f44336;} /* Red */ 
-.button4 {background-color: #e7e7e7; color: black;} /* Grey */ 
+.button3 {background-color: #f44336;} /* Red */
+.button4 {background-color: #e7e7e7; color: black;} /* Grey */
 .button5 {background-color: #555555;} /* Black */
 
 .button[disabled] {
@@ -200,6 +206,8 @@ footer #pie{
 	color: white;
 	cursor: default;
 }
+
+
 
 /* Fin de clase Botones */
 
@@ -209,7 +217,7 @@ table {
 	    width: 90%;
 	    margin:auto;
 	    margin-top: 10px;
-	  	/*text-align: center; */	
+	  	/*text-align: center; */
 }
 
 table tbody tr th {
@@ -225,7 +233,7 @@ td {
 	background-color: rgba(235,237,239,0.7);
 }
 
-td, th {		
+td, th {
 	   /* border: 1px solid #387273;*/
 	    border-radius: 3px;
 	    text-align: left;
@@ -235,4 +243,3 @@ td, th {
 tr:hover {
 	background-color: #EBEDEF;
 }
-

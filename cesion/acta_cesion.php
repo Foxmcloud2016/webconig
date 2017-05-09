@@ -47,7 +47,7 @@
 	if (empty($depto)) {
 		$depto = '-----';
 	}
-	
+
 	if ($mayor=='si') {
 		$responsable = $alumno;
 		$dni_responsable = $dni_alumno;
@@ -69,9 +69,9 @@
 			$curso_mayor = $curso;
 			$division_mayor = $division;
 		}
-		
+
 	}
-	
+
 	include('cesion_pdf.php');
 
 	?>

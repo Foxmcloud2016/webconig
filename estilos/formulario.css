@@ -250,3 +250,7 @@ div.flex {
 	justify-content: center;
 	flex-wrap: wrap;
 }
+
+div #block-filtro {
+	display: inline-block;
+}

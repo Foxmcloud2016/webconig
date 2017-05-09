@@ -18,7 +18,7 @@ include('../includes/inicio_sesion.php');
 	<section id="contenedor">
 		<?php include('../includes/header.php') ?>
 		<div id="cuerpo">
-			<h2>Contrato de Cesión:</h2>
+			<h2>Alta de Egresado</h2>
 			<form action="acta_cesion.php" method="POST" target="_blank">
 				<label>DNI del comodatario:</label>
 				<input class="en_linea" type="text" id='dni' name="dni_com"></input>
