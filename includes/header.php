@@ -1,7 +1,7 @@
 <header>
 	<div id="head">
 		<div id="titulo">
-			<a href="/proyecto/home.php"><h1>Sistema Generador de Actas</h1></a>
+			<a href="/proyecto/home.php"><h1>Sistema Administrativo</h1></a>
 		</div>
 		<div class="info-login">
 			<span>Buenos dias, <?php echo ucwords(strtolower($_SESSION['usuario']['NOMBRE_ATEI'])) ?></span>
@@ -16,6 +16,7 @@
 						<button class="subdropbtn">Alta de Comodatarios</button>
 						<div class="dropdown-content-sub">
 							<a class="dropdown-content-superior" href="/proyecto/comodatarios/alta_alumno.php">Alta Alumno</a>
+							<a class="dropdown-content-superior" href="/proyecto/comodatarios/alta_alumno_ISFD.php">Alta Alumno ISFD</a>
 							<a class="dropdown-content-inferior" href="/proyecto/comodatarios/alta_docente.php">Alta Docente</a>
 							<a class="dropdown-content-inferior" href="/proyecto/comodatarios/alta_masiva.php">Alta Masiva</a>
 						</div>
@@ -65,11 +66,11 @@
 				<div class="dropdown-content">
 					<a class="dropdown-content-inferior" href="/proyecto/st/st.php">Acta de ST</a>
 					<div class="dropdown_subcontent">
-						<button class="subdropbtn">Prestamos</button>
+						<button class="subdropbtn">Préstamos</button>
 							<div class="dropdown-content-sub-prestamos">
 								<a class="dropdown-content-superior" href="/proyecto/prestamos/parque_escolar.php">Cargar Net al parque escolar</a>
 								<a class="dropdown-content-inferior" href="/proyecto/prestamos/admin_prestamo.php">Administrar prestamos</a>
-								<a class="dropdown-content-inferior" href="/proyecto/prestamos/nets_parque_escolar.php">Nets del Parque Escolar</a>
+								<a class="dropdown-content-inferior" href="/proyecto/prestamos/nets_parque_escolar.php">Historial de Préstamos</a>
 							</div>
 						</div>
 					</div>

@@ -144,10 +144,9 @@
 								
 							</div>
 					<?php }else{
-						 echo $num_rows; 
 								//No hay nets prestadas
 								echo "<p>La netbook <b>$marca $modelo $serie</b> no ha sido prestada en ninguna oportunidad.</p>";
-								echo "<button class='button button2' onclick='window.close();'>Cerrar pestaña</button>";
+								echo "<a class='button button2' href='nets_parque_escolar.php'>Volver al historial</a>";
 						} ?>
 						<?php
 

@@ -35,16 +35,12 @@
 					<input type="hidden" name="id_colegio" value="<?php echo $row['ID_COLEGIO'];?>" />
 					<label for= 'dire'>Directora</label>
 					<input type="text" name="directora" id="dire" value="<?php echo $row['DIRECTOR'];?>" required> </input>
-					<br/>
 					<label for= 'dni_dire'>DNI</label>
 					<input type="text" name="dni" id="dni_dire" value="<?php echo $row['DNI'];?>" required> </input>
-					<br/>
 					<label for= 'cole'>Establecimiento</label>
 					<input type="text" name="colegio" id="cole" value="<?php echo $row['COLEGIO'];?>" required></input>
-					<br/>
 					<label for= 'domi'>Domicilio</label>
 					<input type="text" name="domicilio" id="domi" <?php echo "value= '".$row['DOMICILIO']."'";?> required></input>
-					<br/>
 					<label for='ciudad'>Ciudad</label>
 					<select name='ciudad' id='ciudad'>
 						<option>Rio Grande</option>
@@ -52,9 +48,7 @@
 						<option>Ushuaia</option>
 					</select>
 					<!--<input type="text" name="ciudad" id="ciudad" value='<?php #echo $row['CIUDAD'];?>' required></input> -->
-					<br/>
 					<?php } ?>
-					<br />
 					<input class = 'button' type="submit" value="Modificar Colegio"></input>
 					<a class='button button2' href="colegios_list.php">Cancelar</a>
 					</form>

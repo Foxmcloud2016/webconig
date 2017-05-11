@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistema generador de actas</title>
+	<title>Sistema Administrativo</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="../estilos/general.css">
 	<link rel="stylesheet" type="text/css" href="../estilos/header.css">
@@ -70,24 +70,9 @@
 				<label for="nombre_adulto">Nombre adulto:</label>
 				<input type="text" name="nombre_adulto" required>
 				<label for="marca">Marca netbook:</label>
-				<select name="marca">
-					<option value="EXO">EXO</option>
-					<option value="BGH">Positivo BGH</option>
-					<option value="Samsung">Samsung</option>
-					<option value="CX">CX</option>
-					<option value="PC-BOX">PC-BOX</option>
-					<option value="Noblex">Noblex</option>
-					<option value="Coradir">Coradir</option>
-				</select>
+				<input type="text" name="marca" required>
 				<label for="modelo">Modelo netbook:</label>
-				<select name="modelo">
-					<option value="E10IS">E10IS</option>
-					<option value="E11IS2">E11IS2</option>
-					<option value="100NZC">100NZC</option>
-					<option value="NT1015E">NT1015E</option>
-					<option value="C5">C5</option>
-					<option value="Schoolmate11">Schoolmate 11</option>
-				</select>
+				<input type="text" name="modelo" required>
 				<label for="serie">Número de serie:</label>
 				<input type="text" name="serie" required>
 				<input class="oculto" type="text" name="tipo_comodatario" value="alumno">

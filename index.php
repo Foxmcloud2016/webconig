@@ -9,7 +9,7 @@
 
 <html>
 	<head>
-		<title>Sistema generador de actas</title>
+		<title>Sistema Administrativo</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="estilos/general.css">
 		<link rel="stylesheet" type="text/css" href="estilos/index.css">
@@ -20,7 +20,7 @@
 			<header>
 				<div id="head"></div>
 				<div id="titulo">
-					<a href="index.php"><h1>Sistema Generador de Actas</h1></a>
+					<a href="index.php"><h1>Sistema Administrativo</h1></a>
 				</div>
 			</header>
 			<div id="cuerpo">

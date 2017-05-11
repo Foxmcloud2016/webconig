@@ -1,6 +1,6 @@
 	<?php
 	$titulo = 'ACTA DE SERVICIO TÉCNICO';
-	$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $adulto D.N.I. Nº $dni_adulto, en su carácter de $retira del alumno $alumno, D.N.I. N° $dni_alumno de $curso $division, turno $turno del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por problemas con:";
+	$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $adulto, D.N.I. Nº $dni_adulto, en su carácter de $retira del alumno $alumno, D.N.I. N° $dni_alumno de $curso $division, turno $turno del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por problemas con:";
 
 	$hoja2 = "Se solicita cuidado y responsabilidad en el uso de la misma.";
 	$mayus_retira = strtoupper($retira);
@@ -19,7 +19,7 @@ if (isset($disco)) {
 }
 $firma1 = iconv('UTF-8', 'windows-1252', $firma1);
 $firma2 = iconv('UTF-8', 'windows-1252', $firma2);
-require('fpdf/fpdf.php');
+require('../fpdf/fpdf.php');
 $pdf = new FPDF('P','mm','Legal');
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',11);

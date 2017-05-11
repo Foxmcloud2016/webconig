@@ -48,6 +48,7 @@
 	              				<!--   Fin de bucle   !-->
 						</table>
 					</div>
+					<a class="button button1" href="nuevo_colegio.php">Agregar nuevo colegio</a>
 			</div>
 			<?php
 				include('../includes/footer.php');
