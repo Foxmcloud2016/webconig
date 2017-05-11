@@ -5,7 +5,7 @@ include('../mysql/conectar.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistema generador de actas</title>
+	<title>Sistema Administrativo</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="../estilos/general.css">
 	<link rel="stylesheet" type="text/css" href="../estilos/header.css">

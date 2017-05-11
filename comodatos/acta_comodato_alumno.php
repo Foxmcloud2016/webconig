@@ -44,6 +44,7 @@
 	$distrito_o = $resul_array_col['DISTRITO'];
 	$ciudad_o = $resul_array_col['CIUDAD'];
 	$domicilio_o = $resul_array_col['DOMICILIO'];
+	$cue = $resul_array_col['CUE'];
 
 
 	//Se guardan datos del form
@@ -73,8 +74,6 @@
 	if (empty($depto)) {
 		$depto = '-----';
 	}
-
-
 
 	include('comodato_alumno_pdf.php');
 

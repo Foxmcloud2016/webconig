@@ -4,7 +4,7 @@ include('../includes/inicio_sesion.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistema generador de actas</title>
+	<title>Sistema Administrativo</title>
 	<meta charset="utf-8" />
 	<!--Estilo para el desplegable de los DNI-->
 	<!--link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"-->

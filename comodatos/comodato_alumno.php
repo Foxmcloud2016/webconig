@@ -4,7 +4,7 @@ include('../includes/inicio_sesion.php');
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Sistema generador de actas</title>
+		<title>Sistema Administrativo</title>
 		<meta charset="utf-8" />
 		<!--Estilo para el desplegable de los DNI-->
 		<!--link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"-->
@@ -39,26 +39,9 @@ include('../includes/inicio_sesion.php');
 						<label>Departamento:</label>
 						<input type="text" name="depto"></input>
 						<label>Curso:</label>
-						<select name="curso">
-							<option value="1°">1°</option>
-							<option value="2°">2°</option>
-							<option value="3°">3°</option>
-							<option value="4°">4°</option>
-							<option value="5°">5°</option>
-							<option value="6°">6°</option>
-						</select>
+						<input type="text" name="curso"></input>
 						<label>División:</label>
-						<select name="division">
-							<option value="1°">1°</option>
-							<option value="2°">2°</option>
-							<option value="3°">3°</option>
-							<option value="4°">4°</option>
-							<option value="5°">5°</option>
-							<option value="6°">6°</option>
-							<option value="7°">7°</option>
-							<option value="8°">8°</option>
-							<option value="9°">9°</option>
-						</select>
+						<input type="text" name="division"></input>
 						<label>Turno:</label>
 						<select name="turno">
 							<option value="mañana">Mañana</option>
