@@ -19,6 +19,8 @@ include('../includes/inicio_sesion.php');
 		<div id="cuerpo">
 			<h2>Alta de Docente:</h2>
 			<form action="procesa_alta_comodatario.php" method="POST">
+				<label for="cuil">CUIL Docente (Opcional, no completar si no se tiene el CUIL):</label>
+				<input type="text" name="cuil">
 				<label for="dni">DNI:</label>
 				<input type="text" name="dni" required>
 				<label for="apellido">Apellido:</label>

@@ -41,27 +41,27 @@ include('../includes/inicio_sesion.php');
 
 			echo "<h2>Detalle de carga de datos a la base de datos:</h2>";
 			echo "<div class='flex'>";
-			
+
 			$no_cargados = 0; //sirve para contar la cantidad de filas del excel NO cargados en la BBDD
 			$cargados = 0; //sirve para contar la cantidad de filas del excel cargados en la BBDD
-			
+
 			while (($data = fgetcsv($csv_file, 1000, ",","\"")) !== FALSE)
 			{
 
-				
+
 				if ($count >= 1) {/*para que empiece a importar datos desde la segunda linea, ya que la primera es el titulo de cada columna*/
 
-					$verifico_duplicado = "SELECT DNI_COM FROM `comodatarios` WHERE DNI_COM= '$data[0]'";
+					$verifico_duplicado = "SELECT DNI_COM FROM `comodatarios` WHERE DNI_COM= '$data[1]'";
 					$resultado = mysqli_query($conexion, $verifico_duplicado) or die('Error: '.mysqli_error($conexion));
 					$row=mysqli_fetch_array($resultado,MYSQLI_NUM);
-					
-					if ($row[0] == $data[0]) {
 
-						echo "<div class='insert_wrong'>El comodatario ".$data[2].", con DNI: ".$data[0]." ya se encuentra cargado en la base de datos. Por lo que no fue agregado nuevamente.</div></br>";
+					if ($row[0] == $data[1]) {
+
+						echo "<div class='insert_wrong'>El comodatario ".$data[3].", con DNI: ".$data[1]." ya se encuentra cargado en la base de datos. Por lo que no fue agregado nuevamente.</div></br>";
 						$no_cargados++;
 					}else{
 
-						$sql = "INSERT INTO COMODATARIOS (DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, MARCA, MODELO, SERIE, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]', '$data[5]','$data[6]','$data[7]','$id_colegio')";
+						$sql = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, MARCA, MODELO, SERIE, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]', '$data[5]','$data[6]','$data[7]','$data[8]','$id_colegio')";
 						mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
 
 						$cargados++;
@@ -84,7 +84,7 @@ include('../includes/inicio_sesion.php');
 			echo "<div class='insert_wrong'>Hay ".$no_cargados." comodatarios que no se cargaron en la BBDD.</div>";
 			echo "<div class='insert_ok'>Se cargaron ".$cargados." comodatarios en la BBDD.</div>";
 			echo "</div>";
-			
+
  //echo "Importación exitosa!";
 
 			?>

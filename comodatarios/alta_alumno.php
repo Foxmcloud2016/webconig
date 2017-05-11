@@ -16,10 +16,12 @@ include('../includes/inicio_sesion.php');
 		<?php
 		include('../includes/header.php');
 		?>
-		
+
 		<div id="cuerpo">
 			<h2>Alta de Alumno:</h2>
 			<form action="procesa_alta_comodatario.php" method="POST">
+				<label for="cuil">CUIL alumno (Opcional, no completar si no se tiene el CUIL):</label>
+				<input type="text" name="cuil">
 				<label for="dni">DNI alumno:</label>
 				<input type="text" name="dni" required>
 				<label for="apellido"o>Apellido alumno:</label>

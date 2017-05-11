@@ -35,11 +35,11 @@ include('../mysql/conectar.php');
 				$dni = $_POST['dni'];
 				$apeynom = $_POST['apeynom'];
 				if ($dni === '') {
-					$result = mysqli_query($conexion, "SELECT * FROM comodatarios where APEYNOM LIKE '%$apeynom%'") or die("Error " .mysqli_error($conexion));	
+					$result = mysqli_query($conexion, "SELECT * FROM comodatarios where APEYNOM LIKE '%$apeynom%'") or die("Error " .mysqli_error($conexion));
 				} elseif ($apeynom === '') {
 					$result = mysqli_query($conexion, "SELECT * FROM COMODATARIOS WHERE DNI_COM=$dni") or die("Error " .mysqli_error($conexion));
 				}
-				
+
 						//Var_dump($row);
 				$contador = mysqli_num_rows($result);
 						//echo $contador;
@@ -52,6 +52,7 @@ include('../mysql/conectar.php');
 					<table>
 						<!-- Header de tablas con nombres de columnas !-->
 						<tr>
+							<th>CUIL</th>
 							<th>DNI</th>
 							<th>Apellido y nombre</th>
 							<th>DNI Adulto</th>
@@ -65,6 +66,7 @@ include('../mysql/conectar.php');
 						<!-- Bucle while para completar tabla con todos los registros de comodatarios !-->
 						<?php while($row=$result->fetch_assoc()){?>
 						<tr>
+							<td><?php echo $row['CUIL'];?> </td>
 							<td><?php echo $row['DNI_COM'];?> </td>
 							<td><?php echo $row['APEYNOM'];?> </td>
 							<td><?php echo $row['DNI_ADULTO'];?> </td>

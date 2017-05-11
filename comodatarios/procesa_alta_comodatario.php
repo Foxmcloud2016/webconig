@@ -2,7 +2,7 @@
 	include('../includes/inicio_sesion.php');
 
 	include('../mysql/conectar.php');
-
+	$cuil = $_POST['cuil'];
 	$dni = $_POST['dni'];
 	$apellido = $_POST['apellido'];
 	$nombre = $_POST['nombre'];
@@ -14,6 +14,10 @@
 		$apellido_adulto = $_POST['apellido_adulto'];
 		$nombre_adulto = $_POST['nombre_adulto'];
 		$apeynom_adulto = "$apellido_adulto $nombre_adulto";
+	}
+
+	if ($cuil == '') {
+		$cuil = '-----';
 	}
 
 	$marca = $_POST['marca'];
@@ -35,7 +39,7 @@
 
 			}elseif ($contador==0) {
 
-				$query_alta_comodat = "INSERT INTO COMODATARIOS (DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, ID_COLEGIO_FK) VALUES ('$dni', '$tipo_comodatario', '$apeynom', '$dni_adulto', '$apeynom_adulto', '$serie', '$marca', '$modelo', '$id_colegio');";
+				$query_alta_comodat = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, ID_COLEGIO_FK) VALUES ('$cuil','$dni', '$tipo_comodatario', '$apeynom', '$dni_adulto', '$apeynom_adulto', '$serie', '$marca', '$modelo', '$id_colegio');";
 				$resultado_alta_comodat = $conexion->query($query_alta_comodat);
 			}
 
@@ -50,7 +54,7 @@
 
 			}elseif ($contador==0) {
 
-				$query_alta_comodat = "INSERT INTO COMODATARIOS (DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, ID_COLEGIO_FK) VALUES ('$dni', '$tipo_comodatario', '$apeynom', NULL, NULL, '$serie', '$marca', '$modelo', '$id_colegio');";
+				$query_alta_comodat = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, ID_COLEGIO_FK) VALUES ('$cuil', '$dni', '$tipo_comodatario', '$apeynom', NULL, NULL, '$serie', '$marca', '$modelo', '$id_colegio');";
 				$resultado_alta_comodat = $conexion->query($query_alta_comodat);
 			}
 
