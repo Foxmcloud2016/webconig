@@ -19,5 +19,5 @@
 	
 	#Cerramos la conexion
 	mysqli_close($conexion);
-	header("Location: admin_prestamo.php");	
+	header("Location: nets_prestadas.php");	
 ?>

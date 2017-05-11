@@ -89,7 +89,7 @@
 					<?php
 						if ($num_rows >= 1) { ?>
 							<div>
-								<h2>Historial de prestamo de:</h2>
+								<h2>Historial de:</h2>
 								<h4><?php echo "$marca $modelo $serie"; ?></h4>
 								<?php echo "<p>Cantidad de veces prestada: ".($num_rows)."</p>";?>
 								<table>
@@ -150,9 +150,10 @@
 						} ?>
 						<?php
 
-						include('paginacion.php');
+							include('paginacion.php');
 
-								?>
+						?>
+						<a class="button button2" href="nets_parque_escolar.php">Volver a Listado</a>
 			</div>
 			<?php
 				include('../includes/footer.php');

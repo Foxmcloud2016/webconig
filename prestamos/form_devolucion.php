@@ -156,13 +156,13 @@
 							<input type="hidden" name="id_prestamo" id="id_prestamo" value="<?php echo $id_prestamo; ?>">
 							<input class = 'button' id="button" type="button" value="Devuelve Net"></input>
 							<input type="hidden" name="id_maquina" id="id_maquina" value="<?php echo $id_maquina; ?>" hidden="true">
-							<a class='button button2' href="admin_prestamo.php">Cancelar</a>
+							<a class='button button2' href="nets_prestadas.php">Cancelar</a>
 						</form>
 						<div id="mensaje_oculto">
 						<span>La devolucion del equipo se registro en la BBDD. Para seguir administrando prestamos haga click en "Administrar mas prestamos" y para generar el PDF clickee en "Generar PDF".</span>
 						</br>
 						</br>
-						<a class='button button2' href="admin_prestamo.php">Administrar mas prestamos</a>
+						<a class='button button2' href="nets_parque_escolar.php">Nets del Parque Escolar</a>
 						<a class='button button2' href="devolucion_pdf.php?id_m=<?php echo $id_maquina.'&id_p='.$id_prestamo; ?>" target="_blank">Generar PDF</a>
 						</div>
 				</div>
@@ -171,7 +171,7 @@
 				<span>La devolucion del equipo se registro en la BBDD. Para seguir administrando prestamos haga click en "Administrar mas prestamos".</span>
 				</br>
 				</br>
-				<a class='button button2' href="admin_prestamo.php">Administrar mas prestamos</a>
+				<a class='button button2' href="nets_parque_escolar.php">Administrar mas prestamos</a>
 			</div>	
 					<script type="text/javascript">$('#mensaje_oculto').show(); //muestro mediante id
 					document.getElementById('mensaje_oculto').style.display = 'block';</script>

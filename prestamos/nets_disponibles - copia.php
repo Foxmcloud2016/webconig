@@ -20,7 +20,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Parque Escolar</title>
+		<title>Parque Escolar Disponible</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="../estilos/general.css">
 		<link rel="stylesheet" type="text/css" href="../estilos/header.css">

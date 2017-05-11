@@ -129,13 +129,13 @@
 							<label for="otro" id="label_area_oculta">Detalle a continuación el motivo del préstamo:</label>
 								<textarea name="otro" id="area_oculta"></textarea>
 							<input class = 'button' id='button' type="button" value="Prestar Net"></input>
-							<a class='button button2' href="admin_prestamo.php">Cancelar</a>
+							<a class='button button2' href="nets_disponibles.php">Cancelar</a>
 						</form>
 						<div id="mensaje_oculto">
-						<span>El prestamo se cargo en la BBDD. Para seguir administrando prestamos haga click en "Administrar mas prestamos" y para generar el PDF clickee en "Generar PDF".</span>
+						<span>El prestamo se cargo en la BBDD. Para realizar mas prestamos haga click en "Realizar mas prestamos" y para generar el PDF clickee en "Generar PDF".</span>
 						</br>
 						</br>
-						<a class='button button2' href="admin_prestamo.php">Administrar mas prestamos</a>
+						<a class='button button2' href="nets_disponibles.php">Realizar mas prestamos</a>
 						<a class='button button2' href="prestamo_pdf.php?id_m=<?php echo $id_maquina; ?>" target="_blank">Generar PDF</a>
 						</div>
 				</div>	

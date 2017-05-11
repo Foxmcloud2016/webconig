@@ -68,24 +68,9 @@ include('../includes/inicio_sesion.php');
 				<h2>Constancia de Préstamo:</h2>
 				<form name='fo' id="fo" method="POST">
 					<label for="marca">Marca netbook:</label>
-					<select name="marca" id="marca">
-						<option value="EXO">EXO</option>
-						<option value="BGH">Positivo BGH</option>
-						<option value="Samsung">Samsung</option>
-						<option value="CX">CX</option>
-						<option value="PC-BOX">PC-BOX</option>
-						<option value="Noblex">Noblex</option>
-						<option value="Coradir">Coradir</option>
-					</select>
+					<input type="text" name="marca" id="marca"></input>
 					<label for="modelo">Modelo netbook:</label>
-					<select name="modelo" id="modelo">
-						<option value="E10IS">E10IS</option>
-						<option value="E11IS2">E11IS2</option>
-						<option value="100NZC">100NZC</option>
-						<option value="NT1015E">NT1015E</option>
-						<option value="C5">C5</option>
-						<option value="Schoolmate11">Schoolmate 11</option>
-					</select>
+					<input type="text" name="modelo" id="modelo"></input>
 					<label for="serie">Número de serie:</label>
 					<input type="text" name="serie" id="serie"></input>
 					<span for= "estado_equipo">Condiciones en que se encuentra el equipo (maximo: 300 caracteres):</span>
@@ -96,7 +81,7 @@ include('../includes/inicio_sesion.php');
 				</form>
 				<div id="mensaje_oculto">
 					<span class="br" >El equipo se cargo correctamente en la BBDD. Para seguir cargando netbooks haga click en "Cargar un nuevo equipo", y para administrar prestamos, en "Administrar prestamo".</span>
-					<a class='button button2' href="admin_prestamo.php">Administrar prestamos</a>
+					<a class='button button2' href="nets_disponibles.php">Ir a Nets disponibles</a>
 					<a class='button button2' href="parque_escolar.php ?>">Cargar un nuevo equipo</a>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 	<?php
 	$titulo = 'ACTA DE SERVICIO TÉCNICO';
-	$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $adulto, D.N.I. Nº $dni_adulto, en su carácter de $retira del alumno $alumno, D.N.I. N° $dni_alumno de $curso $division, turno $turno del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por problemas con:";
+	$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $adulto, D.N.I. Nº $dni_adulto, en su carácter de $retira del alumno $alumno, D.N.I. N° $dni_alumno de $curso $division, turno $turno del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por falla/rotura de:";
 
 	$hoja2 = "Se solicita cuidado y responsabilidad en el uso de la misma.";
 	$mayus_retira = strtoupper($retira);
@@ -30,7 +30,6 @@ $pdf->SetFont('Arial','',11);
 $pdf->SetLeftMargin(25);
 $pdf->SetRightMargin(25);
 $pdf->MultiCell(0,6,$hoja1,0,'J',false);
-$pdf->Ln(2);
 
 if (isset($teclado)) {
 	$pdf->Write(5,$teclado);

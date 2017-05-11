@@ -69,8 +69,14 @@
 						<button class="subdropbtn">Préstamos</button>
 							<div class="dropdown-content-sub-prestamos">
 								<a class="dropdown-content-superior" href="/proyecto/prestamos/parque_escolar.php">Cargar Net al parque escolar</a>
-								<a class="dropdown-content-inferior" href="/proyecto/prestamos/admin_prestamo.php">Administrar prestamos</a>
-								<a class="dropdown-content-inferior" href="/proyecto/prestamos/nets_parque_escolar.php">Historial de Préstamos</a>
+								<a class="dropdown-content-inferior" href="/proyecto/prestamos/nets_parque_escolar.php">Nets del Parque Escolar</a>
+								<div class="dropdown_subcontent2">
+									<button class="subdropbtn">Administrar prestamos</button>
+										<div class="dropdown-content-sub-admin">
+											<a class="dropdown-content-superior" href="/proyecto/prestamos/nets_disponibles.php">Nets disponibles</a>
+											<a class="dropdown-content-inferior" href="/proyecto/prestamos/nets_prestadas.php">Nets Prestadas</a>
+										</div>
+								</div>							
 							</div>
 						</div>
 					</div>
