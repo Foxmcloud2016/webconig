@@ -5,7 +5,7 @@
 
 //Trae useer y pass del form del index
 	$user = $_POST['user'];
-	$pass = $_POST['pass'];
+	$pass = strtoupper($_POST['pass']);
 	$_SESSION['colegio'] = $_POST['colegio'];
 
 //consulta a la DDBB si dichos usuarios y pass estan almacenados en ella
