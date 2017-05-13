@@ -84,7 +84,7 @@
 				<div class="dropdown">
 				<button class="dropbtn">Mantenimiento</button>
 				<div class="dropdown-content">
-					<a class="dropdown-content-inferior" class="dropdown-content-superior" href="/proyecto/backup/listar_backups.php">Backup</a>
+					<a class="dropdown-content-inferior" class="dropdown-content-superior" href="/proyecto/backup/listar_backups.php">Listado Backups</a>
 				</div>
 			</div>	
 		</div>
