@@ -80,7 +80,13 @@
 							</div>
 						</div>
 					</div>
-				</div>	
+				</div>
+				<div class="dropdown">
+				<button class="dropbtn">Mantenimiento</button>
+				<div class="dropdown-content">
+					<a class="dropdown-content-inferior" class="dropdown-content-superior" href="/proyecto/backup/listar_backups.php">Backup</a>
+				</div>
+			</div>	
 		</div>
 	</div>
 </header>

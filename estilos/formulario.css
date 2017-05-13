@@ -93,18 +93,27 @@ form textarea {
 
 #cuerpo div[class=comodatarios] {
 	margin-top: 10px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 }
 #cuerpo div[class=nets] {
 	margin-top: 10px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 }
 #cuerpo div[class=completa] {
 	margin-top: 10px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 }
 
 
@@ -121,20 +130,18 @@ form textarea {
 }
 
 #cuerpo div .col1 {
-	flex-basis: 60%;
+	-ms-flex-preferred-size: 60%;
+	    flex-basis: 60%;
 	margin-left: 5%;
 	margin-right: 5%;
 	background-color: rgba(235,237,239,0.7);
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
 
 #cuerpo div .col2 {
-	flex-basis: 25%;
+	-ms-flex-preferred-size: 25%;
+	    flex-basis: 25%;
 	background-color: rgba(235,237,239,0.7);
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
 
@@ -169,8 +176,6 @@ ul {
 	border:solid 1px #9aafe5; 
 	margin-right:2px;
 	background-color: rgba(235,237,239,0.7);;/**/
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
 
@@ -181,9 +186,7 @@ ul {
 	float:left; 
 	font-weight:bold; 
 	margin-right:2px; 
-	padding:3px 4px; 
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
+	padding:3px 4px;
 	border-radius: 8px;
 }
 
@@ -198,9 +201,7 @@ ul {
 	display:block; 
 	float:left; 
 	padding:4px 6px; /* savers */ 
-	margin-right:2px; 
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
+	margin-right:2px;
 	border-radius: 8px;
 }
 
@@ -217,8 +218,12 @@ ul {
 }
 
 div.paginacion {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	padding: 10px 0px 10px 0px;
 }
 
@@ -230,8 +235,6 @@ div.insert_ok {
 	width: 80%;
 	background: #7EEDB0;
 	border: solid #39C839 0.5px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
 
@@ -241,14 +244,17 @@ div.insert_wrong {
 	width: 80%;	
 	background: #EC98A0;
 	border: solid #EB4545 0.5px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
 div.flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 }
 
 div #block-filtro {

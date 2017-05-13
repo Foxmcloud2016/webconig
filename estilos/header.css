@@ -7,8 +7,6 @@ header {
     width: 860px;
     height: 160px;
     background-color: white;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
     border-radius: 20px;
 }
 header #head {
@@ -17,8 +15,6 @@ header #head {
     /*background-image: url("../img/igualdad2.jpg");
     background-repeat: no-repeat;
     background-position: 95% 90%;*/
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
     border-radius: 20px;
 }
 header #titulo {
@@ -56,8 +52,6 @@ header #head .info-login {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    -webkit-border-radius: 10px 10px 0px 0px;
-    -moz-border-radius: 10px 10px 0px 0px;
     border-radius: 10px 10px 0px 0px;
 }
 .subdropbtn {
@@ -67,8 +61,6 @@ header #head .info-login {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     min-width: 160px;/**/
     display: block;/**/
@@ -96,9 +88,8 @@ header #head .info-login {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    -webkit-border-radius: 0px 10px 10px 10px;
-    -moz-border-radius: 0px 10px 10px 10px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 0px 10px 10px 10px;
 }
 
@@ -110,9 +101,8 @@ header #head .info-login {
     left: 160px;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    -webkit-border-radius: 0px 10px 10px 10px;
-    -moz-border-radius: 0px 10px 10px 10px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 0px 10px 10px 10px;
 }
 .dropdown-content-sub-prestamos{
@@ -122,9 +112,8 @@ header #head .info-login {
     left: 160px;/**/
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    -webkit-border-radius: 0px 10px 10px 10px;
-    -moz-border-radius: 0px 10px 10px 10px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 0px 10px 10px 10px;
 }
 
@@ -135,9 +124,8 @@ header #head .info-login {
     left: 160px;/**/
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    -webkit-border-radius: 0px 10px 10px 10px;
-    -moz-border-radius: 0px 10px 10px 10px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 0px 10px 10px 10px;
 }
 .dropdown-content-sub-comodatos {
@@ -147,9 +135,8 @@ header #head .info-login {
     left: 160px;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    -webkit-border-radius: 0px 10px 10px 10px;
-    -moz-border-radius: 0px 10px 10px 10px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 0px 10px 10px 10px;
 }
 .dropdown-content-sub-egresados {
@@ -159,9 +146,8 @@ header #head .info-login {
     left: 160px;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    -webkit-border-radius: 0px 10px 10px 10px;
-    -moz-border-radius: 0px 10px 10px 10px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 0px 10px 10px 10px;
 }
 /*a continuacion se customizan los submenues desplegables*/
