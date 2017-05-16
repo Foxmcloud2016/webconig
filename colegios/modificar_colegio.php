@@ -47,6 +47,12 @@
 						<option>Tolhuin</option>
 						<option>Ushuaia</option>
 					</select>
+					<label for='tipo_colegio'>Tipo de Institución:</label>
+					<select name='tipo_colegio' id='tipo_colegio'>
+						<option value='Secundaria'>Secundaria</option>
+						<option value='Especial'>Especial</option>
+						<option value='ISFD'>ISFD</option>
+					</select>
 					<!--<input type="text" name="ciudad" id="ciudad" value='<?php #echo $row['CIUDAD'];?>' required></input> -->
 					<?php } ?>
 					<input class = 'button' type="submit" value="Modificar Colegio"></input>

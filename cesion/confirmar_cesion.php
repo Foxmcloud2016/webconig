@@ -36,9 +36,9 @@ $resultado= $conexion->query($query);
 			<?php 
 
 				if ($resultado) {
-					echo "<p>El alumno/a con DNI $dni fue marcado como egresado.</p>";
+					echo "<div class='insert_ok' style='margin-left: 30px'><p>El alumno/a con DNI $dni fue marcado como egresado.</p></div>";
 				}else{
-					echo "<p>El alumno/a con DNI $dni no ha podido ser cargado en la base de datos. Revise que los datos del alumno/a y reintente la operacion. Es posible que el alumno/a ya se enuentre en el listado de egresados.</p>";
+					echo "<div class='insert_wrong' style='margin-left: 30px'><p>El alumno/a con DNI $dni no ha podido ser cargado en la base de datos. Revise que los datos del alumno/a y reintente la operacion. Es posible que el alumno/a ya se encuentre en el listado de egresados.</p></div>";
 				}
 			?>
 			

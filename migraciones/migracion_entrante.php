@@ -57,6 +57,8 @@
 			<h2>Alta de Alumno Entrante:</h2>
 			<form action="alta_migracion_entrante.php" method="POST" id="fo">
 				<input type="hidden" name="tipo_comodatario" value="alumno">
+				<label for="cuil">CUIL alumno (Opcional, no completar si no se tiene el CUIL):</label>
+				<input type="text" name="cuil">
 				<label for="dni">DNI alumno:</label>
 				<input type="text" name="dni" required>
 				<label for="apellido"o>Apellido alumno:</label>

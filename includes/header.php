@@ -21,7 +21,13 @@
 							<a class="dropdown-content-inferior" href="/proyecto/comodatarios/alta_masiva.php">Alta Masiva</a>
 						</div>
 					</div>
-					<a class="dropdown-content-inferior" href="/proyecto/comodatarios/listar_comodatarios.php">Listar Comodatarios</a>
+					<div class="dropdown_subcontent">
+						<button class="subdropbtn">Ver comodatarios</button>
+							<div class="dropdown-content-sub-comodatos">
+								<a class="dropdown-content-superior" href="/proyecto/comodatarios/listar_comodatarios.php">Buscar un comodatario</a>
+								<a class="dropdown-content-inferior" href="/proyecto/comodatarios/comodatarios_todos.php">Listar comodatarios</a>
+							</div>
+					</div>
 				</div>
 			</div>
 			<div class="dropdown">

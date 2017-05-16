@@ -13,14 +13,14 @@ body {
 }
 
 #contenedor {
-	width: 960px;
+	width: 960px;/*960*/
 	margin:auto auto;
 }
 
 #cuerpo {
 	background-image: url("../img/huayra.jpg");
     background-position: 75% 10%;
-	width: 860px;
+	width: 960px;/*860*/
 	min-height: 550px;
 	margin-top: 5px;
 	padding-top: 10px;
@@ -74,7 +74,7 @@ display: none;
 
 footer {
 	background-color: white;
-	width: 860px;
+	width: 960px;/*860*/
 	margin-top: 5px;
 	border-radius: 20px;
 }
@@ -83,7 +83,7 @@ footer {
 	background-image: url("../img/LogoPie.jpg");
 	background-repeat: no-repeat;
 	background-position: 95% 90%;
-	width: 860px;
+	width: 960px;/*860*/
 	height: 100px;
 	border-radius: 20px;
 

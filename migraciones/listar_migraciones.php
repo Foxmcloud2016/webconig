@@ -22,7 +22,8 @@ $migraciones_salientes=$conexion->query($query_migraciones_salientes);
 			<?php include('../includes/header.php'); ?>
 			<div id="cuerpo">
 				<h2>Listado de migraciones </h2>
-				<a style='margin: 1.5em' href="migracion.php" class="button">Añadir solicitud de Migracion</a>
+				<a href="migracion.php" class="button">Añadir solicitud de Migracion Saliente</a>
+        <a href="migracion_entrante.php" class="button">Añadir solicitud de Migracion Entrante</a>
 
         <h2>Listado de migraciones entrantes</h2>
         <table>

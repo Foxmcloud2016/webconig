@@ -34,24 +34,37 @@ include('../mysql/conectar.php');
 			if(isset($_POST['submit'])){
 				$dni = $_POST['dni'];
 				$apeynom = $_POST['apeynom'];
-				if ($dni === '') {
+				if ($dni == '' && $apeynom == '') {
+					# No hacer nada...
+				}
+				if ($dni === '' && $apeynom !== '') {
 					$result = mysqli_query($conexion, "SELECT * FROM comodatarios where APEYNOM LIKE '%$apeynom%'") or die("Error " .mysqli_error($conexion));
-				} elseif ($apeynom === '') {
+					$contador = mysqli_num_rows($result);
+				} elseif ($apeynom === '' && $dni !== '') {
 					$result = mysqli_query($conexion, "SELECT * FROM COMODATARIOS WHERE DNI_COM=$dni") or die("Error " .mysqli_error($conexion));
+					$contador = mysqli_num_rows($result);
 				}
 
 						//Var_dump($row);
-				$contador = mysqli_num_rows($result);
+				//$contador = mysqli_num_rows($result);
+				if (!isset($contador)) {
+					$contador = 0;
+				}
+				
 						//echo $contador;
 				?>
 				<?php
 				if ($contador == 0) {
-					echo "<span>El DNI o Apellido o Nombre ingresado no se encuentra cargado en la base de datos aún, haga click <a href=".'alta_alumno.php'.">aquí</a> para cargar un alumno o <a href=".'alta_docente.php'.">aquí</a> para un docente.</span>";
+					echo "<div class='insert_wrong'>El DNI, Apellido o Nombre ingresado no se encuentra cargado en la base de datos aún, haga click en el link correspondiente para cargar al comodatario:<br>
+					<a href=".'alta_alumno.php'.">Aquí</a> para cargar un alumno.<br>
+					<a href=".'alta_docente.php'.">Aquí</a> para cargar un docente.<br>
+					<a href=".'alta_alumno_ISFD.php'.">Aquí</a> para cargar un alumno de ISFD.</div>";
 				}else if ($contador >= 1) {?>
 				<div>
 					<table>
 						<!-- Header de tablas con nombres de columnas !-->
 						<tr>
+							<th>Tipo comodatario</th>
 							<th>CUIL</th>
 							<th>DNI</th>
 							<th>Apellido y nombre</th>
@@ -66,6 +79,7 @@ include('../mysql/conectar.php');
 						<!-- Bucle while para completar tabla con todos los registros de comodatarios !-->
 						<?php while($row=$result->fetch_assoc()){?>
 						<tr>
+							<td><?php echo $row['TIPO_COM'];?> </td>
 							<td><?php echo $row['CUIL'];?> </td>
 							<td><?php echo $row['DNI_COM'];?> </td>
 							<td><?php echo $row['APEYNOM'];?> </td>

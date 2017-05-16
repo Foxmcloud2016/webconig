@@ -68,6 +68,29 @@ $pdf->SetX(75);
 $pdf->Write(0,$firma2);
 $pdf->SetX(142);
 $pdf->Write(0,$firma3);
+
+//salto de pagina
+$pdf->AddPage('P','Legal');
+
+//Repite 4ta vez
+$pdf->Ln(12);
+$pdf->SetFont('Arial','B',11);
+$pdf->SetX(26);
+$pdf->Write(5,$titulo);
+$pdf->Ln(7);
+$pdf->SetFont('Arial','',11);
+$pdf->MultiCell(0,4.5,$contenido,0,'J',false);
+$pdf->Ln(10);
+$pdf->Write(5,'_________________________________________________________________________________________');
+$pdf->Ln(7);
+$pdf->SetFont('Arial','',9);
+$pdf->SetX(10);//posiciono firma1
+$pdf->Write(0,$firma1);
+$pdf->SetX(75);
+$pdf->Write(0,$firma2);
+$pdf->SetX(142);
+$pdf->Write(0,$firma3);
+
 $pdf->SetTitle("Acta de Migración - $alumno", true);
 $pdf->Output('I',"Acta de Migración - $alumno.pdf",true);
 ?>

@@ -2,6 +2,7 @@
 include('../includes/inicio_sesion.php');
 include('../mysql/conectar.php');
 
+$tipo_colegio = $_POST['tipo_colegio'];
 $cue = $_POST['cue'];
 $nombre = $_POST['nombre'];
 $director = $_POST['director'];
@@ -35,7 +36,7 @@ $row=mysqli_fetch_array($resultado_duplicado);
 			if ($row['CUE'] == $cue) {
 					echo "<p>El colegio $nombre no ha podido ser cargado en la base de datos. El mismo ya estaba cargado.</p>";
 			}else{
-					$query = "INSERT INTO `colegios`(`ID_COLEGIO`, `DIRECTOR`, `DNI`, `DOMICILIO`, `COLEGIO`, `CUE`, `CIUDAD`, `DISTRITO`) VALUES (NULL,'$director','$dni','$domicilio','$nombre',$cue,'$ciudad','$distrito')";
+					$query = "INSERT INTO `colegios`(`ID_COLEGIO`, `DIRECTOR`, `DNI`, `DOMICILIO`, `COLEGIO`, `CUE`, `CIUDAD`, `DISTRITO`, `TIPO_COLEGIO`) VALUES (NULL,'$director','$dni','$domicilio','$nombre',$cue,'$ciudad','$distrito', '$tipo_colegio')";
 					$resultado= $conexion->query($query);
 
 					echo "<p>El colegio $nombre fue agregado a la base de datos.</p>";

@@ -1,7 +1,7 @@
 <?php
 	include('../includes/inicio_sesion.php');
 	include('../mysql/conectar.php');
-	$querycolegios="SELECT ID_COLEGIO,DIRECTOR,DNI,DOMICILIO,COLEGIO,CUE,CIUDAD,DISTRITO FROM COLEGIOS";
+	$querycolegios="SELECT ID_COLEGIO,DIRECTOR,DNI,DOMICILIO,COLEGIO,CUE,CIUDAD,DISTRITO, TIPO_COLEGIO FROM COLEGIOS";
 	$resultadocolegios=$conexion->query($querycolegios);
 ?>
 <!DOCTYPE html>
@@ -19,7 +19,9 @@
 				include('../includes/header.php');
 			?>
 			<div id="cuerpo">
+
 					<div>
+					<a class="button button1" style="margin-left: 30px" href="nuevo_colegio.php">Agregar nuevo colegio</a>
 						<table>
 							<!--   Header de tablas con nombres de columnas  !-->
 								<tr>
@@ -30,6 +32,7 @@
 									<th>Domicilio</th>
 									<th>Ciudad</th>
 									<th>Distrito</th>
+									<th>Institucion</th>
 									<th>Acciones</th>
 								</tr>
 								<!--   Bucle while para completar tabla con todos los registros de colegios   !-->
@@ -42,13 +45,14 @@
 	              						<td><?php echo $row['DOMICILIO'];?> </td>
 	              						<td><?php echo $row['CIUDAD'];?> </td>
 	              						<td><?php echo $row['DISTRITO'];?> </td>
+	              						<td><?php echo $row['TIPO_COLEGIO'];?> </td>
 	              						<td> <a class="button button2" href='modificar_colegio.php?id=<?php echo $row['ID_COLEGIO'] ?>'  >Modificar</a></td>
 	     							<tr> 
 	              				<?php } ?>
 	              				<!--   Fin de bucle   !-->
 						</table>
 					</div>
-					<a class="button button1" href="nuevo_colegio.php">Agregar nuevo colegio</a>
+					
 			</div>
 			<?php
 				include('../includes/footer.php');

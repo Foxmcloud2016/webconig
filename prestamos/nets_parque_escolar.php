@@ -106,7 +106,7 @@
 								//No hay nets prestadas, entonces no muestra nada
 						} ?>
 						<?php
-									include('paginacion.php');
+									include('../includes/paginacion.php');
 								?>
 			</div>
 			<?php

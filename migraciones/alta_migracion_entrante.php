@@ -3,7 +3,7 @@
 	include('../includes/inicio_sesion.php');
 
 	//Insert Comodatario 
-
+	$cuil = $_POST['cuil'];
 	$dni = $_POST['dni'];
 	$apellido = $_POST['apellido'];
 	$nombre = $_POST['nombre'];
@@ -36,7 +36,7 @@
 
 			}elseif ($contador==0) {
 
-				$query_alta_comodat = "INSERT INTO COMODATARIOS (DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, ID_COLEGIO_FK) VALUES ('$dni', '$tipo_comodatario', '$apeynom', '$dni_adulto', '$apeynom_adulto', '$serie', '$marca', '$modelo', '$id_colegio');";
+				$query_alta_comodat = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, ID_COLEGIO_FK) VALUES ('$cuil','$dni', '$tipo_comodatario', '$apeynom', '$dni_adulto', '$apeynom_adulto', '$serie', '$marca', '$modelo', '$id_colegio');";
 				$resultado_alta_comodat = $conexion->query($query_alta_comodat);
 			}
 

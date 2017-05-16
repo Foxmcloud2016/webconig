@@ -3,16 +3,64 @@
 	include('../mysql/conectar.php');
 	$id_colegio = $_SESSION['colegio'];
 
+	//AL PRINCIPIO COMPRUEBO SI HICIERON CLICK EN ALGUNA PÁGINA 
+		if(isset($_GET['page']))
+	{
+	    $page= $_GET['page'];
+	}
+	else
+	{
+	    //SI NO DIGO Q ES LA PRIMERA PÁGINA
+	    $page=1;
+	}
+
+
 	//Consulta a BD de nets prestadas
-	$query_prestada = "SELECT PARQUE.ID_MAQUINA, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO, PARQUE.ESTADO, PARQUE.ESTADO_EQUIPO, PRESTAMOS.CARGADOR, PRESTAMOS.APEYNOM, PRESTAMOS.VIGENTE
+	$consulta = "SELECT PARQUE.ID_MAQUINA, PARQUE.SERIE, PARQUE.MARCA, PARQUE.MODELO, PARQUE.ESTADO, PARQUE.ESTADO_EQUIPO, PRESTAMOS.CARGADOR, PRESTAMOS.APEYNOM, PRESTAMOS.VIGENTE
 						FROM parque_escolar AS PARQUE
 						JOIN PRESTAMOS 
 						ON PARQUE.ID_MAQUINA = PRESTAMOS.ID_MAQUINA_FK
 						WHERE PARQUE.ESTADO = 'prestada'
 						AND PARQUE.ID_COLEGIO_FK='$id_colegio'
 						AND PRESTAMOS.VIGENTE = 1";
-	$result_prestada=$conexion->query($query_prestada);
-	$cuenta_prestada = mysqli_num_rows($result_prestada);
+	$datos=$conexion->query($consulta);
+	$num_rows = mysqli_num_rows($datos);
+
+	//ACA SE DECIDE CUANTOS RESULTADOS MOSTRAR POR PÁGINA
+		$rows_per_page= 10;
+		  
+		//CALCULO LA ULTIMA PÁGINA
+		$lastpage= ceil($num_rows / $rows_per_page);
+		  
+		//COMPRUEBO QUE EL VALOR DE LA PÁGINA SEA CORRECTO Y SI ES LA ULTIMA PÁGINA
+		$page=(int)$page;
+		 
+		if($page > $lastpage)
+		{
+		    $page= $lastpage;
+		}
+		 
+		if($page < 1)
+		{
+		    $page=1;
+		}
+		 
+		//CREO LA SENTENCIA LIMIT PARA AÑADIR A LA CONSULTA QUE DEFINITIVA
+		$limit= 'LIMIT '. ($page -1) * $rows_per_page . ',' .$rows_per_page;
+
+		//REALIZO LA CONSULTA QUE VA A MOSTRAR LOS DATOS (ES LA ANTERIO + EL $limit)
+		$consulta .=" $limit";
+		$consulta_limit=mysqli_query($conexion,$consulta);
+		  
+		if(!$consulta_limit)
+		{
+		        //SI FALLA LA CONSULTA MUESTRO ERROR
+		        die('Invalid query: ' . mysqli_error());
+		}
+		else
+		{
+			//Si no hay consulta con limit no hace nada
+		}
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +69,7 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="../estilos/general.css">
 		<link rel="stylesheet" type="text/css" href="../estilos/header.css">
+		<link rel="stylesheet" type="text/css" href="../estilos/formulario.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
@@ -30,7 +79,7 @@
 			?>
 			<div id="cuerpo">
 					<?php
-						if ($cuenta_prestada >= 1) { ?>
+						if ($num_rows >= 1) { ?>
 							<div>
 								<h2>Netbooks del parque escolar prestadas:</h2>
 								<table>
@@ -46,7 +95,7 @@
 											<th>Acciones</th>
 										</tr>
 										<!--   Bucle while para completar tabla con todos los registros de colegios   !-->
-										<?php while($row=$result_prestada->fetch_assoc()){?>
+										<?php while($row=$datos->fetch_assoc()){?>
 			              					<tr>
 			              						<td><?php echo $row['APEYNOM'];?> </td>	
 												<td><?php echo $row['SERIE'];?> </td>
@@ -75,7 +124,9 @@
 								echo "<a class='button button2' href='nets_parque_escolar.php'>Nets Parque Escolar</a>";
 						} ?>
 						
-					
+					<?php
+									include('../includes/paginacion.php');
+								?>
 			</div>
 			<?php
 				include('../includes/footer.php');

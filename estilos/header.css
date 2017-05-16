@@ -4,13 +4,13 @@
 }
 
 header {
-    width: 860px;
+    width: 960px;/*860*/
     height: 160px;
     background-color: white;
     border-radius: 20px;
 }
 header #head {
-    width: 860px;
+    width: 960px;/*860*/
     height: 160px;
     /*background-image: url("../img/igualdad2.jpg");
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@ header #head {
     border-radius: 20px;
 }
 header #titulo {
-    width: 460px;/*860*/
+    width: 460px;
     position: relative;
     top: 10px;
     left: 10px;
