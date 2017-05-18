@@ -10,22 +10,24 @@
 	$id_colegio = $_POST['id_colegio'];
 	$id_comodatario = $_POST['id_com'];
 
-	$queryescuelas="SELECT ID_COLEGIO,COLEGIO, CIUDAD from COLEGIOS WHERE ID_COLEGIO = $id_colegio";
+	$queryescuelas="SELECT ID_COLEGIO,COLEGIO, CIUDAD, TIPO_COLEGIO from COLEGIOS WHERE ID_COLEGIO = $id_colegio";
 	$resultadoescuelas=$conexion->query($queryescuelas);
 	$row=$resultadoescuelas->fetch_assoc();		
 
 
-	$alumno="SELECT DNI_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO from COMODATARIOS WHERE ID_COMODATARIO = $id_comodatario";
+	$alumno="SELECT DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO from COMODATARIOS WHERE ID_COMODATARIO = $id_comodatario";
 	$resul_alumno=$conexion->query($alumno);
 	$fila=$resul_alumno->fetch_assoc();	
 			             
 
 	$escuela_o = $row['COLEGIO'];
 	$ciudad_o = $row['CIUDAD'];
+	$tipo_colegio = $row['TIPO_COLEGIO'];
 	$retira = $_POST['retira'];
 	$adulto = $fila['APEYNOM_A'];
 	$dni_adulto = $fila['DNI_ADULTO'];
 	$alumno = $fila['APEYNOM'];
+	$tipo_com = $fila['TIPO_COM'];
 	$dni_alumno = $fila['DNI_COM'];
 	$curso = $_POST['curso'];
 	$division = $_POST['division'];

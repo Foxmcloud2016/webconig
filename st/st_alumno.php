@@ -32,6 +32,7 @@ $id_colegio = $_SESSION['colegio'];
 						<option value="padre">Padre</option>
 						<option value="madre">Madre</option>
 						<option value="tutor">Tutor</option>
+						<option value="alumno">Alumno</option>
 					</select>
 					<label>Curso:</label>
 					<input type="text" name="curso">
@@ -46,7 +47,6 @@ $id_colegio = $_SESSION['colegio'];
 				<option value="vespertino">Vespertino</option>
 			</select>
 			<label>A continuación marque los componentes dañados o con fallas por los que la netbook requirio ST:</label>
-			<br>
 			<input type="checkbox" name="teclado" value="teclado" />Teclado<br />
 			<input type="checkbox" name="motherboard" value="motherboard" />Motherboard<br />
 			<input type="checkbox" name="pantalla" value="pantalla"/>Pantalla<br />

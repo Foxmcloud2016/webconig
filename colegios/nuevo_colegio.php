@@ -45,7 +45,7 @@ include('../includes/inicio_sesion.php');
 				<label for="distrito">Distrito:</label>
 				<input type="text" name="distrito" required>
 				<input type="submit" value="Agregar colegio"></input>
-				<a href="colegios_list.php" class="button button5">Cancelar</a>
+				<a href="colegios_list.php" class="boton button5">Cancelar</a>
 			</form>
 		</div>
 		<?php

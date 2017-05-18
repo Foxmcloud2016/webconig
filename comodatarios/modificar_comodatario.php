@@ -58,7 +58,7 @@
 					<br/>
 					<?php } ?>
 					<input class = 'button' type="submit" value="Modificar Comodatario"></input>
-					<a class='button button2' href="listar_comodatarios.php">Cancelar</a>
+					<a class='boton button2' href="listar_comodatarios.php">Cancelar</a>
 					</form>
 			</div>
 		</div>
