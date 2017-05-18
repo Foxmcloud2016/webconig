@@ -28,8 +28,12 @@ include('../mysql/conectar.php');
 		<?php include('../includes/header.php'); ?>
 		<div id="cuerpo">
 			<h2>Lista de Comodatarios</h2>
+
 			<?php
-			$consulta = "SELECT * FROM comodatarios";
+
+			$id_colegio = $_SESSION['colegio'];
+
+			$consulta = "SELECT * FROM comodatarios WHERE ID_COLEGIO_fk = $id_colegio";
 						//Var_dump($row);
 			$datos=$conexion->query($consulta);
 			$num_rows = mysqli_num_rows($datos);
@@ -73,9 +77,9 @@ include('../mysql/conectar.php');
 			?>
 			<?php
 			if ($num_rows == 0) {
-				echo "<span>No existen comodatarios cargados aún.</span>";
+				echo "<div class='insert_wrong'>No existen comodatarios cargados aún.</div>";
 			}else if ($num_rows >= 1) {?>
-			<div>
+			<div class="tabla">
 				<table>
 					<!-- Header de tablas con nombres de columnas !-->
 					<tr>

@@ -26,65 +26,69 @@ $migraciones_salientes=$conexion->query($query_migraciones_salientes);
         <a href="migracion_entrante.php" class="button">Añadir solicitud de Migracion Entrante</a>
 
         <h2>Listado de migraciones entrantes</h2>
-        <table>
-              <thead>
-                <tr>
-                  <th>Comodatario</th>
-                  <th>Numero de Serie</th>
-                  <th>Fecha</th>
-                  <th>Colegio Origen</th>
-                  <th>Colegio Destino</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <!-- Header de tablas con nombres de columnas !-->
-              <tbody>
-                <?php while($row=$migraciones_entrantes->fetch_assoc()){?>
-                  
+        <div class="tabla">
+          <table>
+                <thead>
                   <tr>
-                        <td><?php echo $row['APEYNOM'];?> </td>
-                        <td><?php echo $row['SERIE'];?> </td>
-                        <td><?php echo $row['FECHA'];?> </td>
-                        <td><?php echo $row['COLEGIO_ORIGEN'];?> </td>
-                        <td><?php echo $row['COLEGIO_DESTINO'];?> </td>
-                        <td>
-                          <a class='button button2' href="baja_migracion.php?id_m=<?php echo $row['ID_MIGRACION'] ?>">Dar de baja</a>
-                        </td>
-                    </tr>
-                  
-              <?php  } ?>
-            </tbody>
-            </table>
+                    <th>Comodatario</th>
+                    <th>Numero de Serie</th>
+                    <th>Fecha</th>
+                    <th>Colegio Origen</th>
+                    <th>Colegio Destino</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <!-- Header de tablas con nombres de columnas !-->
+                <tbody>
+                  <?php while($row=$migraciones_entrantes->fetch_assoc()){?>
+                    
+                    <tr>
+                          <td><?php echo $row['APEYNOM'];?> </td>
+                          <td><?php echo $row['SERIE'];?> </td>
+                          <td><?php echo $row['FECHA'];?> </td>
+                          <td><?php echo $row['COLEGIO_ORIGEN'];?> </td>
+                          <td><?php echo $row['COLEGIO_DESTINO'];?> </td>
+                          <td>
+                            <a class='button button2' href="baja_migracion.php?id_m=<?php echo $row['ID_MIGRACION'] ?>">Dar de baja</a>
+                          </td>
+                      </tr>
+                    
+                <?php  } ?>
+              </tbody>
+              </table>
+        </div>
 
             <h2>Listado de migraciones salientes</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Comodatario</th>
-                  <th>Numero de Serie</th>
-                  <th>Fecha</th>
-                  <th>Colegio Origen</th>
-                  <th>Colegio Destino</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <!-- Header de tablas con nombres de columnas !-->
-              <tbody>
-                <?php while($row=$migraciones_salientes->fetch_assoc()){?>
+            <div class="tabla">
+              <table>
+                <thead>
                   <tr>
-                        <td><?php echo $row['APEYNOM'];?> </td>
-                        <td><?php echo $row['SERIE'];?> </td>
-                        <td><?php echo $row['FECHA'];?> </td>
-                        <td><?php echo $row['COLEGIO_ORIGEN'];?> </td>
-                        <td><?php echo $row['COLEGIO_DESTINO'];?> </td>
-                        <td>
-                          <a class="button button2" href="acta_migracion.php?id_com=<?php echo $row['ID_COMODATARIO'].'&id_d='.$row['ID_COLEGIO_D'] ?>" target="_blank">Generar PDF</a>
-                          <a class='button button2' href="baja_migracion.php?id_m=<?php echo $row['ID_MIGRACION'] ?>">Dar de baja</a>
-                        </td>
-                    </tr>
-              <?php  } ?>
-            </tbody>
-            </table>
+                    <th>Comodatario</th>
+                    <th>Numero de Serie</th>
+                    <th>Fecha</th>
+                    <th>Colegio Origen</th>
+                    <th>Colegio Destino</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <!-- Header de tablas con nombres de columnas !-->
+                <tbody>
+                  <?php while($row=$migraciones_salientes->fetch_assoc()){?>
+                    <tr>
+                          <td><?php echo $row['APEYNOM'];?> </td>
+                          <td><?php echo $row['SERIE'];?> </td>
+                          <td><?php echo $row['FECHA'];?> </td>
+                          <td><?php echo $row['COLEGIO_ORIGEN'];?> </td>
+                          <td><?php echo $row['COLEGIO_DESTINO'];?> </td>
+                          <td>
+                            <a class="button button2" href="acta_migracion.php?id_com=<?php echo $row['ID_COMODATARIO'].'&id_d='.$row['ID_COLEGIO_D'] ?>" target="_blank">Generar PDF</a>
+                            <a class='button button2' href="baja_migracion.php?id_m=<?php echo $row['ID_MIGRACION'] ?>">Dar de baja</a>
+                          </td>
+                      </tr>
+                <?php  } ?>
+              </tbody>
+              </table>
+            </div>
 					</div>
 			<?php include('../includes/footer.php'); ?>
 		</section>

@@ -74,7 +74,7 @@
 			<div id="cuerpo">
 					<?php
 						if ($num_rows >= 1) { ?>
-							<div>
+							<div class="tabla">
 								<h2>Netbooks del parque escolar:</h2>
 								<?php echo "<p>Cantidad de equipos del parque escolar: ".($num_rows)."</p>";?>
 								<table>

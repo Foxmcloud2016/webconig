@@ -70,7 +70,13 @@
 				<div class="dropdown">
 				<button class="dropbtn">Escolares</button>
 				<div class="dropdown-content">
-					<a class="dropdown-content-inferior" href="/proyecto/st/st.php">Acta de ST</a>
+					<div class="dropdown_subcontent">
+						<button class="subdropbtn">Acta de ST</button>
+						<div class="dropdown-content-sub-st">
+							<a class="dropdown-content-superior" href="/proyecto/st/st_alumno.php">Alumnos</a>
+							<a class="dropdown-content-inferior" href="/proyecto/st/st_docente.php">Docentes</a>
+						</div>
+					</div>
 					<div class="dropdown_subcontent">
 						<button class="subdropbtn">Préstamos</button>
 							<div class="dropdown-content-sub-prestamos">
