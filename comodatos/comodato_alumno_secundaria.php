@@ -1,7 +1,5 @@
 <?php
 
-$titulo = 'CONTRATO DE COMODATO ESCUELA SECUNDARIA';
-
 $clausulas = "
 SEGUNDA: EL COMODATARIO destinará la laptop que recibe en COMODATO a fines educativos en su carácter de estudiante y para el uso de	su   grupo   familiar,   en   el   marco   del   PROGRAMA   CONECTAR IGUALDAD.COM.AR, procurando  familiarizar a todo integrante de su hogar con las nuevas tecnologías. La entrega del equipamiento implica única y exclusivamente la facultad de uso sobre el mismo, el que deberá realizarse conforme a su destino.
 

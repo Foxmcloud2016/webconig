@@ -24,12 +24,12 @@
 	$resultado_colegio = $conexion->query($query_colegio);
 
 	$resul_array_col = mysqli_fetch_assoc($resultado_colegio);
-	
+
 	//Se guardan datos de la BD de la tabla comodatarios
 	if ($dni_comodatario <> $result_array['DNI_COM']) {
 		header('Location:comodato_docente.php');
 	}
-	
+
 	$comodatario = $result_array['APEYNOM'];
 	$marca = $result_array['MARCA'];
 	$modelo = $result_array['MODELO'];
@@ -37,7 +37,7 @@
 	$serie = strtoupper($serie);
 
 	//Se guardan datos de la BD de la tabla colegios
-
+	$tipo_colegio = $resul_array_col['TIPO_COLEGIO'];
 	$director_o = $resul_array_col['DIRECTOR'];
 	$dni_dir_o = $resul_array_col['DNI'];
 	$escuela_nombre_o = $resul_array_col['COLEGIO'];
@@ -53,13 +53,13 @@
 	$numero = $_POST['numero'];
 	$piso = $_POST['piso'];
 	$depto = $_POST['depto'];
-	
+
 	//Se guardan en variables datos de fecha actual
 
 	$dias = strftime("%d");
 	$mes = strftime("%B");
 	$anio = strftime("%Y");
-	
+
 	include('../includes/mes.php');
 	//include('escuela_origen.php');
 
@@ -73,8 +73,8 @@
 	}
 
 
-	include('comodato_docente_pdf.php');	
-	
+	include('comodato_docente_pdf.php');
+
 ?>
 </body>
 </html>
