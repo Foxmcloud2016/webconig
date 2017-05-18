@@ -33,6 +33,6 @@
 	$result = mysqli_query($conexion, "UPDATE COMODATARIOS SET CUIL = '$cuil' ,DNI_COM = '$dni' , APEYNOM = '$apeynom', DNI_ADULTO = '$dni_adulto', APEYNOM_A = '$apeynom_a', MARCA = '$marca', SERIE = '$serie' WHERE ID_COMODATARIO = '$id_comodatario' ") or die("Error " .mysqli_error($conexion));
 	#Cerramos la conexion
 	mysqli_close($conexion);
-	header("Location: listar_comodatarios.php");
+	header("Location: comodatarios_todos.php");
 
 ?>
