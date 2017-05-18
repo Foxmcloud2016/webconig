@@ -71,8 +71,8 @@
 				include('../includes/header.php');
 			?>
 			<div id="cuerpo">
-					<div>
-						<h2>Netbooks del parque escolar disponibles:</h2>
+			<h2>Netbooks del parque escolar disponibles:</h2>
+					<div class="tabla">
 						<table>
 							<!--   Header de tablas con nombres de columnas  !-->
 								<tr>

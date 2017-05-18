@@ -54,7 +54,7 @@
 				</div>
 			</form>
 
-			<div id='datos'>
+			<div id='datos' class="tabla">
 				<table>
 					<!--   Header de tablas con nombres de columnas  !-->
 						<tr>

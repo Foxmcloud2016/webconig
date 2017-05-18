@@ -32,11 +32,11 @@ En prueba de conformidad se firman DOS (2) ejemplares de un mismo tenor y a un s
 
 
 
-	if ($cue == 940007100 || $cue == 940002700) {//aca van escuelas especiales
+	if ($tipo_colegio == 'Especial') {//aca van escuelas especiales
 
 		$titulo = 'CONTRATO DE COMODATO ESCUELA ESPECIAL';
 
-	}elseif ($cue == 940016900) {//aca van institutos de formacion superior
+	}elseif ($tipo_colegio == 'ISFD') {//aca van institutos de formacion superior
 
 		$titulo = 'CONTRATO DE COMODATO INSTITUTOS SUPERIORES DE FORMACIÓN
 		DOCENTE';

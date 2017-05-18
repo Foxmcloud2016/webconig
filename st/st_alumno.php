@@ -19,7 +19,7 @@ $id_colegio = $_SESSION['colegio'];
 		include('../includes/header.php');
 		?>
 		<div id="cuerpo">
-			<h2>Acta de Servicio Técnico:</h2>
+			<h2>Acta de Servicio Técnico (p/ Alumnos):</h2>
 			<form action="acta_st.php" method="POST" target="_blank">
 				<input type="hidden" name="id_colegio" value=<?php echo '"'.$id_colegio.'"'; ?>></input>
 				<label>DNI del comodatario:</label>

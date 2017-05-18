@@ -204,6 +204,11 @@ footer #pie{
 /* Fin de clase Botones */
 
 /* Tablas */
+
+div.tabla {
+	overflow-x:auto;
+}
+
 table {
 	    font-family: arial, sans-serif;
 	    width: 90%;

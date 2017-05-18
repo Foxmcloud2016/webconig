@@ -31,6 +31,8 @@ include('../mysql/conectar.php');
 				<br/>
 			</form>
 			<?php
+			$id_colegio = $_SESSION['colegio'];
+
 			if(isset($_POST['submit'])){
 				$dni = $_POST['dni'];
 				$apeynom = $_POST['apeynom'];
@@ -41,7 +43,7 @@ include('../mysql/conectar.php');
 					$result = mysqli_query($conexion, "SELECT * FROM comodatarios where APEYNOM LIKE '%$apeynom%'") or die("Error " .mysqli_error($conexion));
 					$contador = mysqli_num_rows($result);
 				} elseif ($apeynom === '' && $dni !== '') {
-					$result = mysqli_query($conexion, "SELECT * FROM COMODATARIOS WHERE DNI_COM=$dni") or die("Error " .mysqli_error($conexion));
+					$result = mysqli_query($conexion, "SELECT * FROM COMODATARIOS WHERE DNI_COM=$dni and ID_COLEGIO_FK = $id_colegio") or die("Error " .mysqli_error($conexion));
 					$contador = mysqli_num_rows($result);
 				}
 
@@ -60,7 +62,7 @@ include('../mysql/conectar.php');
 					<a href=".'alta_docente.php'.">Aquí</a> para cargar un docente.<br>
 					<a href=".'alta_alumno_ISFD.php'.">Aquí</a> para cargar un alumno de ISFD.</div>";
 				}else if ($contador >= 1) {?>
-				<div>
+				<div class="tabla">
 					<table>
 						<!-- Header de tablas con nombres de columnas !-->
 						<tr>

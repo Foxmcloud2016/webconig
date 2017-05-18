@@ -80,8 +80,8 @@
 			<div id="cuerpo">
 					<?php
 						if ($num_rows >= 1) { ?>
-							<div>
-								<h2>Netbooks del parque escolar prestadas:</h2>
+							<h2>Netbooks del parque escolar prestadas:</h2>
+							<div class="tabla">
 								<table>
 									<!--   Header de tablas con nombres de columnas  !-->
 										<tr>

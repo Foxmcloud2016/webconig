@@ -37,7 +37,8 @@
 	$serie = strtoupper($serie);
 
 	//Se guardan datos de la BD de la tabla colegios
-
+	
+	$tipo_colegio = $resul_array_col['TIPO_COLEGIO'];
 	$director_o = $resul_array_col['DIRECTOR'];
 	$dni_dir_o = $resul_array_col['DNI'];
 	$escuela_nombre_o = $resul_array_col['COLEGIO'];
