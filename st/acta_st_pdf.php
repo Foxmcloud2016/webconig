@@ -1,6 +1,23 @@
 	<?php
 	$titulo = 'ACTA DE SERVICIO TÉCNICO';
-	$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $adulto, D.N.I. Nº $dni_adulto, en su carácter de $retira del alumno $alumno, D.N.I. N° $dni_alumno de $curso $division, turno $turno del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por falla/rotura de:";
+
+	if ($tipo_colegio == 'Secundaria' || $tipo_colegio == 'Especial') {
+
+		if ($tipo_com == 'alumno') {//si es alumno de secundaria o especial
+		$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $adulto, D.N.I. Nº $dni_adulto, en su carácter de $retira del alumno $alumno, D.N.I. N° $dni_alumno de $curso $division, turno $turno del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por falla/rotura de:";
+	}else{//si es docente de secundaria o especial
+		$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $alumno, D.N.I. Nº $dni_alumno, en su carácter de docente del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por falla/rotura de:";
+		}
+	}elseif ($tipo_colegio == 'ISFD') {
+		if ($tipo_com == 'alumno') {//si es alumno de ISFD
+		$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $alumno, D.N.I. Nº $dni_alumno, en su carácter de alumno/a del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por falla/rotura de:";
+	}else{//si es docente de ISFD
+		$hoja1 = "En la ciudad de $ciudad_o, a los $dias días del mes de $mes del año $anio, se deja constancia que la/el Sra./Sr.: $alumno, D.N.I. Nº $dni_alumno, en su carácter de docente del Establecimiento Educativo: $escuela_o, se le hace devolución de la Netbook marca $marca, modelo $modelo y Nº de Serie $serie que fue retenida en concepto de Servicio Técnico, por falla/rotura de:";
+		}
+	}
+
+	
+	
 
 	$hoja2 = "Se solicita cuidado y responsabilidad en el uso de la misma.";
 	$mayus_retira = strtoupper($retira);
