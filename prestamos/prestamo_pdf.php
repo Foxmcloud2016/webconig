@@ -36,7 +36,7 @@
 
 	$escuela_o = $escuela_nombre_o;
 	if ($comodatario==0) {
-		$comodatario = 'alumno/a';
+		$comodatario = 'alumno/padre/madre/tutor';
 	}else{
 		$comodatario = 'docente';
 	}
