@@ -8,18 +8,24 @@
 
 	if ($_GET['dni_apeynom'] == 0) {
 		$anio = $_GET['anio'];
-		$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio";
+		#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio";
+		$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio";
 	} else if (($_GET['dni_apeynom']) == 1) {
 		if (!empty($_GET['dni'])) {
 			$dni = $_GET['dni'];
-			$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = $dni AND ID_COLEGIO_FK = $id_colegio";
+			#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = $dni AND ID_COLEGIO_FK = $id_colegio";
+			$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = $dni AND ID_COLEGIO_FK = $id_colegio";
 		} elseif (!empty($_GET['apeynom'])){
 			$apeynom = $_GET['apeynom'];
-			$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio AND APEYNOM LIKE '%$apeynom%'";
+			#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio AND APEYNOM LIKE '%$apeynom%'";
+			$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio AND comodatarios.APEYNOM LIKE '%$apeynom%'";
 		}
 	}
 
-	$resultado_egresados=$conexion->query($query_egresados) or die("Error " .mysqli_error($conexion));;
+	if (!isset($query_egresados)) { echo "<div class='insert_wrong'>Debe ingresar algún valor en los filtros.</div>";}/*Lo agregué yo (JP)*/
+	
+	if (isset($query_egresados)) {
+		$resultado_egresados=$conexion->query($query_egresados) or die("Error " .mysqli_error($conexion));;
 	if (mysqli_num_rows($resultado_egresados) > 0) {
 		echo "<table>
 		<!--   Header de tablas con nombres de columnas  !-->
@@ -57,8 +63,8 @@
 
 
 	} else {
-		echo 'El egresado no se encuentra con el dni o apellido y nombre ingresado';
+		echo "<div class='insert_wrong'>El egresado no se encuentra con el dni o apellido y nombre ingresado.</div>";
 	}
-
+	}
 
  ?>

@@ -21,6 +21,9 @@
 	$marca = $_POST['marca'];
 	$modelo = $_POST['modelo'];
 	$serie = $_POST['serie'];
+	$curso = $_POST['curso'];
+	$division = $_POST['division'];
+	$turno = $_POST['turno'];
 	#Conexion con la bd
 
 	#Actualizamos en la BD
@@ -28,9 +31,10 @@
 	$querymodi="UPDATE COLEGIOS SET DIRECTOR = '$direnuevo' , DNI = '$dninuevo', COLEGIO = '$colenuevo', DOMICILIO = '$dominuevo', CIUDAD = '$ciudadnueva' WHERE ID_COLEGIO = '$id_colegio' " ;
 	$Resultado = $conexion->query($querymodi);
 	*/
-	$querymodi="UPDATE COMODATARIOS SET CUIL = '$cuil', DNI_COM = '$dni' , APEYNOM = '$apeynom', DNI_ADULTO = '$dni_adulto', APEYNMOM_A = '$apeynom_a', MARCA = '$marca', SERIE = '$serie' WHERE ID_COMODATARIO = '$id_comodatario' " ;
+	$querymodi="UPDATE COMODATARIOS SET CUIL = '$cuil', DNI_COM = '$dni' , APEYNOM = '$apeynom', DNI_ADULTO = '$dni_adulto', APEYNMOM_A = '$apeynom_a', MARCA = '$marca', MODELO = '$modelo', SERIE = '$serie', CURSO = '$curso', DIVISION = '$division', TURNO = '$turno' WHERE ID_COMODATARIO = '$id_comodatario' " ;
 	//$Resultado = $conexion->query($querymodi);
-	$result = mysqli_query($conexion, "UPDATE COMODATARIOS SET CUIL = '$cuil' ,DNI_COM = '$dni' , APEYNOM = '$apeynom', DNI_ADULTO = '$dni_adulto', APEYNOM_A = '$apeynom_a', MARCA = '$marca', SERIE = '$serie' WHERE ID_COMODATARIO = '$id_comodatario' ") or die("Error " .mysqli_error($conexion));
+	//$result = mysqli_query($conexion, $querymodi) or die("Error " .mysqli_error($conexion));
+	$result = mysqli_query($conexion, "UPDATE COMODATARIOS SET CUIL = '$cuil' ,DNI_COM = '$dni' , APEYNOM = '$apeynom', DNI_ADULTO = '$dni_adulto', APEYNOM_A = '$apeynom_a', MARCA = '$marca', MODELO = '$modelo', SERIE = '$serie', CURSO = '$curso', DIVISION = '$division', TURNO = '$turno' WHERE ID_COMODATARIO = '$id_comodatario' ") or die("Error " .mysqli_error($conexion));
 	#Cerramos la conexion
 	mysqli_close($conexion);
 	header("Location: comodatarios_todos.php");

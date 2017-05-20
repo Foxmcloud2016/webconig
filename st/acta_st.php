@@ -15,7 +15,7 @@
 	$row=$resultadoescuelas->fetch_assoc();		
 
 
-	$alumno="SELECT DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO from COMODATARIOS WHERE ID_COMODATARIO = $id_comodatario";
+	$alumno="SELECT DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, CURSO, DIVISION, TURNO from COMODATARIOS WHERE ID_COMODATARIO = $id_comodatario";
 	$resul_alumno=$conexion->query($alumno);
 	$fila=$resul_alumno->fetch_assoc();	
 			             
@@ -29,9 +29,9 @@
 	$alumno = $fila['APEYNOM'];
 	$tipo_com = $fila['TIPO_COM'];
 	$dni_alumno = $fila['DNI_COM'];
-	$curso = $_POST['curso'];
-	$division = $_POST['division'];
-	$turno = $_POST['turno'];
+	$curso = $fila['CURSO'];
+	$division = $fila['DIVISION'];
+	$turno = $fila['TURNO'];
 	$marca = $fila['MARCA'];
 	$modelo = $fila['MODELO'];
 	$serie = $fila['SERIE'];

@@ -16,8 +16,7 @@ include('includes/inicio_sesion.php');
 			<?php
 				include('includes/header.php');
 			?>
-			<div id="cuerpo">
-					
+			<div id="cuerpo">	
 			</div>
 			<?php
 				include('includes/footer.php');

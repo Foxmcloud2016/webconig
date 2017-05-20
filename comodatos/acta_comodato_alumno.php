@@ -13,7 +13,7 @@
     $dni_comodatario = $_POST['dni_comodatario'];
     $escuela_o = $_SESSION['colegio'];
 	//Consulta los datos del comodatario en la BD en base al DNI ingresado anteriormente
-	$query_dni="SELECT DNI_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, MARCA, MODELO, SERIE from COMODATARIOS WHERE DNI_COM='".$dni_comodatario."'";
+	$query_dni="SELECT DNI_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, MARCA, MODELO, SERIE, CURSO, DIVISION, TURNO from COMODATARIOS WHERE DNI_COM='".$dni_comodatario."'";
 
 	$resultado_dni=$conexion->query($query_dni);
 	//Guarda los datos de la BD e un array
@@ -35,6 +35,9 @@
 	$modelo = $result_array['MODELO'];
 	$serie = $result_array['SERIE'];
 	$serie = strtoupper($serie);
+	$curso = $result_array['CURSO'];
+	$division = $result_array['DIVISION'];
+	$turno = $result_array['TURNO'];
 
 	//Se guardan datos de la BD de la tabla colegios
 	
@@ -54,9 +57,6 @@
 	$numero = $_POST['numero'];
 	$piso = $_POST['piso'];
 	$depto = $_POST['depto'];
-	$curso = $_POST['curso'];
-	$division = $_POST['division'];
-	$turno = $_POST['turno'];
 
 	//Se guardan en variables datos de fecha actual
 

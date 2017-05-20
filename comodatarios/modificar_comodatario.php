@@ -8,13 +8,7 @@
 	$querycomodatario="SELECT * FROM COMODATARIOS WHERE ID_COMODATARIO = '".$id_comodatario."'";
 	$resultadocomodatario=$conexion->query($querycomodatario);
 
-
-	$query_colegios="SELECT TIPO_COLEGIO FROM COLEGIOS WHERE ID_COLEGIO = '".$id_colegio."'";
-	$result_colegios=$conexion->query($query_colegios);
-	$fila=$result_colegios->fetch_assoc();	
-
-
-	$tipo_colegio = $fila['TIPO_COLEGIO'];
+	$tipo_colegio = $_SESSION['tipo_colegio'];
 ?>
 
 
@@ -33,10 +27,10 @@
 	<section id="contenedor">
 			<?php include('../includes/header.php'); ?>
 			<div id="cuerpo">
-				<h2>Modificar Comodatario</h2>
+			<?php while($row=$resultadocomodatario->fetch_assoc()){?>
+				<h2>Modificar Comodatario (<?php echo $row['TIPO_COM'] ;?>)</h2>
 				<br/>
 				<form action='realizar_modi_comodatario.php' method ="POST">
-					<?php while($row=$resultadocomodatario->fetch_assoc()){?>
 					<input type="hidden" name="id_comodatario" value="<?php echo $row['ID_COMODATARIO'];?>" />
 					<label for= 'cuil'>CUIL</label>
 					<input type="text" name="cuil" id="cuil" value="<?php echo $row['CUIL'];?>"> </input>
@@ -46,7 +40,7 @@
 
 					<label for= 'apeynom'>Apellido y Nombre</label>
 					<input type="text" name="apeynom" id="apeynom" value="<?php echo $row['APEYNOM'];?>" required> </input>
-				
+					<!--A continuaciòn se configuró para que aparezcan los campos APEYNOM_A y DNI_ADULTO, sólo si son alumnos-->
 					<?php 
 						if ($tipo_colegio == 'Secundaria' || $tipo_colegio == 'Especial') {
 							if ($row['TIPO_COM'] == 'docente') {
@@ -70,7 +64,28 @@
 
 					<label for= 'serie'>Serie</label>
 					<input type="text" name="serie" id="serie" <?php echo "value= '".$row['SERIE']."'";?> required></input>
+					<!--A continuaciòn se configuró para que aparezcan los campos CURSO, DIVISION y TURNO, sólo si son alumnos-->	
+					<?php 
+						if ($tipo_colegio == 'Secundaria' || $tipo_colegio == 'Especial') {
+							if ($row['TIPO_COM'] == 'docente') {
+								//no mostrar nada
+							}elseif ($row['TIPO_COM'] == 'alumno') { ?>
+							<label for= 'curso'>Curso</label>
+							<input type="text" name="curso" id="curso" <?php echo "value= '".$row['CURSO']."'";?> required></input>
 
+							<label for= 'division'>División</label>
+							<input type="text" name="division" id="division" <?php echo "value= '".$row['DIVISION']."'";?> required></input>
+
+							<label for= 'turno'>Turno</label>
+							<select type="text" name="turno" id="turno" <?php echo "value= '".$row['TURNO']."'";?> required>
+								<option value="mañana">Mañana</option>
+								<option value="tarde">Tarde</option>
+								<option value="vespertino">Vespertino</option>
+							</select> 
+								<?php
+							}
+						}
+					?>					
 
 					<?php } ?>
 					<input class = 'button' type="submit" value="Modificar Comodatario"></input>

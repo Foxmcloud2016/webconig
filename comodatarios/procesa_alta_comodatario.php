@@ -7,6 +7,9 @@
 	$apellido = $_POST['apellido'];
 	$nombre = $_POST['nombre'];
 	$apeynom = "$apellido $nombre";
+	$curso = $_POST['curso'];
+	$division = $_POST['division'];
+	$turno = $_POST['turno'];
 	$tipo_comodatario = $_POST['tipo_comodatario'];
 
 	if ($_POST['tipo_comodatario'] == 'alumno') {
@@ -39,7 +42,7 @@
 
 			}elseif ($contador==0) {
 
-				$query_alta_comodat = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, ID_COLEGIO_FK) VALUES ('$cuil',$dni, '$tipo_comodatario', '$apeynom', '$dni_adulto', '$apeynom_adulto', '$serie', '$marca', '$modelo', $id_colegio)";
+				$query_alta_comodat = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, SERIE, MARCA, MODELO, CURSO, DIVISION, TURNO, ID_COLEGIO_FK) VALUES ('$cuil',$dni, '$tipo_comodatario', '$apeynom', '$dni_adulto', '$apeynom_adulto', '$serie', '$marca', '$modelo', '$curso', '$division', '$turno', $id_colegio)";
 				$resultado_alta_comodat = $conexion->query($query_alta_comodat);
 			}
 

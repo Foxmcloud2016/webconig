@@ -40,6 +40,16 @@ include('../includes/inicio_sesion.php');
 				<input type="text" name="modelo" required>
 				<label for="serie">Número de serie:</label>
 				<input type="text" name="serie" required>
+				<label for="curso">Curso:</label>
+				<input type="text" name="curso" required>
+				<label for="division">División:</label>
+				<input type="text" name="division" required>
+				<label for="turno">Turno:</label>
+				<select type="text" name="turno" required>
+					<option value="mañana">Mañana</option>
+					<option value="tarde">Tarde</option>
+					<option value="vespertino">Vespertino</option>
+				</select> 
 				<input class="oculto" type="text" name="tipo_comodatario" value="alumno">
 				<input type="submit" value="Agregar comodatario"></input>
 			</form>

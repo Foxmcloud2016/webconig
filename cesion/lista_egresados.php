@@ -3,8 +3,10 @@
 	include('../mysql/conectar.php');
 	include('../includes/estados.php');
 	$id_colegio = $_SESSION['colegio'];
+	#$queryanios="SELECT DNI,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio ";
 	$queryanios="SELECT DNI,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio ";
-	$queryegresados="SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio ";
+	$queryegresados="SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio ";
+	#$queryegresados="SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio ";
 	$resultado_anios=$conexion->query($queryanios);
 	$resultado_egresados=$conexion->query($queryegresados);
 	$lista_anios = [];

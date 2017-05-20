@@ -5,6 +5,7 @@
 	$queryescuelas="SELECT ID_COLEGIO,COLEGIO from COLEGIOS";
 	$resultadoescuelas=$conexion->query($queryescuelas);
 
+
 ?>
 
 <html>

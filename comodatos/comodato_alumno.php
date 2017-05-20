@@ -38,16 +38,6 @@ include('../includes/inicio_sesion.php');
 						<input type="text" name="piso"></input>
 						<label>Departamento:</label>
 						<input type="text" name="depto"></input>
-						<label>Curso:</label>
-						<input type="text" name="curso"></input>
-						<label>División:</label>
-						<input type="text" name="division"></input>
-						<label>Turno:</label>
-						<select name="turno">
-							<option value="mañana">Mañana</option>
-							<option value="tarde">Tarde</option>
-							<option value="vespertino">Vespertino</option>
-						</select>
 					</div>
 					<input class="button button2" type="submit" id="mySubmit" value="Generar Contrato"></input>	
 				</form>	
