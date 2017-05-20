@@ -86,7 +86,17 @@
 							}
 						}
 					?>					
-
+					
+					<!--Si cuando cargaron el/los comodatarios a través de un alta masiva y en el excel no aclararon si era alumno o docente tenemos un problema, porque en esta sección no se puede cambiar eso - Por ello hago el siguiente condicional que si encuentra que el comodatario no tiene especificado si es alumno o docente, entonces le aparece un select para determinarlo y cargarlo a la BBDD-->
+					<?php 
+						if ($row['TIPO_COM'] == '') { ?>
+							<label for="tipo_com">Tipo de comodatario</label>
+							<select name="tipo_com" id="tipo_com">
+								<option value="alumno">Alumno</option>
+								<option value="docente">Docente</option>
+							</select>
+					<?php	}
+					?>
 					<?php } ?>
 					<input class = 'button' type="submit" value="Modificar Comodatario"></input>
 					<a class='boton button2' href="comodatarios_todos.php">Cancelar</a>

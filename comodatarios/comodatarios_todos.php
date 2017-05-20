@@ -33,7 +33,7 @@ include('../mysql/conectar.php');
 
 			$id_colegio = $_SESSION['colegio'];
 
-			$consulta = "SELECT * FROM comodatarios WHERE ID_COLEGIO_fk = $id_colegio";
+			$consulta = "SELECT * FROM comodatarios WHERE ID_COLEGIO_fk = $id_colegio ORDER BY APEYNOM";
 						//Var_dump($row);
 			$datos=$conexion->query($consulta);
 			$num_rows = mysqli_num_rows($datos);
