@@ -61,7 +61,7 @@ include('../includes/inicio_sesion.php');
 						$no_cargados++;
 					}else{
 
-						$sql = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, MARCA, MODELO, SERIE, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]', '$data[5]','$data[6]','$data[7]','$data[8]','$id_colegio')";
+						$sql = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, MARCA, MODELO, SERIE, CURSO, DIVISION, TURNO, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]', '$data[5]','$data[6]','$data[7]','$data[8]','$data[9]','$data[10]','$data[11]','$id_colegio')";
 						mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
 
 						$cargados++;

@@ -60,7 +60,7 @@
 
 				  		}else{
 
-				  			$sql = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$id_colegio')";
+				  			$sql = "INSERT INTO COMODATARIOS (CUIL, DNI_COM, TIPO_COM, APEYNOM, DNI_ADULTO, APEYNOM_A, CURSO, DIVISION, TURNO, ID_COLEGIO_FK) VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]','$data[8]','$id_colegio')";
 				  			mysqli_query($conexion, $sql) or die('Error: '.mysqli_error($conexion));
 
 				  			$cargados++;

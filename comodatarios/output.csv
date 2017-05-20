@@ -1,5 +1,3 @@
-"CUIL","DNI COMODATARIO","TIPO COMODATARIO (alumno o docente)","APELLIDO  Y NOMBRE","DNI ADULTO","APELLIDO Y NOMBRE ADULTO","MARCA","MODELO","SERIE"
-"","23456789","alumno","Gomez1 Juan","98765432","Gomez1 Jose","NOBLEX","E11IS2","12345678"
-"","23456790","alumno","Gomez2 Juan","98765433","Gomez2 Jose","NOBLEX","E11IS3","12345679"
-"","23456791","alumno","Gomez3 Juan","98765434","Gomez3 Jose","NOBLEX","E11IS4","12345680"
-"","23456792","alumno","Gomez4 Juan","98765435","Gomez4 Jose","NOBLEX","E11IS5","12345681"
+"CUIL","DNI COMODATARIO","TIPO COMODATARIO (alumno o docente)","APELLIDO  Y NOMBRE","DNI ADULTO","APELLIDO Y NOMBRE ADULTO","MARCA","MODELO","SERIE","CURSO","DIVISION","TURNO (mañana, tarde o vespertino)"
+"","7125639","alumno","Borquez Juan","14523678","Borquez Jose","NOBLEX","NT1015E","AA123456745","5º","4º","tarde"
+"","7125640","alumno","Borquez Juan","14523679","Borquez Jose","NOBLEX","NT1015E","AA123456746","5º","4º","tarde"
