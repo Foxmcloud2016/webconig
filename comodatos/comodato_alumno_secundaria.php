@@ -145,6 +145,7 @@ $pdf->SetFont('Arial','',11);
 $pdf->MultiCell(0,6,$clausulas,0,'J',false);
 
 $pdf->Ln(10);
+
 $pdf->newFlowingBlock( 160, 6, '', 'J' );
 
 $pdf->SetFont('Arial','',11);
