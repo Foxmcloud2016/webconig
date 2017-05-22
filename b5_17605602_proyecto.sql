@@ -34,36 +34,37 @@ CREATE TABLE `colegios` (
   `COLEGIO` varchar(80) NOT NULL,
   `CUE` int(11) NOT NULL,
   `CIUDAD` varchar(20) NOT NULL,
-  `DISTRITO` varchar(20) NOT NULL
+  `DISTRITO` varchar(20) NOT NULL,
+  `TIPO_COLEGIO` varchar(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `colegios`
 --
 
-INSERT INTO `colegios` (`ID_COLEGIO`, `DIRECTOR`, `DNI`, `DOMICILIO`, `COLEGIO`, `CUE`, `CIUDAD`, `DISTRITO`) VALUES
-(19, 'Fernanda Gabriela DurÃ¡n', '25808560', 'Juana Fadul 266', ' Colegio Provincial Kloketen - Sede', 940015800, 'Ushuaia', 'Sur'),
-(18, 'Claudia Viviana Astorga', '22455473', 'Facundo Quiroga 1780', ' Colegio Provincial Ernesto SÃ¡bato', 940015900, 'Ushuaia', 'Sur'),
-(17, 'Lorena Florencia Cladera', '25009181', 'Felipe Romero 205', ' Colegio Provincial Los Andes', 940006100, 'Ushuaia', 'Sur'),
-(16, 'Juan Enrique Carucci', '11392827', 'Indios YÃ¡manas 1572', ' Colegio Provincial Dr. JosÃ© MarÃ­a Sobral', 940008500, 'Ushuaia', 'Sur'),
-(15, 'Ricardo Federico BouzÃ³n', '16730763', 'Avda. Alem 15', 'Centro Polivalente de Arte de Ushuaia - Prof. InÃ©s MarÃ­a Bustelo', 940008400, 'Ushuaia', 'Sur'),
-(14, 'Juan RamÃ³n Arrieta', '18499008', 'Gobernador Paz 1693', ' Colegio TÃ©cnico Provincial Olga B.de Arko', 940008300, 'Ushuaia', 'Sur'),
-(13, 'Ricardo JuliÃ¡n NÃ³bile', '16300660', 'AntÃ¡rtida Argentina 16', ' Colegio Provincial JosÃ© MartÃ­ - AntÃ¡rtida Argentina y MaipÃº - Sede', 940007608, 'Ushuaia', 'Sur'),
-(12, 'Alejandra Elena Franck', '16969381', 'Camilo Antonio Giamarini 3472', ' Colegio Provincial Padre JosÃ© Zink', 940018900, 'Rio Grande', 'Norte'),
-(11, 'Fernando JosÃ© Greco', '21986997', 'Thorne 2023', ' Colegio Provincial Dr. RenÃ© Favaloro ', 940016400, 'Rio Grande', 'Norte'),
-(2, 'MarÃ­a Julia Plou', '16042722', 'ColÃ³n 751', ' Colegio Provincial Comandante Luis Piedrabuena', 940002500, 'Rio Grande', 'Norte'),
-(3, 'MÃ³nica Patricia Norte', '20219813', 'Prefectura Naval Argentina 1151', ' Colegio Provincial  SoberanÃ­a Nacional', 940002600, 'Rio Grande', 'Norte'),
-(4, 'Raquel NÃ©lida Lamattina', '16266854', 'RamÃ³n Diaz Chara 64', ' Colegio Provincial Alicia Moreau de Justo', 940001700, 'Rio Grande', 'Norte'),
-(5, 'NÃ©stor Alejandro SÃ¡enz', '20645785', 'Avenida Belgrano 777       ', '  Colegio Provincial de EducaciÃ³n TecnolÃ³gica RÃ­o Grande', 940007700, 'Rio Grande', 'Norte'),
-(6, 'MÃ³nica Viviana Marchese', '16915834', 'Luro Cambaceres y MarÃ­a Auxiliadora', '  Centro Polivalente de Arte de RÃ­o Grande Prof. Diana Cotorruelo', 940011400, 'Rio Grande', 'Norte'),
-(7, 'Fernando Rogelio GarcÃ­a Carral', '12982648', 'JosÃ© Ingenieros 851', '  Colegio Provincial Haspen - "Profesor Luis Adan Felippa"', 940011500, 'Rio Grande', 'Norte'),
-(8, 'Graciela Beatriz Castro', '14009006', 'Mosconi 655', ' Colegio Provincial Dr. Ernesto Guevara', 940015700, 'Rio Grande', 'Norte'),
-(9, 'MarÃ­a AngÃ©lica Del Estal', '16751679', 'Santiago Rupatini 379', ' Colegio Provincial RamÃ³n Alberto Trejo Noel', 940001900, 'Tolhuin', 'Norte'),
-(10, 'Daniela Viviana Balverdi', '23994784', 'Lima 731', ' Colegio Provincial Dr. Esteban Laureano Maradona', 940016200, 'Rio Grande', 'Norte'),
-(1, 'MarÃ­a InÃ©s CaucamÃ¡n SÃ¡nchez', '24162062', 'Chawr 1042', ' Colegio Provincial AntÃ¡rtida Argentina', 940015000, 'Rio Grande', 'Norte'),
-(27, 'Completar', 'Completar', 'Completar', 'Instituto Provincial de EnseÃ±anza Superior â€œPaulo Freireâ€', 940016900, 'Completar', 'Completar'),
-(26, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 2 - Casita de Luz', 940007100, 'Completar', 'Completar'),
-(25, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 3 - IntegraciÃ³n Plena', 940002700, 'Completar', 'Completar');
+INSERT INTO `colegios` (`ID_COLEGIO`, `DIRECTOR`, `DNI`, `DOMICILIO`, `COLEGIO`, `CUE`, `CIUDAD`, `DISTRITO`, `TIPO_COLEGIO`) VALUES
+(19, 'Fernanda Gabriela DurÃ¡n', '25808560', 'Juana Fadul 266', ' Colegio Provincial Kloketen - Sede', 940015800, 'Ushuaia', 'Sur','Secundaria'),
+(18, 'Claudia Viviana Astorga', '22455473', 'Facundo Quiroga 1780', ' Colegio Provincial Ernesto SÃ¡bato', 940015900, 'Ushuaia', 'Sur','Secundaria'),
+(17, 'Lorena Florencia Cladera', '25009181', 'Felipe Romero 205', ' Colegio Provincial Los Andes', 940006100, 'Ushuaia', 'Sur','Secundaria'),
+(16, 'Juan Enrique Carucci', '11392827', 'Indios YÃ¡manas 1572', ' Colegio Provincial Dr. JosÃ© MarÃ­a Sobral', 940008500, 'Ushuaia', 'Sur','Secundaria'),
+(15, 'Ricardo Federico BouzÃ³n', '16730763', 'Avda. Alem 15', 'Centro Polivalente de Arte de Ushuaia - Prof. InÃ©s MarÃ­a Bustelo', 940008400, 'Ushuaia', 'Sur','Secundaria'),
+(14, 'Juan RamÃ³n Arrieta', '18499008', 'Gobernador Paz 1693', ' Colegio TÃ©cnico Provincial Olga B.de Arko', 940008300, 'Ushuaia', 'Sur','Secundaria'),
+(13, 'Ricardo JuliÃ¡n NÃ³bile', '16300660', 'AntÃ¡rtida Argentina 16', ' Colegio Provincial JosÃ© MartÃ­ - AntÃ¡rtida Argentina y MaipÃº - Sede', 940007608, 'Ushuaia', 'Sur','Secundaria'),
+(12, 'Alejandra Elena Franck', '16969381', 'Camilo Antonio Giamarini 3472', ' Colegio Provincial Padre JosÃ© Zink', 940018900, 'Rio Grande', 'Norte','Secundaria'),
+(11, 'Fernando JosÃ© Greco', '21986997', 'Thorne 2023', ' Colegio Provincial Dr. RenÃ© Favaloro ', 940016400, 'Rio Grande', 'Norte','Secundaria'),
+(2, 'MarÃ­a Julia Plou', '16042722', 'ColÃ³n 751', ' Colegio Provincial Comandante Luis Piedrabuena', 940002500, 'Rio Grande', 'Norte','Secundaria'),
+(3, 'MÃ³nica Patricia Norte', '20219813', 'Prefectura Naval Argentina 1151', ' Colegio Provincial  SoberanÃ­a Nacional', 940002600, 'Rio Grande', 'Norte','Secundaria'),
+(4, 'Raquel NÃ©lida Lamattina', '16266854', 'RamÃ³n Diaz Chara 64', ' Colegio Provincial Alicia Moreau de Justo', 940001700, 'Rio Grande', 'Norte','Secundaria'),
+(5, 'NÃ©stor Alejandro SÃ¡enz', '20645785', 'Avenida Belgrano 777       ', '  Colegio Provincial de EducaciÃ³n TecnolÃ³gica RÃ­o Grande', 940007700, 'Rio Grande', 'Norte','Secundaria'),
+(6, 'MÃ³nica Viviana Marchese', '16915834', 'Luro Cambaceres y MarÃ­a Auxiliadora', '  Centro Polivalente de Arte de RÃ­o Grande Prof. Diana Cotorruelo', 940011400, 'Rio Grande', 'Norte','Secundaria'),
+(7, 'Fernando Rogelio GarcÃ­a Carral', '12982648', 'JosÃ© Ingenieros 851', '  Colegio Provincial Haspen - "Profesor Luis Adan Felippa"', 940011500, 'Rio Grande', 'Norte','Secundaria'),
+(8, 'Graciela Beatriz Castro', '14009006', 'Mosconi 655', ' Colegio Provincial Dr. Ernesto Guevara', 940015700, 'Rio Grande', 'Norte','Secundaria'),
+(9, 'MarÃ­a AngÃ©lica Del Estal', '16751679', 'Santiago Rupatini 379', ' Colegio Provincial RamÃ³n Alberto Trejo Noel', 940001900, 'Tolhuin', 'Norte','Secundaria'),
+(10, 'Daniela Viviana Balverdi', '23994784', 'Lima 731', ' Colegio Provincial Dr. Esteban Laureano Maradona', 940016200, 'Rio Grande', 'Norte','Secundaria'),
+(1, 'MarÃ­a InÃ©s CaucamÃ¡n SÃ¡nchez', '24162062', 'Chawr 1042', ' Colegio Provincial AntÃ¡rtida Argentina', 940015000, 'Rio Grande', 'Norte','Secundaria'),
+(27, 'Completar', 'Completar', 'Completar', 'Instituto Provincial de EnseÃ±anza Superior â€œPaulo Freireâ€', 940016900, 'Completar', 'Completar','ISFD'),
+(26, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 2 - Casita de Luz', 940007100, 'Completar', 'Completar','Especial'),
+(25, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 3 - IntegraciÃ³n Plena', 940002700, 'Completar', 'Completar','Especial');
 
 -- --------------------------------------------------------
 
@@ -82,6 +83,9 @@ CREATE TABLE `comodatarios` (
   `SERIE` varchar(20) DEFAULT NULL,
   `MARCA` varchar(20) DEFAULT NULL,
   `MODELO` varchar(20) DEFAULT NULL,
+  `CURSO` varchar(10) DEFAULT NULL,
+  `DIVISION` varchar(10) DEFAULT NULL,
+  `TURNO` varchar(10) DEFAULT NULL,
   `ID_COLEGIO_FK` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
