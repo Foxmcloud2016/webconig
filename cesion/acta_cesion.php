@@ -9,7 +9,7 @@
 	include('../mysql/conectar.php');
 	$id_com = intval($_POST['id_com']);
 	$id_colegio = intval($_POST['colegio_o']);
-	$querycomodatario="SELECT * FROM COMODATARIOS INNER JOIN COLEGIOS WHERE ID_COMODATARIO = '".$id_com."' AND COLEGIOS.ID_COLEGIO = '".$id_colegio."'";
+	$querycomodatario="SELECT * FROM COMODATARIOS INNER JOIN COLEGIOS WHERE DNI_COM = '".$id_com."' AND COLEGIOS.ID_COLEGIO = '".$id_colegio."'";
 	$resultado= $conexion->query($querycomodatario);
 	$datos = $resultado->fetch_object();
 
@@ -73,7 +73,7 @@
 
 	}
 
-	include('cesion_pdf.php');
+	#include('cesion_pdf.php');
 
 	?>
 </body>

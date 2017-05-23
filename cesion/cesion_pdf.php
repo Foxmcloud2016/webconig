@@ -5,8 +5,6 @@
 
 ?>
 
-
-
 <?php
 
 	ob_start();
