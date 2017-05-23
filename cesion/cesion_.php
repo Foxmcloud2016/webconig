@@ -3,7 +3,11 @@
 	include('../mysql/conectar.php');
 	include('../includes/functions.php');
 	$id_egresado = intval($_GET['id']);
+
 	$queryegresado="SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,egresados.CURSO,egresados.DIVISION,egresados.TURNO FROM comodatarios INNER JOIN egresados WHERE ID_EGRESADO = $id_egresado";
+
+	#$queryegresado="SELECT ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,egresados.CURSO,egresados.DIVISION,egresados.TURNO FROM comodatarios INNER JOIN egresados WHERE ID_EGRESADO = $id_egresado";
+
 
 	$resultado_egresado = $conexion->query($queryegresado);
 	$egresado = mysqli_fetch_object($resultado_egresado);
@@ -28,20 +32,20 @@
 			<h2>Contrato de Cesión:</h2>
 			<form action="acta_cesion.php" method="POST" target="_blank">
 				<input class="en_linea" type="hidden" id='dni' name="dni_com" value="<?php echo $egresado->DNI; ?>"></input>
-				<?php 
-				  buscar_comodatario($egresado->DNI); 
+				<?php
+				  buscar_comodatario($egresado->DNI);
 				?>
-				
+
 				<label>¿El alumno/a es mayor de edad?:</label>
 				<input id="mayor" type="radio" name="mayor" value="si" />Si <br />
 				<input id="mayor" type="radio" name="mayor" value="no" />No <br />
 				<?php #si no es mayor preguntar si es el mismo tutor que firma ?>
 				<div id="mismo">
 					<label>¿El Adulto responsable firmante es el mismo que se muestra arriba?:</label>
-					<input id="mismo" type="radio" name="mismo" value="si" />Si 
+					<input id="mismo" type="radio" name="mismo" value="si" />Si
 					<br />
-					<input id="mismo" type="radio" name="mismo" value="no" />No 
-					<br/>	
+					<input id="mismo" type="radio" name="mismo" value="no" />No
+					<br/>
 				</div>
 				<?php #si no es el mismo ingresar nuevos datos para el adulto. ?>
 				<div id="nuevo_adulto">
@@ -52,7 +56,7 @@
 					<label for="motivo">Motivo del cambio de adulto.</label>
 					<textarea cols="40" rows="10" type="text" name="motivo"></textarea>
 				</div>
-				
+
 				<label>Domicilio:</label>
 				<input type="text" name="calle" id="domicilio"></input>
 				<label>Número:</label>
@@ -61,7 +65,7 @@
 				<input type="text" name="piso"></input>
 				<label>Departamento:</label>
 				<input type="text" name="depto"></input>
-				
+
 				<input type="hidden" name="curso" value="<?php echo $egresado->CURSO; ?>">
 				<input type="hidden" name="division" value="<?php echo $egresado->DIVISION; ?>">
 				<input type="hidden" name="turno" value="<?php echo $egresado->TURNO; ?>">
@@ -83,7 +87,7 @@
    				$('#mismo').hide();
 				$('#nuevo_adulto').hide();
    			} else {
-   				$('#mismo').show();	
+   				$('#mismo').show();
    			}
 		});
 
@@ -91,7 +95,7 @@
    			if ($('input[name="mismo"]:checked','form').val() == 'si') {
 				$('#nuevo_adulto').hide();
    			} else {
-   				$('#nuevo_adulto').show();	
+   				$('#nuevo_adulto').show();
    			}
 		});
 

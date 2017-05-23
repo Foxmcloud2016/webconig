@@ -88,16 +88,26 @@
 					?>					
 					
 					<!--Si cuando cargaron el/los comodatarios a través de un alta masiva y en el excel no aclararon si era alumno o docente tenemos un problema, porque en esta sección no se puede cambiar eso - Por ello hago el siguiente condicional que si encuentra que el comodatario no tiene especificado si es alumno o docente, entonces le aparece un select para determinarlo y cargarlo a la BBDD-->
-					<?php 
-						if ($row['TIPO_COM'] == '') { ?>
+					<?php if ($row['TIPO_COM'] == '') { ?>
 							<label for="tipo_com">Tipo de comodatario</label>
 							<select name="tipo_com" id="tipo_com">
 								<option value="alumno">Alumno</option>
 								<option value="docente">Docente</option>
 							</select>
-					<?php	}
-					?>
-					<?php } ?>
+
+								<input type="hidden" name="dni_adulto" id="dni_adulto" value="<?php echo $row['DNI_ADULTO'];?>" required></input>
+								<input type="hidden" name="apeynom_a" id="apeynom_a" <?php echo "value= '".$row['APEYNOM_A']."'";?> required></input>
+
+							<input type="hidden" name="curso" id="curso" <?php echo "value= '".$row['CURSO']."'";?> required></input>
+
+							<input type="hidden" name="division" id="division" <?php echo "value= '".$row['DIVISION']."'";?> required></input>
+
+							<input type="hidden" name="turno" id="turno" <?php echo "value= '".$row['TURNO']."'";?> required></input> 
+
+					<?php	}else{?>
+						<input type="hidden" name="tipo_com" id="tipo_com" <?php echo "value= '".$row['TIPO_COM']."'";?>></input>
+					
+					<?php } }?>
 					<input class = 'button' type="submit" value="Modificar Comodatario"></input>
 					<a class='boton button2' href="comodatarios_todos.php">Cancelar</a>
 					</form>
@@ -106,5 +116,4 @@
 		<?php include('../includes/footer.php'); ?>
 	</section>
 </body>
-
 </html>

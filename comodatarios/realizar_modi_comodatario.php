@@ -31,9 +31,26 @@
 	$querymodi="UPDATE COLEGIOS SET DIRECTOR = '$direnuevo' , DNI = '$dninuevo', COLEGIO = '$colenuevo', DOMICILIO = '$dominuevo', CIUDAD = '$ciudadnueva' WHERE ID_COLEGIO = '$id_colegio' " ;
 	$Resultado = $conexion->query($querymodi);
 	*/
+	/*
+	echo $id_comodatario."</br>";
+	echo $dni."</br>";
+	echo $cuil."</br>";
+	echo $apeynom."</br>";
+	echo $dni_adulto."</br>";
+	echo $apeynom_a."</br>";
+	echo $marca."</br>";
+	echo $modelo."</br>";
+	echo $serie."</br>";
+	echo $curso."</br>";
+	echo $division."</br>";
+	echo $turno."</br>";
+	echo $tipo_com."</br>";
+*/
 	$querymodi="UPDATE COMODATARIOS SET TIPO_COM = '$tipo_com', CUIL = '$cuil', DNI_COM = '$dni' , APEYNOM = '$apeynom', DNI_ADULTO = '$dni_adulto', APEYNMOM_A = '$apeynom_a', MARCA = '$marca', MODELO = '$modelo', SERIE = '$serie', CURSO = '$curso', DIVISION = '$division', TURNO = '$turno' WHERE ID_COMODATARIO = '$id_comodatario' " ;
+	
 	//$Resultado = $conexion->query($querymodi);
 	//$result = mysqli_query($conexion, $querymodi) or die("Error " .mysqli_error($conexion));
+	
 	$result = mysqli_query($conexion, "UPDATE COMODATARIOS SET TIPO_COM = '$tipo_com', CUIL = '$cuil' ,DNI_COM = '$dni' , APEYNOM = '$apeynom', DNI_ADULTO = '$dni_adulto', APEYNOM_A = '$apeynom_a', MARCA = '$marca', MODELO = '$modelo', SERIE = '$serie', CURSO = '$curso', DIVISION = '$division', TURNO = '$turno' WHERE ID_COMODATARIO = '$id_comodatario' ") or die("Error " .mysqli_error($conexion));
 	#Cerramos la conexion
 	mysqli_close($conexion);
