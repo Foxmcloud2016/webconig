@@ -8,17 +8,17 @@
 
 	if ($_GET['dni_apeynom'] == 0) {
 		$anio = $_GET['anio'];
-		#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio";
-		$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio";
+		#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados ON DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio";
+		$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados ON DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio";
 	} else if (($_GET['dni_apeynom']) == 1) {
 		if (!empty($_GET['dni'])) {
 			$dni = $_GET['dni'];
-			#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = $dni AND ID_COLEGIO_FK = $id_colegio";
-			$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = $dni AND ID_COLEGIO_FK = $id_colegio";
+			#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados ON DNI = $dni AND ID_COLEGIO_FK = $id_colegio";
+			$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.DNI_COM,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados ON DNI_COM = DNI WHERE DNI = $dni AND ID_COLEGIO_FK = $id_colegio";
 		} elseif (!empty($_GET['apeynom'])){
 			$apeynom = $_GET['apeynom'];
-			#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio AND APEYNOM LIKE '%$apeynom%'";
-			$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados WHERE DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio AND comodatarios.APEYNOM LIKE '%$apeynom%'";
+			#$query_egresados = "SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,ANIO_EGRESO,CURSO,DIVISION,TURNO,ESTADO FROM comodatarios INNER JOIN egresados ON DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio AND APEYNOM LIKE '%$apeynom%'";
+			$query_egresados = "SELECT egresados.ID_EGRESADO,egresados.DNI,comodatarios.APEYNOM,comodatarios.ID_COLEGIO_FK,egresados.ANIO_EGRESO,egresados.CURSO,egresados.DIVISION,egresados.TURNO,egresados.ESTADO FROM comodatarios INNER JOIN egresados ON DNI = comodatarios.DNI_COM AND ID_COLEGIO_FK = $id_colegio AND comodatarios.APEYNOM LIKE '%$apeynom%'";
 		}
 	}
 

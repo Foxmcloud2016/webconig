@@ -3,7 +3,7 @@
 	include('../mysql/conectar.php');
 	include('../includes/functions.php');
 	$id_egresado = intval($_GET['id']);
-	$queryegresado="SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,CURSO,DIVISION,TURNO FROM comodatarios INNER JOIN egresados WHERE ID_EGRESADO = $id_egresado";
+	$queryegresado="SELECT ID_EGRESADO,DNI,comodatarios.APEYNOM,egresados.CURSO,egresados.DIVISION,egresados.TURNO FROM comodatarios INNER JOIN egresados WHERE ID_EGRESADO = $id_egresado";
 
 	$resultado_egresado = $conexion->query($queryegresado);
 	$egresado = mysqli_fetch_object($resultado_egresado);

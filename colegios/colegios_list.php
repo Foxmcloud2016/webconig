@@ -19,7 +19,7 @@
 				include('../includes/header.php');
 			?>
 			<div id="cuerpo">
-				<a class="button button1" style="margin-left: 30px" href="nuevo_colegio.php">Agregar nuevo colegio</a>
+				<a class="button button2" style="margin-left: 30px" href="nuevo_colegio.php">Agregar nuevo colegio</a>
 					<div class="tabla">
 					
 						<table>

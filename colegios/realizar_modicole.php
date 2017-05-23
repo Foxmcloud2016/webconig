@@ -11,12 +11,13 @@
 	$colenuevo = $_POST['colegio'];
 	$dominuevo = $_POST['domicilio'];
 	$ciudadnueva = $_POST['ciudad'];
+	$distrito = $_POST['distrito'];
 	
 	#Conexion con la bd
 	
 	#Actualizamos en la BD
 	
-	$querymodi="UPDATE COLEGIOS SET DIRECTOR = '$direnuevo' , DNI = '$dninuevo', COLEGIO = '$colenuevo', DOMICILIO = '$dominuevo', CIUDAD = '$ciudadnueva', TIPO_COLEGIO = '$tipo_colegio' WHERE ID_COLEGIO = '$id_colegio' " ;
+	$querymodi="UPDATE COLEGIOS SET DIRECTOR = '$direnuevo' , DNI = '$dninuevo', COLEGIO = '$colenuevo', DOMICILIO = '$dominuevo', CIUDAD = '$ciudadnueva', TIPO_COLEGIO = '$tipo_colegio', DISTRITO = '$distrito' WHERE ID_COLEGIO = '$id_colegio' " ;
 	$Resultado = $conexion->query($querymodi);
 	
 	#Cerramos la conexion

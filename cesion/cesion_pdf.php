@@ -28,7 +28,7 @@ $pdf->Write(5,$titulo);
 $pdf->Ln(15);
 $pdf->SetFont('Arial','',11);
 
-$pdf->newFlowingBlock( 190, 6, '', 'J' );
+$pdf->newFlowingBlock( 190, 4.5, '', 'J' );
 $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Entre la Autoridad Educativa Provincial representada en este acto por el Sr./a: ') );
 $pdf->SetFont('Arial','B',11);
@@ -117,7 +117,7 @@ $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' ) del establecimiento educativo mencionado, en adelante “EL CESIONARIO”, ambos mayores de edad y hábiles para este acto, convienen en celebrar el presente CONTRATO DE CESION EN PROPIEDAD, sujeto a las siguientes cláusulas y condiciones: ') );
 $pdf->finishFlowingBlock();
 $pdf->Ln(7);
-$pdf->newFlowingBlock( 190, 6, '', 'J' );
+$pdf->newFlowingBlock( 190, 4.5, '', 'J' );
 $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'PRIMERA: LA AUTORIDAD EDUCATIVA da en forma gratuita y definitiva en PROPIEDAD al CESIONARIO y éste acepta, una laptop educativa marca ') );
 $pdf->SetFont('Arial','B',11);
@@ -135,7 +135,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ', con cargo de destinar
 $pdf->finishFlowingBlock();
 $pdf->Ln(7);
 
-$pdf->newFlowingBlock( 190, 6, '', 'J' );
+$pdf->newFlowingBlock( 190, 4.5, '', 'J' );
 $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'En prueba de conformidad se firman DOS (2) ejemplares de un mismo tenor y a un solo efecto, por EL CEDENTE y por EL CESIONARIO en la ciudad ') );
 $pdf->SetFont('Arial','B',11);
@@ -172,13 +172,13 @@ if (isset($motivo)) {
 	$pdf->MultiCell(0,5,$motivo,0,'J',false);
 }
 //Repite 2da vez
-$pdf->Ln(10);
+$pdf->Ln(20);
 $pdf->SetFont('Arial','B',11);
 $pdf->SetX(70);
 $pdf->Write(5,$titulo);
 $pdf->Ln(15);
 $pdf->SetFont('Arial','',11);
-$pdf->newFlowingBlock( 190, 6, '', 'J' );
+$pdf->newFlowingBlock( 190, 4.5, '', 'J' );
 $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Entre la Autoridad Educativa Provincial representada en este acto por el Sr./a: ') );
 $pdf->SetFont('Arial','B',11);
@@ -267,7 +267,7 @@ $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' ) del establecimiento educativo mencionado, en adelante “EL CESIONARIO”, ambos mayores de edad y hábiles para este acto, convienen en celebrar el presente CONTRATO DE CESION EN PROPIEDAD, sujeto a las siguientes cláusulas y condiciones: ') );
 $pdf->finishFlowingBlock();
 $pdf->Ln(7);
-$pdf->newFlowingBlock( 190, 6, '', 'J' );
+$pdf->newFlowingBlock( 190, 4.5, '', 'J' );
 $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'PRIMERA: LA AUTORIDAD EDUCATIVA da en forma gratuita y definitiva en PROPIEDAD al CESIONARIO y éste acepta, una laptop educativa marca ') );
 $pdf->SetFont('Arial','B',11);
@@ -285,7 +285,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ', con cargo de destinar
 $pdf->finishFlowingBlock();
 $pdf->Ln(7);
 
-$pdf->newFlowingBlock( 190, 6, '', 'J' );
+$pdf->newFlowingBlock( 190, 4.5, '', 'J' );
 $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'En prueba de conformidad se firman DOS (2) ejemplares de un mismo tenor y a un solo efecto, por EL CEDENTE y por EL CESIONARIO en la ciudad ') );
 $pdf->SetFont('Arial','B',11);

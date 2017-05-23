@@ -53,6 +53,8 @@
 						<option value='Especial'>Especial</option>
 						<option value='ISFD'>ISFD</option>
 					</select>
+					<label for= 'distrito'>Distrito</label>
+					<input type="text" name="distrito" id="distrito" value="<?php echo $row['DISTRITO'];?>" required></input>
 					<!--<input type="text" name="ciudad" id="ciudad" value='<?php #echo $row['CIUDAD'];?>' required></input> -->
 					<?php } ?>
 					<input class = 'button' type="submit" value="Modificar Colegio"></input>
