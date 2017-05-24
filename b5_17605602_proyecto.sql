@@ -64,7 +64,10 @@ INSERT INTO `colegios` (`ID_COLEGIO`, `DIRECTOR`, `DNI`, `DOMICILIO`, `COLEGIO`,
 (1, 'MarÃ­a InÃ©s CaucamÃ¡n SÃ¡nchez', '24162062', 'Chawr 1042', ' Colegio Provincial AntÃ¡rtida Argentina', 940015000, 'Rio Grande', 'Norte','Secundaria'),
 (27, 'Completar', 'Completar', 'Completar', 'Instituto Provincial de EnseÃ±anza Superior â€œPaulo Freireâ€', 940016900, 'Completar', 'Completar','ISFD'),
 (26, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 2 - Casita de Luz', 940007100, 'Completar', 'Completar','Especial'),
-(25, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 3 - IntegraciÃ³n Plena', 940002700, 'Completar', 'Completar','Especial');
+(25, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 3 - IntegraciÃ³n Plena', 940002700, 'Completar', 'Completar','Especial'),
+(28, 'Chinquini Romina', '24957867', 'Magallanes 1745', 'Escuela de EducaciÃ³n Integral Ushuaia', 940017800, 'Ushuaia', 'Tierra del Fuego','Especial'),
+(29, 'Enciso Jorge', '23397411', 'Gdor. Deloqui 237', 'Instituto Provincial de EducaciÃ³n Superior Ushuaia', 940008800, 'Ushuaia', 'Tierra del Fuego','ISFD'),
+(30, 'Rodriguez Sade Andrea Roxana', '22047539', 'Magallanes 1745', 'Escuela Especial NÂ° 1 Kayu Chenen', 940006400, 'Rio Grande', 'Tierra del Fuego','Especial');
 
 -- --------------------------------------------------------
 
@@ -100,7 +103,7 @@ CREATE TABLE `egresados` (
   `DNI` int(10) NOT NULL,
   `ANIO_EGRESO` int(11) NOT NULL,
   `CURSO` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `DIVISION` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `DIVISION` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
   `TURNO` varchar(12) COLLATE utf8_spanish_ci NOT NULL,
   `ESTADO` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
