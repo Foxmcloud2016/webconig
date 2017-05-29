@@ -62,19 +62,19 @@
 
 	if ($motivo == "net_st") {
 		$contenido2 = "El motivo de dicho préstamo es que el $comodatario tiene su equipo a la espera de ser reparado por el proveedor de servicio técnico.
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	}else if ($motivo == "cue_ext_jur") {
 		$contenido2 = "El motivo de dicho préstamo es que el $comodatario se encuentra cargado en un CUE de una escuela de otra provincia.
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	}else if ($motivo == "otro_cue") {
 		$contenido2 = "El motivo de dicho préstamo es que el $comodatario se encuentra asociado a un CUE de otra escuela dentro de la Provincia de Tierra del Fuego.
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	}else if ($motivo == "fuera_cierre") {
 		$contenido2 = "El motivo de dicho préstamo es que el $comodatario ha solicitado equipo luego del cierre correspondiente a este período.
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	} else {
 		$contenido2 = "$motivo
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	}
 	
 
