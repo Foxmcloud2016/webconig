@@ -2,27 +2,27 @@
 
 	if ($motivo == 'egresado_ext') {
 		$contenido2 = "Dicha devolución se debe a que el alumno/a es egresado fuera de término, es decir, ha finalizado sus estudios fuera del período correspondiente al ciclo lectivo de su último año de cursada.
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	}
 
 	if ($motivo == 'pase_no_pci') {
 		$contenido2 = "Dicha devolución se debe a que el alumno/a ha gestionado el pase a un establecimiento educativo no alcanzado por el Programa Conectar Igualdad (CENS o escuela de gestión privada).
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	}
 
 	if ($motivo == 'pase_otra_prov') {
 		$contenido2 = "Dicha devolución se debe a que el alumno/a ha gestionado el pase a un establecimiento educativo fuera de la Provincia de Tierra del Fuego.
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	}
 
 	if ($motivo == 'jubilacion') {
 		$contenido2 = "Dicha devolución se debe a que el docente se ha jubilado.
-		Con conformidad de ambas partes se firman 2 (dos) copias.";
+Con conformidad de ambas partes se firman 2 (dos) copias.";
 	}
 
 	if ($motivo == 'otro') {
 		$contenido2 = $otro_motivo.'
-		Con conformidad de ambas partes se firman 2 (dos) copias.';
+Con conformidad de ambas partes se firman 2 (dos) copias.';
 	}
 
 
@@ -41,7 +41,7 @@ $fecha = iconv('UTF-8', 'windows-1252', $fecha);/*Esta función cambia la codifi
 $renglon1 = iconv('UTF-8', 'windows-1252', $renglon1);
 $renglon2 = iconv('UTF-8', 'windows-1252', $renglon2);
 $contenido2 = iconv('UTF-8', 'windows-1252', $contenido2);
-$contenido = iconv('UTF-8', 'windows-1252', $contenido);
+//$contenido = iconv('UTF-8', 'windows-1252', $contenido);
 $firma1 = iconv('UTF-8', 'windows-1252', $firma1);
 $firma2 = iconv('UTF-8', 'windows-1252', $firma2);
 ob_start();
@@ -79,7 +79,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $modelo) );
 $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' y reglada bajo el siguiente número de serie: ') );
 $pdf->SetFont('Arial','B',11);
-$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $serie." ") );
+$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $serie) );
 $pdf->SetFont('Arial','',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $componentes) );
 $pdf->finishFlowingBlock();
