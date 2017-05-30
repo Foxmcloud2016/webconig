@@ -62,12 +62,12 @@ INSERT INTO `colegios` (`ID_COLEGIO`, `DIRECTOR`, `DNI`, `DOMICILIO`, `COLEGIO`,
 (9, 'MarÃ­a AngÃ©lica Del Estal', '16751679', 'Santiago Rupatini 379', ' Colegio Provincial RamÃ³n Alberto Trejo Noel', 940001900, 'Tolhuin', 'Norte','Secundaria'),
 (10, 'Daniela Viviana Balverdi', '23994784', 'Lima 731', ' Colegio Provincial Dr. Esteban Laureano Maradona', 940016200, 'Rio Grande', 'Norte','Secundaria'),
 (1, 'MarÃ­a InÃ©s CaucamÃ¡n SÃ¡nchez', '24162062', 'Chawr 1042', ' Colegio Provincial AntÃ¡rtida Argentina', 940015000, 'Rio Grande', 'Norte','Secundaria'),
-(27, 'Completar', 'Completar', 'Completar', 'Instituto Provincial de EnseÃ±anza Superior â€œPaulo Freireâ€', 940016900, 'Completar', 'Completar','ISFD'),
+(27, 'Olguin Alicia Mabel', '23584942', 'Estrada 1575', 'Instituto Provincial de EnseÃ±anza Superior â€œPaulo Freireâ€', 940016900, 'Rio Grande', 'Norte','ISFD'),
 (26, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 2 - Casita de Luz', 940007100, 'Completar', 'Completar','Especial'),
 (25, 'Completar', 'Completar', 'Completar', 'Escuela Especial NÂº 3 - IntegraciÃ³n Plena', 940002700, 'Completar', 'Completar','Especial'),
-(28, 'Chinquini Romina', '24957867', 'Magallanes 1745', 'Escuela de EducaciÃ³n Integral Ushuaia', 940017800, 'Ushuaia', 'Tierra del Fuego','Especial'),
-(29, 'Enciso Jorge', '23397411', 'Gdor. Deloqui 237', 'Instituto Provincial de EducaciÃ³n Superior Ushuaia', 940008800, 'Ushuaia', 'Tierra del Fuego','ISFD'),
-(30, 'Rodriguez Sade Andrea Roxana', '22047539', 'Magallanes 1745', 'Escuela Especial NÂ° 1 Kayu Chenen', 940006400, 'Rio Grande', 'Tierra del Fuego','Especial');
+(28, 'Chinquini Romina', '24957867', 'Magallanes 1745', 'Escuela de EducaciÃ³n Integral Ushuaia', 940017800, 'Ushuaia', 'Sur','Especial'),
+(29, 'Enciso Jorge', '23397411', 'Gdor. Deloqui 237', 'Instituto Provincial de EducaciÃ³n Superior Ushuaia', 940008800, 'Ushuaia', 'Sur','ISFD'),
+(30, 'Rodriguez Sade Andrea Roxana', '22047539', 'Magallanes 1745', 'Escuela Especial NÂ° 1 Kayu Chenen', 940006400, 'Rio Grande', 'Sur','Especial');
 
 -- --------------------------------------------------------
 

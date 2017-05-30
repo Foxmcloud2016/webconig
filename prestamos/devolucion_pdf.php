@@ -64,61 +64,61 @@
 if ($modelo=='E10IS' || $modelo=='E11IS2' || $modelo=='Schoolmate11' || $modelo=='X352' || $modelo=='X355' || $modelo=='Schoolmate') {
 		$adeuda_antena = 'antena';
 
-		if (empty($adeuda_bateria) && empty($adeuda_cargador)) {
+		if ($adeuda_bateria == 0 && $adeuda_cargador == 0) {
 
 			$adeuda_bateria = 'bateria';
 			$adeuda_cargador = 'cargador';
 
 			$componentes = ', con todos sus componentes, a saber: batería y cargador, la cual forma parte del Programa Nacional de Educación Conectar Igualdad.';
 
-	}elseif ($adeuda_bateria=='adeuda_bateria' || $adeuda_cargador=='adeuda_cargador') {
+	}elseif ($adeuda_bateria == 1 || $adeuda_cargador == 1) {
 
-		if ($adeuda_bateria=='adeuda_bateria' && empty($adeuda_cargador)) {
+		if ($adeuda_bateria == 1 && $adeuda_cargador == 0) {
 			$componentes = ", con su cargador correspondiente. Se aclara que el $comodatario adeuda la batería, la cual forma parte del Programa Nacional de Educación Conectar Igualdad.";
 		}
 
-	elseif ($adeuda_cargador=='adeuda_cargador' && empty($adeuda_bateria)) {
+	elseif ($adeuda_cargador == 1 && $adeuda_bateria == 0) {
 		$componentes = ", con su batería correspondiente. Se aclara que el $comodatario adeuda el cargador, el cual forma parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif ($adeuda_cargador=='adeuda_cargador' && $adeuda_bateria=='adeuda_bateria') {
+	}elseif ($adeuda_cargador == 1 && $adeuda_bateria == 1) {
 		$componentes = ". Se aclara que el $comodatario adeuda la batería y el cargador, los cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
 }
 }
 
 /*En el siguiente condicional van las nets que vienen con antena TDA*/
 }elseif ($modelo=='NP100NZC' || $modelo=='100NZC' || $modelo=='C5' || $modelo=='NT1015E' || $modelo=='CXEdu') {
-	if (empty($adeuda_bateria) && empty($adeuda_cargador) && empty($adeuda_antena)){
+	if ($adeuda_bateria==0 && $adeuda_cargador==0 && $adeuda_antena == 0){
 		$componentes = ', con todos sus componentes, a saber: batería, cargador y antena TDA, la cual forma parte del Programa Nacional de Educación Conectar Igualdad.';
-	}elseif ($adeuda_bateria=='adeuda_bateria' && empty($adeuda_cargador) && empty($adeuda_antena)) {
+	}elseif ($adeuda_bateria == 1 && $adeuda_cargador==0 && $adeuda_antena == 0) {
 		$componentes = ", con su cargador y antena TDA correspondientes. Se aclara que el $comodatario adeuda la batería, la cual forma parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif (empty($adeuda_bateria) && $adeuda_cargador=='adeuda_cargador' && empty($adeuda_antena)) {
+	}elseif ($adeuda_bateria==0 && $adeuda_cargador==1 && $adeuda_antena == 0) {
 		$componentes = ", con su batería y antena TDA correspondientes. Se aclara que el $comodatario adeuda el cargador, el cual forma parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif (empty($adeuda_bateria) && empty($adeuda_cargador) && $adeuda_antena=='adeuda_antena') {
+	}elseif ($adeuda_bateria==0 && $adeuda_cargador==0 && $adeuda_antena==1) {
 		$componentes = ", con su batería y cargador correspondientes. Se aclara que el $comodatario adeuda la antena TDA, la cual forma parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif ($adeuda_bateria=='adeuda_bateria' && $adeuda_cargador=='adeuda_cargador' && $adeuda_antena=='adeuda_antena') {
+	}elseif ($adeuda_bateria == 1 && $adeuda_cargador==1 && $adeuda_antena==1) {
 		$componentes = ". Se aclara que el $comodatario adeuda batería, cargador y antena TDA, los cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif ($adeuda_bateria=='adeuda_bateria' && $adeuda_cargador=='adeuda_cargador' && empty($adeuda_antena)) {
+	}elseif ($adeuda_bateria == 1 && $adeuda_cargador==1 && $adeuda_antena == 0) {
 		$componentes = ", con su antena TDA correspondiente. Se aclara que el $comodatario adeuda batería y cargador, los cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif ($adeuda_bateria=='adeuda_bateria' && empty($adeuda_cargador) && $adeuda_antena=='adeuda_antena') {
+	}elseif ($adeuda_bateria == 1 && $adeuda_cargador==0 && $adeuda_antena==1) {
 		$componentes = ", con su cargador correspondiente. Se aclara que el $comodatario adeuda batería y antena TDA, las cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif (empty($adeuda_bateria) && $adeuda_cargador=='adeuda_cargador' && $adeuda_antena=='adeuda_antena') {
+	}elseif ($adeuda_bateria==0 && $adeuda_cargador==1 && $adeuda_antena==1) {
 		$componentes = ", con su batería correspondiente. Se aclara que el $comodatario adeuda cargador y antena TDA, los cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
 	}
 }else{//Si el modelo de la net cargado en la BBDD no coincide con los anteriormente citados
-	if (empty($adeuda_bateria) && empty($adeuda_cargador) && empty($adeuda_antena)){
+	if ($adeuda_bateria==0 && $adeuda_cargador==0 && $adeuda_antena == 0){
 		$componentes = ', con todos sus componentes, a saber: batería, cargador y antena TDA (si corresponde por modelo de netbook), la cual forma parte del Programa Nacional de Educación Conectar Igualdad.';
-	}elseif ($adeuda_bateria=='adeuda_bateria' && empty($adeuda_cargador) && empty($adeuda_antena)) {
+	}elseif ($adeuda_bateria == 1 && $adeuda_cargador==0 && $adeuda_antena == 0) {
 		$componentes = ", con su cargador y antena TDA correspondientes (si corresponde por modelo de netbook). Se aclara que el $comodatario adeuda la batería, la cual forma parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif (empty($adeuda_bateria) && $adeuda_cargador=='adeuda_cargador' && empty($adeuda_antena)) {
+	}elseif ($adeuda_bateria==0 && $adeuda_cargador==1 && $adeuda_antena == 0) {
 		$componentes = ", con su batería y antena TDA correspondientes (si corresponde por modelo de netbook). Se aclara que el $comodatario adeuda el cargador, el cual forma parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif (empty($adeuda_bateria) && empty($adeuda_cargador) && $adeuda_antena=='adeuda_antena') {
+	}elseif ($adeuda_bateria==0 && $adeuda_cargador==0 && $adeuda_antena==1) {
 		$componentes = ", con su batería y cargador correspondientes. Se aclara que el $comodatario adeuda la antena TDA, la cual forma parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif ($adeuda_bateria=='adeuda_bateria' && $adeuda_cargador=='adeuda_cargador' && $adeuda_antena=='adeuda_antena') {
+	}elseif ($adeuda_bateria == 1 && $adeuda_cargador==1 && $adeuda_antena==1) {
 		$componentes = ". Se aclara que el $comodatario adeuda batería, cargador y antena TDA, los cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif ($adeuda_bateria=='adeuda_bateria' && $adeuda_cargador=='adeuda_cargador' && empty($adeuda_antena)) {
+	}elseif ($adeuda_bateria == 1 && $adeuda_cargador==1 && $adeuda_antena == 0) {
 		$componentes = ", con su antena TDA correspondiente (si corresponde por modelo de netbook). Se aclara que el $comodatario adeuda batería y cargador, los cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif ($adeuda_bateria=='adeuda_bateria' && empty($adeuda_cargador) && $adeuda_antena=='adeuda_antena') {
+	}elseif ($adeuda_bateria == 1 && $adeuda_cargador==0 && $adeuda_antena==1) {
 		$componentes = ", con su cargador correspondiente. Se aclara que el $comodatario adeuda batería y antena TDA, las cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
-	}elseif (empty($adeuda_bateria) && $adeuda_cargador=='adeuda_cargador' && $adeuda_antena=='adeuda_antena') {
+	}elseif ($adeuda_bateria==0 && $adeuda_cargador==1 && $adeuda_antena==1) {
 		$componentes = ", con su batería correspondiente. Se aclara que el $comodatario adeuda cargador y antena TDA, los cuales forman parte del Programa Nacional de Educación Conectar Igualdad.";
 }
 }
