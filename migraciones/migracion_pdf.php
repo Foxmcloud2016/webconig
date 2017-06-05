@@ -1,6 +1,6 @@
 	<?php
 	$titulo = 'ACTA DE MIGRACION PARA ALUMNOS DEL PROGRAMA CONECTAR  IGUALDAD';
-	$contenido = "                          .";
+	
 
 	$firma1 = 'FIRMA DEL PADRE/MADRE/TUTOR';
 	$firma2 = 'FIRMA DEL DIRECTOR CEDENTE';
@@ -13,7 +13,6 @@
 <?php
 
 $titulo = iconv('UTF-8', 'windows-1252', $titulo);/*Esta función cambia la codificación de caracteres para que no salgan signo raros*/
-$contenido = iconv('UTF-8', 'windows-1252', $contenido);/*Esta función cambia la codificación de caracteres para que no salgan signo raros*/
 $firma1 = iconv('UTF-8', 'windows-1252', $firma1);
 $firma2 = iconv('UTF-8', 'windows-1252', $firma2);
 $firma3 = iconv('UTF-8', 'windows-1252', $firma3);
@@ -45,7 +44,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' CUE: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $cue_o) );
 $pdf->SetFont('Arial','',11);
-$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Distrito Escolar: ') );
+$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' Distrito Escolar: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $distrito_o) );
 $pdf->SetFont('Arial','',11);
@@ -69,7 +68,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ', CUE: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $cue_d) );
 $pdf->SetFont('Arial','',11);
-$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Distrito Escolar: ') );
+$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' Distrito Escolar: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $distrito_d) );
 $pdf->SetFont('Arial','',11);
@@ -182,7 +181,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ', CUE: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $cue_d) );
 $pdf->SetFont('Arial','',11);
-$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Distrito Escolar: ') );
+$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' Distrito Escolar: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $distrito_d) );
 $pdf->SetFont('Arial','',11);
@@ -270,7 +269,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' CUE: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $cue_o) );
 $pdf->SetFont('Arial','',11);
-$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Distrito Escolar: ') );
+$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' Distrito Escolar: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $distrito_o) );
 $pdf->SetFont('Arial','',11);
@@ -294,7 +293,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ', CUE: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $cue_d) );
 $pdf->SetFont('Arial','',11);
-$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Distrito Escolar: ') );
+$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' Distrito Escolar: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $distrito_d) );
 $pdf->SetFont('Arial','',11);
@@ -386,7 +385,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' CUE: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $cue_o) );
 $pdf->SetFont('Arial','',11);
-$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Distrito Escolar: ') );
+$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' Distrito Escolar: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $distrito_o) );
 $pdf->SetFont('Arial','',11);
@@ -410,7 +409,7 @@ $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ', CUE: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $cue_d) );
 $pdf->SetFont('Arial','',11);
-$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', 'Distrito Escolar: ') );
+$pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', ' Distrito Escolar: ') );
 $pdf->SetFont('Arial','B',11);
 $pdf->WriteFlowingBlock( iconv('UTF-8', 'windows-1252', $distrito_d) );
 $pdf->SetFont('Arial','',11);
