@@ -95,7 +95,7 @@
 											<th>Acciones</th>
 										</tr>
 										<!--   Bucle while para completar tabla con todos los registros de colegios   !-->
-										<?php while($row=$datos->fetch_assoc()){?>
+										<?php while($row = mysqli_fetch_assoc($consulta_limit)){?>
 			              					<tr>
 			              						<td><?php echo $row['APEYNOM'];?> </td>	
 												<td><?php echo $row['SERIE'];?> </td>
