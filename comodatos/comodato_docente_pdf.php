@@ -5,10 +5,10 @@
 		$escuela_1 = ' en su carácter de Director/a del Instituto Superior de Formación Docente ';
 		$escuela_2 = ' la cual deberá ser asociada, a fin de cumplir con el protocolo de seguridad antirrobo, al servidor del Instituto Superior de Formación Profesional ';
 		$clausulas = "
-	SEGUNDA: EL COMODATARIO destinará la laptop que recibe en COMODATO a fines educativos en su carácter de estudiante y para el uso de su grupo familiar, en el marco del PROGRAMA CONECTAR IGUALDAD.COM.AR, procurando familiarizar a todo integrante de su hogar con las nuevas tecnologías. La entrega del equipamiento implica única y exclusivamente la facultad de uso sobre el mismo, el que deberá realizarse conforme a su destino.
+	SEGUNDA: EL COMODATARIO destinará la laptop que recibe en COMODATO a fines educativos para el desempeño de las funciones estipuladas en su carácter de docente en el marco del PROGRAMA CONECTAR IGUALDAD. La entrega del equipamiento implica única y exclusivamente la facultad de uso sobre el mismo, el que deberá realizarse conforme a su destino.
 
-	TERCERA: El COMODATARIO reconoce en forma expresa que recibe el bien objeto del presente contrato de parte de EL COMODANTE gratuitamente, en concepto de préstamo de uso. También será gratuita su conectividad en los términos y condiciones establecidos por el Comité Ejecutivo del Programa Conectar Igualdad.
-
+	TERCERA: El COMODATARIO reconoce en forma expresa que recibe el bien objeto del presente contrato de parte de EL COMODANTE gratuitamente, en concepto de préstamo de uso. 
+	
 	CUARTA: El presente contrato tendrá vigencia desde la firma del mismo y hasta el momento en que EL COMANDATARIO no desempeñe más sus funciones en el Instituto Superior de Formación Docente, contemplando los casos de licencias por más de TREINTA (30) días, renuncia o jubilación.
 
 	QUINTA: El COMODATARIO podrá rescindir en cualquier momento el presente contrato previa notificación fehaciente a EL COMODANTE con TREINTA (30) días de anticipación, debiendo para ello restituir la laptop objeto del presente al COMODANTE en buen estado de conservación.
@@ -26,18 +26,16 @@
 
 	DECIMOPRIMERA: EL COMODANTE y EL COMODATARIO constituyen domicilio especial en los señalados “ut supra”, donde tendrán validez todas las notificaciones judiciales y extrajudiciales.
 
-	DECIMOSEGUNDA: EL COMODATARIO autoriza a EL COMODANTE a la realización de investigaciones cuantitativas (encuestas) y/o investigaciones cualitativas (entrevistas en profundidad), con el consentimiento del usuario/a, a través de la entidad que designe con el fin de evaluar el funcionamiento y desempeño del programa.
-
-	DECIMOTERCERA: Para cualquier cuestión judicial, de común acuerdo las partes quedan sometidas a la competencia de los Juzgados Ordinarios de Primera Instancia con competencia en lo Contencioso Administrativo.
+	DECIMOSEGUNDA: Para cualquier cuestión judicial, de común acuerdo las partes quedan sometidas a la competencia de los Juzgados Ordinarios de Primera Instancia con competencia en lo Contencioso Administrativo.
 	  ";
 		include('escribir_comodato_docente.php');
 	} else {
 		$escuela_1 = ' en su carácter de Director/a de la Escuela ';
 		$escuela_2 = ' la cual deberá ser asociada, a fin de cumplir con el protocolo de seguridad antirrobo, al servidor del establecimiento educativo ';
 		$clausulas = "
-	SEGUNDA: EL COMODATARIO destinará la laptop que recibe en COMODATO a fines educativos en su carácter de estudiante y para el uso de su grupo familiar, en el marco del PROGRAMA CONECTAR IGUALDAD.COM.AR, procurando familiarizar a todo integrante de su hogar con las nuevas tecnologías. La entrega del equipamiento implica única y exclusivamente la facultad de uso sobre el mismo, el que deberá realizarse conforme a su destino.
+	SEGUNDA: EL COMODATARIO destinará la laptop que recibe en COMODATO a fines educativos para el desempeño de las funciones estipuladas en su carácter de docente en el marco del PROGRAMA CONECTAR IGUALDAD. La entrega del equipamiento implica única y exclusivamente la facultad de uso sobre el mismo, el que deberá realizarse conforme a su destino.
 
-	TERCERA: El COMODATARIO reconoce en forma expresa que recibe el bien objeto del presente contrato de parte de EL COMODANTE gratuitamente, en concepto de préstamo de uso. También será gratuita su conectividad en los términos y condiciones establecidos por el Comité Ejecutivo del Programa Conectar Igualdad.
+	TERCERA: El COMODATARIO reconoce en forma expresa que recibe el bien objeto del presente contrato de parte de EL COMODANTE gratuitamente, en concepto de préstamo de uso.
 
 	CUARTA: El presente contrato tendrá vigencia desde la firma del mismo y hasta el momento en que EL COMADATARIO no desempeñe más sus funciones en el establecimiento educativo, contemplando los casos de licencias por más de TREINTA (30) días, renuncia o jubilación.
 
@@ -55,9 +53,7 @@
 
 	DECIMOPRIMERA: EL COMODANTE y EL COMODATARIO constituyen domicilio especial en los señalados “ut supra”, donde tendrán validez todas las notificaciones judiciales y extrajudiciales.
 
-	DECIMOSEGUNDA: EL COMODATARIO autoriza a EL COMODANTE a la realización de investigaciones cuantitativas (encuestas) y/o investigaciones cualitativas (entrevistas en profundidad), con el consentimiento del usuario/a, a través de la entidad que designe con el fin de evaluar el funcionamiento y desempeño del programa.
-
-	DECIMOTERCERA: Para cualquier cuestión judicial, de común acuerdo las partes quedan sometidas a la competencia de los Juzgados Ordinarios de Primera Instancia con competencia en lo Contencioso Administrativo.
+	DECIMOSEGUNDA: Para cualquier cuestión judicial, de común acuerdo las partes quedan sometidas a la competencia de los Juzgados Ordinarios de Primera Instancia con competencia en lo Contencioso Administrativo.
 	  ";
 		include('escribir_comodato_docente.php');
 	}
